@@ -4,8 +4,10 @@
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-const DOT = (v) => `<span class="dot ${v ? 'dot--on' : 'dot--off'}"></span>`;
+const DOT = (v, kind) => `<span class="dot ${v ? `dot--on dot--${kind}` : 'dot--off'}"></span>`;
 const BOOL = (v) => (v ? '<span class="tbl-yes">✓</span>' : '<span class="tbl-no">—</span>');
+const SUP = (v) => `<span class="sup sup--${String(v).toLowerCase()}">${esc(v)}</span>`;
+const KEY = (kind, label) => `<span class="legend-key legend-key--${kind}">${label}</span>`;
 
 const SPECS = {
   perception: {
@@ -15,12 +17,12 @@ const SPECS = {
       { k: 'method', l: 'Method', sort: 'alpha' },
       { k: 'venue_raw', l: 'Venue & Year', sort: 'year' },
       { k: 'setting', l: 'Setting' },
-      ...['I', 'D', 'V', '3D', 'L', 'HOI'].map((m) => ({ k: `in_${m}`, l: m, dot: 1 })),
-      ...['M', 'H', 'P', 'Mo'].map((m) => ({ k: `out_${m}`, l: m, dot: 1 })),
-      { k: 'supervision', l: 'Supervision' },
+      ...['I', 'D', 'V', '3D', 'L', 'HOI'].map((m) => ({ k: `in_${m}`, l: m, dot: 'in' })),
+      ...['M', 'H', 'P', 'Mo'].map((m) => ({ k: `out_${m}`, l: m, dot: 'out' })),
+      { k: 'supervision', l: 'Supervision', chip: 1 },
       { k: 'open_set', l: 'Open-set', bool: 1 },
     ],
-    legend: 'Input — I RGB · D depth · V video · 3D point cloud · L language · HOI human–object interaction. Output — M mask · H heatmap · P keypoint · Mo motion/trajectory.',
+    legend: `${KEY('in', 'Input')} I RGB · D depth · V video · 3D point cloud · L language · HOI human–object interaction &ensp; ${KEY('out', 'Output')} M mask · H heatmap · P keypoint · Mo motion/trajectory`,
   },
   reasoning: {
     label: 'Reasoning', roleClass: 'role-reasoning', nameKey: 'method', grouped: 'paradigm',
@@ -30,9 +32,9 @@ const SPECS = {
       { k: 'venue_raw', l: 'Venue & Year', sort: 'year' },
       { k: 'setting', l: 'Setting' },
       { k: 'text_form', l: 'Text form' },
-      ...['M', 'H', 'P', 'Mo'].map((m) => ({ k: `out_${m}`, l: m, dot: 1 })),
+      ...['M', 'H', 'P', 'Mo'].map((m) => ({ k: `out_${m}`, l: m, dot: 'out' })),
     ],
-    legend: 'Text form — how language enters: an action term, an explicit instruction, or implicit intent ("--" = no direct language input).',
+    legend: `Text form — how language enters: an action term, an explicit instruction, or implicit intent ("--" = no direct language input) &ensp; ${KEY('out', 'Output')} M mask · H heatmap · P keypoint · Mo motion`,
   },
   action: {
     label: 'Action', roleClass: 'role-action', nameKey: 'method', grouped: 'paradigm',
@@ -40,11 +42,11 @@ const SPECS = {
     cols: [
       { k: 'method', l: 'Method', sort: 'alpha' },
       { k: 'venue_raw', l: 'Venue & Year', sort: 'year' },
-      ...['I', 'D', '3D', 'L'].map((m) => ({ k: `in_${m}`, l: m, dot: 1 })),
+      ...['I', 'D', '3D', 'L'].map((m) => ({ k: `in_${m}`, l: m, dot: 'in' })),
       { k: 'aff_role', l: 'Affordance role' },
       { k: 'robot', l: 'Robot' },
     ],
-    legend: 'Affordance role — how the grounded affordance is used: Primitive / Retrieval / Planning (hierarchical) · Explicit / Implicit / Reward / Goal (policy learning).',
+    legend: `${KEY('in', 'Input')} I RGB · D depth · 3D point cloud · L language &ensp; Affordance role — Primitive / Retrieval / Planning (hierarchical) · Explicit / Implicit / Reward / Goal (policy learning)`,
   },
   datasets: {
     label: 'Datasets', roleClass: '', nameKey: 'name',
@@ -56,10 +58,10 @@ const SPECS = {
       { k: 'obj', l: 'Obj.' },
       { k: 'aff', l: 'Aff.' },
       { k: 'num', l: 'Scale' },
-      ...['I', 'D', 'V', '3D', 'L', 'HOI'].map((m) => ({ k: `in_${m}`, l: m, dot: 1 })),
-      ...['M', 'H', 'P', 'Mo'].map((m) => ({ k: `ann_${m}`, l: m, dot: 1 })),
+      ...['I', 'D', 'V', '3D', 'L', 'HOI'].map((m) => ({ k: `in_${m}`, l: m, dot: 'in' })),
+      ...['M', 'H', 'P', 'Mo'].map((m) => ({ k: `ann_${m}`, l: m, dot: 'ann' })),
     ],
-    legend: 'Obj./Aff. — object and affordance category counts where reported. Annotation — M mask · H heatmap · P keypoint · Mo motion.',
+    legend: `Obj./Aff. — object and affordance category counts where reported &ensp; ${KEY('in', 'Input')} I RGB · D depth · V video · 3D point cloud · L language · HOI &ensp; ${KEY('ann', 'Annotation')} M mask · H heatmap · P keypoint · Mo motion`,
   },
 };
 
@@ -87,7 +89,8 @@ export function initTables(root, data) {
          ${s.label} (${data[key].rows.length})</button>`).join('');
 
     const groupHead = spec.groups.length
-      ? `<tr>${spec.groups.map(([g, span]) => `<th colspan="${span}" class="td-c th-group">${g}</th>`).join('')}</tr>` : '';
+      ? `<tr>${spec.groups.map(([g, span]) =>
+          `<th colspan="${span}" class="td-c th-group th-group--${g.toLowerCase() || 'none'}">${g}</th>`).join('')}</tr>` : '';
     const head = `<tr>${spec.cols.map((c) => {
       const sortable = c.sort ? 'is-sortable' : '';
       const dir = sort && sort.k === c.k ? `<span class="dir">${sort.dir > 0 ? '▲' : '▼'}</span>` : '';
@@ -102,8 +105,9 @@ export function initTables(root, data) {
         groupRow = `<tr class="group-row"><td colspan="${spec.cols.length}">${esc(lastGroup)}</td></tr>`;
       }
       const tds = spec.cols.map((c) => {
-        if (c.dot) return `<td class="td-c">${DOT(r[c.k])}</td>`;
+        if (c.dot) return `<td class="td-c">${DOT(r[c.k], c.dot)}</td>`;
         if (c.bool) return `<td class="td-c">${BOOL(r[c.k])}</td>`;
+        if (c.chip) return `<td>${SUP(r[c.k])}</td>`;
         if (c.k === spec.nameKey) {
           const inner = r.paper_key
             ? `<a href="#explorer" data-pin="${esc(r.paper_key)}" title="Open in the atlas index">${esc(r[c.k])}</a>`
@@ -117,14 +121,23 @@ export function initTables(root, data) {
 
     root.innerHTML = `
       <div class="tables__tabs">${tabs}</div>
-      <div class="tables__scroll ${spec.roleClass}" data-lenis-prevent>
+      <div class="tables__scroll ${spec.roleClass}">
         <table class="ctable ${spec.roleClass}">
           <thead>${groupHead}${head}</thead>
           <tbody>${body}</tbody>
         </table>
       </div>
       <p class="tables__legend">${spec.legend}</p>`;
+    fitCheck();
   };
+
+  // when the table fits, lift the h-scroll container so the header row can
+  // stick to the viewport (a scroll container would trap position:sticky)
+  const fitCheck = () => {
+    const sc = root.querySelector('.tables__scroll');
+    if (sc) sc.classList.toggle('tables__scroll--fit', sc.scrollWidth <= sc.clientWidth + 1);
+  };
+  addEventListener('resize', fitCheck, { passive: true });
 
   root.addEventListener('click', (e) => {
     const tab = e.target.closest('[data-tab]');

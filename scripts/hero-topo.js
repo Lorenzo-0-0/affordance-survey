@@ -12,9 +12,9 @@ export function initHeroTopo() {
 
   // theme-driven: read palette from CSS variables so the topology follows tokens.css
   const css = getComputedStyle(document.documentElement);
-  const EDGE = (css.getPropertyValue('--border-strong') || '#C4CBD6').trim();
-  const PULSE = (css.getPropertyValue('--accent') || '#3D63C2').trim();
-  const SPARK = (css.getPropertyValue('--accent-spark') || '#A9C2F8').trim();
+  const EDGE = (css.getPropertyValue('--topo-edge') || css.getPropertyValue('--border-strong') || '#B3C1E2').trim();
+  const PULSE = (css.getPropertyValue('--accent-volt') || css.getPropertyValue('--accent') || '#2E5BEB').trim();
+  const SPARK = (css.getPropertyValue('--accent-spark') || '#6FC2FF').trim();
 
   const NS = 'http://www.w3.org/2000/svg';
   const mk = (tag, attrs) => {
@@ -54,7 +54,7 @@ export function initHeroTopo() {
   grad.appendChild(mk('stop', { offset: '1', 'stop-color': SPARK }));
   defs.appendChild(grad);
   const glow = mk('filter', { id: 'topo-glow', x: '-40%', y: '-40%', width: '180%', height: '180%' });
-  glow.appendChild(mk('feGaussianBlur', { stdDeviation: '3.2', result: 'b' }));
+  glow.appendChild(mk('feGaussianBlur', { stdDeviation: '4.4', result: 'b' }));
   const merge = mk('feMerge', {});
   merge.appendChild(mk('feMergeNode', { in: 'b' }));
   merge.appendChild(mk('feMergeNode', { in: 'SourceGraphic' }));
@@ -80,15 +80,15 @@ export function initHeroTopo() {
       edgesGroup.appendChild(mk('path', {
         d, fill: 'none', stroke: EDGE, 'stroke-width': 1,
       }));
-      if (!reduced && rand() > 0.38) {
+      if (!reduced && rand() > 0.28) {
         const p = mk('path', {
-          d, fill: 'none', stroke: 'url(#topo-pulse)', 'stroke-width': 1.8,
-          'stroke-linecap': 'round', opacity: 0.88,
+          d, fill: 'none', stroke: 'url(#topo-pulse)', 'stroke-width': 2.3,
+          'stroke-linecap': 'round', opacity: 0.95,
         });
         pulseGroup.appendChild(p);
         const len = p.getTotalLength();
-        p.setAttribute('stroke-dasharray', `26 ${len}`);
-        pulses.push({ el: p, len: len + 26, off: rand() * len, speed: 28 + rand() * 36 });
+        p.setAttribute('stroke-dasharray', `38 ${len}`);
+        pulses.push({ el: p, len: len + 38, off: rand() * len, speed: 36 + rand() * 46 });
       }
     });
   });
@@ -97,11 +97,11 @@ export function initHeroTopo() {
     const accent = n.row === 2;
     if (accent) {
       nodesGroup.appendChild(mk('circle', {
-        cx: n.x, cy: n.y, r: 9, fill: PULSE, opacity: 0.14,
+        cx: n.x, cy: n.y, r: 10, fill: PULSE, opacity: 0.18,
       }));
     }
     nodesGroup.appendChild(mk('circle', {
-      cx: n.x, cy: n.y, r: accent ? 4 : 3,
+      cx: n.x, cy: n.y, r: accent ? 4.5 : 3,
       fill: accent ? PULSE : EDGE,
       opacity: accent ? 0.95 : 1,
     }));
@@ -118,7 +118,7 @@ export function initHeroTopo() {
     last = now;
     for (const p of pulses) {
       p.off = (p.off + p.speed * dt) % p.len;
-      p.el.setAttribute('stroke-dashoffset', String(-p.off + 26));
+      p.el.setAttribute('stroke-dashoffset', String(-p.off + 38));
     }
     requestAnimationFrame(tick);
   }

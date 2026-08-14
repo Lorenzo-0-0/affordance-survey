@@ -48,7 +48,11 @@
 
   /* -- site accent: one cornflower voice for chrome ----------- */
   --accent: var(--moss);
-  --accent-spark: #a9c2f8;    /* topology pulse gradient end */
+  --accent-spark: #6fc2ff;    /* topology pulse gradient end — electric sky */
+  --accent-volt: #2e5beb;     /* saturated pulse head, hero wires only */
+  --topo-edge: #b3c1e2;       /* topology wire color, a blue cast over border-strong */
+  --ghost-stroke: rgba(61, 99, 194, 0.22);  /* outlined ghost numerals (≡ --moss at 22%) */
+  --ghost-fill: rgba(61, 99, 194, 0.14);    /* solid fallback when text-stroke is unsupported */
 
   /* role binding — sections/cards re-bind these */
   --role: var(--ink);
@@ -94,12 +98,13 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --d-fast: 140ms; --d-base: 240ms; --d-slow: 420ms;
 
-  /* -- aurora wash (hero backdrop: cornflower light + a breath
-     of celadon lower-right, barely there) ---------------------- */
+  /* -- aurora wash (hero backdrop: electric cornflower + sky,
+     a breath of celadon lower-right — present, not shy) -------- */
   --aurora:
-    radial-gradient(58% 52% at 14% 6%,  rgba(106, 147, 232, 0.12), transparent 60%),
-    radial-gradient(46% 44% at 90% -4%, rgba(169, 194, 248, 0.12), transparent 58%),
-    radial-gradient(60% 64% at 82% 96%, rgba(102, 191, 163, 0.07), transparent 64%);
+    radial-gradient(58% 52% at 14% 6%,  rgba(74, 120, 230, 0.20), transparent 62%),
+    radial-gradient(46% 44% at 90% -4%, rgba(111, 194, 255, 0.20), transparent 60%),
+    radial-gradient(50% 46% at 50% 116%, rgba(82, 176, 255, 0.13), transparent 66%),
+    radial-gradient(60% 64% at 84% 94%, rgba(102, 191, 163, 0.10), transparent 64%);
 
   /* -- cool grain (feTurbulence, multiply; graphite tint) ----- */
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.16 0 0 0 0 0.22 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E");

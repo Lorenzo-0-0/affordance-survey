@@ -6,6 +6,7 @@ export function initTree(el, idx, taxonomy, stateApi, countFn) {
     if (state.mode === 'datasets') { el.hidden = true; return; }
     el.hidden = false;
     const counts = countFn(); // Map leaf -> n (respecting all filters except tree selection)
+    const maxN = Math.max(1, ...counts.values()); // shared scale for the per-leaf count bars
     el.innerHTML = taxonomy.roles.map((r) => {
       const roleN = r.families.reduce((n, f) => n + f.leaves.reduce((m, l) => m + (counts.get(l.slug) || 0), 0), 0);
       const roleOn = state.role === r.slug && !state.leaf;
@@ -22,7 +23,7 @@ export function initTree(el, idx, taxonomy, stateApi, countFn) {
             <span class="tree__familyname">${esc(f.label)}</span>
             <ul class="tree__leaves">
               ${f.leaves.map((l) => `
-                <li><button class="tree__leaf ${state.leaf === l.slug ? 'is-on' : ''}" data-role="${r.slug}" data-leaf="${l.slug}" title="${esc(l.blurb)}">
+                <li><button class="tree__leaf ${state.leaf === l.slug ? 'is-on' : ''}" data-role="${r.slug}" data-leaf="${l.slug}" title="${esc(l.blurb)}" style="--bar:${((counts.get(l.slug) || 0) / maxN).toFixed(3)}">
                   ${esc(l.label)}<span class="tree__count">${counts.get(l.slug) || 0}</span>
                 </button></li>`).join('')}
             </ul>
