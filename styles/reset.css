@@ -1,0 +1,59 @@
+/* modern minimal reset + base element voice */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+/* Lenis owns smooth scrolling; never let native smooth-scroll fight its per-frame writes */
+html.lenis, .lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+/* paper grain under the content: blends against the flat paper only,
+   so scrolling never re-composites the whole viewport */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: var(--grain);
+  background-size: 140px 140px;
+  mix-blend-mode: multiply;
+  opacity: 0.32;
+  pointer-events: none;
+  z-index: 0;
+}
+body > * { position: relative; z-index: 1; }
+
+img, picture, svg, video { display: block; max-width: 100%; }
+input, button, textarea, select { font: inherit; color: inherit; }
+button { background: none; border: none; padding: 0; cursor: pointer; }
+
+p, li, figcaption { text-wrap: pretty; }
+h1, h2, h3, h4 { line-height: var(--lh-snug); text-wrap: balance; font-weight: inherit; }
+
+a { color: inherit; text-decoration-color: var(--line); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--role, var(--ink)); }
+
+::selection { background: rgba(192, 138, 45, 0.28); }
+
+:focus-visible {
+  outline: 2px solid var(--role, var(--ink));
+  outline-offset: 3px;
+  border-radius: var(--r-xs);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+  }
+}

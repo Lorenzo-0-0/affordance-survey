@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>og-card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500&display=swap" />
+<style>
+  /* social card: same plate language at ~2x opacity — whisper designs photograph as blank */
+  * { margin: 0; box-sizing: border-box; }
+  body { width: 1200px; height: 630px; background: #f6f3ed; overflow: hidden; position: relative; font-family: "Fraunces", serif; }
+  .contours { position: absolute; inset: 0; }
+  .frame { position: absolute; inset: 26px; border: 1px solid rgba(27,25,22,.35); }
+  .tick { position: absolute; background: rgba(27,25,22,.35); }
+  .inner { position: absolute; inset: 0; padding: 92px 96px; display: flex; flex-direction: column; justify-content: space-between; }
+  .eyebrow { font-family: "JetBrains Mono", monospace; font-size: 19px; letter-spacing: .24em; color: #6f6a5f; text-transform: uppercase; display: flex; align-items: center; gap: 14px; }
+  .dots { display: flex; gap: 7px; }
+  .dots i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+  h1 { font-size: 88px; font-weight: 460; line-height: 1.04; letter-spacing: -0.02em; color: #837d70; font-variation-settings: "opsz" 144; }
+  h1 b { display: block; color: #8f4322; font-weight: 560; }
+  .sub { font-size: 27px; color: #47433c; font-weight: 420; }
+  .stats { font-family: "JetBrains Mono", monospace; font-size: 19px; letter-spacing: .1em; color: #6f6a5f; text-transform: uppercase; }
+  .stats b { color: #1b1916; font-weight: 500; }
+</style>
+</head>
+<body>
+  <svg class="contours" viewBox="0 0 1200 630" fill="none" stroke="#1b1916">
+    <g stroke-opacity="0.16">
+      <ellipse cx="1010" cy="180" rx="150" ry="105" transform="rotate(14 1010 180)"/>
+      <ellipse cx="1010" cy="180" rx="210" ry="150" transform="rotate(14 1010 180)"/>
+      <ellipse cx="1010" cy="180" rx="275" ry="200" transform="rotate(12 1010 180)"/>
+      <ellipse cx="1010" cy="180" rx="345" ry="255" transform="rotate(10 1010 180)"/>
+      <ellipse cx="1050" cy="560" rx="130" ry="80" transform="rotate(-8 1050 560)"/>
+      <ellipse cx="1050" cy="560" rx="195" ry="125" transform="rotate(-8 1050 560)"/>
+      <ellipse cx="1050" cy="560" rx="265" ry="175" transform="rotate(-6 1050 560)"/>
+    </g>
+    <g stroke-opacity="0.30">
+      <ellipse cx="1010" cy="180" rx="92" ry="64" transform="rotate(14 1010 180)"/>
+      <ellipse cx="1050" cy="560" rx="72" ry="44" transform="rotate(-8 1050 560)"/>
+    </g>
+    <circle cx="1010" cy="180" r="8" stroke="#c08a2d" stroke-opacity=".9" stroke-width="2"/>
+    <circle cx="1010" cy="180" r="2.6" fill="#c08a2d" stroke="none"/>
+    <path d="M700 630 Q850 470 1046 564" stroke="#b4552d" stroke-opacity=".65" stroke-width="2" stroke-dasharray="7 9"/>
+    <text x="1042" y="186" font-family="JetBrains Mono" font-size="17" letter-spacing="2" fill="#47433c" stroke="none">grasp ·87</text>
+  </svg>
+  <div class="frame"></div>
+  <div class="inner">
+    <div class="eyebrow">
+      <span class="dots"><i style="background:#3d5a45"></i><i style="background:#c08a2d"></i><i style="background:#b4552d"></i></span>
+      Survey · Affordance Learning for Embodied AI
+    </div>
+    <div>
+      <h1>From Passive Perception <b>to Active Interaction</b></h1>
+    </div>
+    <div class="sub">A survey of affordance learning — perception, reasoning, and action.</div>
+    <div class="stats"><b>189</b> methods · <b>34</b> datasets · <b>18</b> taxonomy leaves · refs <b>1979→2026</b></div>
+  </div>
+</body>
+</html>

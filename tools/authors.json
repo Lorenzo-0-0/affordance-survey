@@ -1,0 +1,22 @@
+{
+  "_note": "Author ORDER is TBD in the paper source (% ORDER TBD). Reorder here and rerun tools/build_authors.py.",
+  "affiliations": {
+    "1": "Nanyang Technological University",
+    "2": "HKUST (Guangzhou)",
+    "3": "Shanghai Jiao Tong University",
+    "4": "The University of Sydney"
+  },
+  "marks": { "*": "Equal contribution", "‡": "Project lead", "†": "Corresponding author" },
+  "authors": [
+    { "name": "Gen Li", "affils": [1], "marks": ["*", "‡"] },
+    { "name": "Hanqing Wang", "affils": [2], "marks": ["*"] },
+    { "name": "Jingliang Li", "affils": [1], "marks": ["*"], "url": "https://jingliangli.com" },
+    { "name": "Yifan Han", "affils": [3], "marks": ["*"] },
+    { "name": "Jindou Jia", "affils": [1], "marks": [] },
+    { "name": "Tao Lin", "affils": [3], "marks": [] },
+    { "name": "Yutong Wang", "affils": [4], "marks": [] },
+    { "name": "Bo Zhao", "affils": [3], "marks": [] },
+    { "name": "Hui Xiong", "affils": [2], "marks": ["†"] },
+    { "name": "Jianfei Yang", "affils": [1], "marks": ["†"], "url": "https://marslab.tech" }
+  ]
+}

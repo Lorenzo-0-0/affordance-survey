@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" data-asset-v="12" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#F7F8F5" />
+  <title>From Passive Perception to Active Interaction · A Survey of Affordance Learning for Embodied AI</title>
+  <meta name="description" content="A unified survey of affordance learning for embodied AI: affordance perception, affordance reasoning, and affordance-guided action — 189 methods, 34 datasets, from Gibson 1979 to today." />
+  <!-- TODO: final deploy URL — the paper's declared ntumars.github.io/wm-robot-survey/ slug is stale; set canonical + og:url before deploy -->
+  <meta property="og:title" content="From Passive Perception to Active Interaction" />
+  <meta property="og:description" content="A survey of affordance learning for embodied AI — perception, reasoning, and action. 189 methods · 34 datasets · 1979→2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/og-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles/tokens.css?v=12" />
+  <link rel="stylesheet" href="styles/reset.css?v=12" />
+  <link rel="stylesheet" href="styles/layout.css?v=12" />
+  <link rel="stylesheet" href="styles/components.css?v=12" />
+  <link rel="stylesheet" href="styles/explorer.css?v=12" />
+  <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+
+  <nav class="nav" aria-label="Site">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top">Affordance Survey</a>
+      <ul class="nav__links">
+        <li><a class="nav__link" href="#abstract">Abstract</a></li>
+        <li><a class="nav__link" href="#framework">Framework</a></li>
+        <li><a class="nav__link" href="#evolution">Evolution</a></li>
+        <li><a class="nav__link" href="#explorer">Explorer</a></li>
+        <li><a class="nav__link" href="#tables">Tables</a></li>
+        <li><a class="nav__link" href="#challenges">Challenges</a></li>
+        <li><a class="nav__link" href="#cite">Cite</a></li>
+      </ul>
+      <a class="nav__cta" href="https://github.com/hq-King/Awesome-Affordance-Learning" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </nav>
+
+  <!-- ============================ HERO ============================ -->
+  <header id="top" class="hero">
+    <!-- OBJECT-FIELD:START (hand-authored line art — bespoke artwork, edit by hand; no build tool) -->
+    <div class="hero__field" aria-hidden="true">
+      <svg class="field field--desktop" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <radialGradient id="fglow-moss"><stop offset="0%" stop-color="#3d5a45" stop-opacity="0.7"/><stop offset="62%" stop-color="#3d5a45" stop-opacity="0.26"/><stop offset="100%" stop-color="#3d5a45" stop-opacity="0"/></radialGradient>
+          <radialGradient id="fglow-ochre"><stop offset="0%" stop-color="#c08a2d" stop-opacity="0.72"/><stop offset="62%" stop-color="#c08a2d" stop-opacity="0.28"/><stop offset="100%" stop-color="#c08a2d" stop-opacity="0"/></radialGradient>
+          <radialGradient id="fglow-terra"><stop offset="0%" stop-color="#b4552d" stop-opacity="0.7"/><stop offset="62%" stop-color="#b4552d" stop-opacity="0.26"/><stop offset="100%" stop-color="#b4552d" stop-opacity="0"/></radialGradient>
+        </defs>
+
+        <!-- door handle · TURN -->
+        <g class="fobj" data-obj="door-handle" transform="translate(120 150) scale(0.9)">
+          <circle class="fobj__glow" data-action="turn" cx="140" cy="100" r="64" fill="url(#fglow-ochre)" opacity="0"/>
+          <g class="fobj__rings fspot--ochre" data-action="turn" opacity="0">
+            <circle cx="140" cy="100" r="32" stroke-width="1.2"/>
+            <circle cx="140" cy="100" r="48" stroke-width="0.8"/>
+          </g>
+          <g class="fobj__art" stroke-width="2.2">
+            <circle cx="70" cy="100" r="34"/>
+            <circle cx="70" cy="100" r="27" stroke-width="1.2" opacity="0.5"/>
+            <circle cx="70" cy="100" r="10" stroke-width="1.8"/>
+            <path d="M79 92 C118 84 156 84 174 90 C183 93 183 107 174 110 C156 116 118 116 82 108"/>
+            <path d="M174 90 C180 96 180 104 174 110" stroke-width="1.6"/>
+          </g>
+          <g class="fobj__label fspot--ochre" data-action="turn" opacity="0">
+            <line x1="152" y1="82" x2="176" y2="46"/>
+            <text class="fobj__verb" x="140" y="34">TURN</text>
+            <text class="fobj__sub" x="140" y="34" dy="15">lever</text>
+          </g>
+          <circle class="fobj__hit" data-action="turn" cx="140" cy="100" r="88"/>
+        </g>
+
+        <!-- mug · GRASP -->
+        <g class="fobj" data-obj="mug" transform="translate(90 430) scale(0.95)">
+          <circle class="fobj__glow" data-action="grasp-mug" cx="184" cy="110" r="62" fill="url(#fglow-moss)" opacity="0"/>
+          <g class="fobj__rings fspot--moss" data-action="grasp-mug" opacity="0">
+            <circle cx="184" cy="110" r="30" stroke-width="1.2"/>
+            <circle cx="184" cy="110" r="46" stroke-width="0.8"/>
+          </g>
+          <g class="fobj__art" stroke-width="2.2">
+            <path d="M40 42 C40 32 62 26 100 26 C138 26 160 32 160 42 C160 52 138 58 100 58 C62 58 40 52 40 42"/>
+            <path d="M40 44 C38 92 42 132 52 152 C62 168 138 168 148 152 C158 132 162 92 160 44"/>
+            <path d="M56 50 C76 57 124 57 144 50" stroke-width="1.2" opacity="0.5"/>
+            <path d="M160 74 C196 72 210 94 206 114 C202 136 182 148 156 148"/>
+            <path d="M160 86 C186 86 194 100 191 113 C188 128 176 136 157 136" stroke-width="1.6"/>
+            <path d="M64 178 L136 178" stroke-width="1" opacity="0.28"/>
+          </g>
+          <g class="fobj__label fspot--moss" data-action="grasp-mug" opacity="0">
+            <line x1="196" y1="86" x2="216" y2="52"/>
+            <text class="fobj__verb" x="180" y="40">GRASP</text>
+            <text class="fobj__sub" x="180" y="40" dy="15">handle</text>
+          </g>
+          <circle class="fobj__hit" data-action="grasp-mug" cx="184" cy="110" r="86"/>
+        </g>
+
+        <!-- scissors · CUT -->
+        <g class="fobj" data-obj="scissors" transform="translate(110 700) scale(0.95)">
+          <circle class="fobj__glow" data-action="cut" cx="118" cy="100" r="64" fill="url(#fglow-terra)" opacity="0"/>
+          <g class="fobj__rings fspot--terra" data-action="cut" opacity="0">
+            <circle cx="118" cy="100" r="32" stroke-width="1.2"/>
+            <circle cx="118" cy="100" r="48" stroke-width="0.8"/>
+          </g>
+          <g class="fobj__art" stroke-width="2.2">
+            <path d="M100 100 L182 58"/>
+            <path d="M104 92 C132 80 160 68 182 58" stroke-width="1.6"/>
+            <path d="M100 100 L182 142"/>
+            <path d="M104 108 C132 120 160 132 182 142" stroke-width="1.6"/>
+            <circle cx="100" cy="100" r="5" stroke-width="1.8"/>
+            <path d="M94 96 L64 78"/>
+            <path d="M94 104 L64 122"/>
+            <circle cx="46" cy="68" r="20"/>
+            <circle cx="46" cy="132" r="20"/>
+          </g>
+          <g class="fobj__label fspot--terra" data-action="cut" opacity="0">
+            <line x1="130" y1="84" x2="152" y2="44"/>
+            <text class="fobj__verb" x="120" y="32">CUT</text>
+            <text class="fobj__sub" x="120" y="32" dy="15">blades</text>
+          </g>
+          <circle class="fobj__hit" data-action="cut" cx="118" cy="100" r="90"/>
+        </g>
+
+        <!-- light switch · FLIP -->
+        <g class="fobj" data-obj="switch" transform="translate(1370 140) scale(0.9)">
+          <circle class="fobj__glow" data-action="flip" cx="100" cy="90" r="60" fill="url(#fglow-terra)" opacity="0"/>
+          <g class="fobj__rings fspot--terra" data-action="flip" opacity="0">
+            <circle cx="100" cy="90" r="30" stroke-width="1.2"/>
+            <circle cx="100" cy="90" r="46" stroke-width="0.8"/>
+          </g>
+          <g class="fobj__art" stroke-width="2.2">
+            <rect x="56" y="28" width="88" height="144" rx="10"/>
+            <rect x="84" y="82" width="32" height="44" rx="4" stroke-width="1.6"/>
+            <path d="M94 100 L94 66 C94 60 106 60 106 66 L106 100"/>
+            <circle cx="100" cy="48" r="3.5" stroke-width="1.4"/>
+            <circle cx="100" cy="152" r="3.5" stroke-width="1.4"/>
+          </g>
+          <g class="fobj__label fspot--terra" data-action="flip" opacity="0">
+            <line x1="118" y1="74" x2="148" y2="44"/>
+            <text class="fobj__verb" x="126" y="32">FLIP</text>
+            <text class="fobj__sub" x="126" y="32" dy="15">toggle</text>
+          </g>
+          <circle class="fobj__hit" data-action="flip" cx="100" cy="92" r="88"/>
+        </g>
+
+        <!-- teapot · POUR + GRASP (the returning protagonist) -->
+        <g class="fobj" data-obj="teapot" transform="translate(1215 380) scale(0.56)">
+          <circle class="fobj__glow" data-action="pour" cx="142" cy="216" r="92" fill="url(#fglow-ochre)" opacity="0"/>
+          <circle class="fobj__glow" data-action="grasp-teapot" cx="568" cy="330" r="98" fill="url(#fglow-moss)" opacity="0"/>
+          <g class="fobj__rings fspot--ochre" data-action="pour" opacity="0">
+            <circle cx="142" cy="216" r="46" stroke-width="1.6"/>
+            <circle cx="142" cy="216" r="70" stroke-width="1"/>
+          </g>
+          <g class="fobj__rings fspot--moss" data-action="grasp-teapot" opacity="0">
+            <circle cx="568" cy="330" r="50" stroke-width="1.6"/>
+            <circle cx="568" cy="330" r="76" stroke-width="1"/>
+          </g>
+          <g class="fobj__art" stroke-width="2.4">
+            <circle cx="360" cy="150" r="11"/>
+            <path d="M360 161 C360 168 360 172 360 176" stroke-width="1.6"/>
+            <path d="M298 208 C306 182 330 176 360 176 C390 176 414 182 422 208"/>
+            <path d="M290 212 C314 204 406 204 430 212" stroke-width="1.6"/>
+            <path d="M296 214 C258 238 218 274 214 330 C210 396 258 456 300 470 C340 483 380 483 420 470 C462 456 510 396 506 330 C502 274 462 238 424 214"/>
+            <path d="M262 292 C252 318 254 352 268 382" stroke-width="1.2" opacity="0.5"/>
+            <path d="M312 476 C330 481 390 481 408 476" stroke-width="1.8"/>
+            <path d="M322 488 C340 492 380 492 398 488" stroke-width="1.4"/>
+            <path d="M236 262 C202 250 170 232 146 206 C142 202 138 199 137 197"/>
+            <path d="M244 302 C210 290 178 262 145 218" stroke-width="2.2"/>
+            <path d="M137 197 C141 203 144 210 145 218" stroke-width="1.7"/>
+            <path d="M502 258 C556 258 596 292 594 336 C592 378 556 406 512 410"/>
+            <path d="M506 282 C544 284 570 306 568 336 C566 364 542 384 514 388" stroke-width="1.8"/>
+            <path d="M150 522 L570 522" stroke-width="1" opacity="0.28"/>
+          </g>
+          <g class="fobj__label fspot--ochre" data-action="pour" opacity="0">
+            <line x1="128" y1="190" x2="104" y2="150" stroke-width="1.8"/>
+            <text class="fobj__verb" x="46" y="134" font-size="22" letter-spacing="3.5">POUR</text>
+            <text class="fobj__sub" x="46" y="134" dy="26" font-size="17">spout</text>
+          </g>
+          <g class="fobj__label fspot--moss" data-action="grasp-teapot" opacity="0">
+            <line x1="600" y1="296" x2="628" y2="252" stroke-width="1.8"/>
+            <text class="fobj__verb" x="600" y="236" text-anchor="end" font-size="22" letter-spacing="3.5">GRASP</text>
+            <text class="fobj__sub" x="600" y="236" dy="26" text-anchor="end" font-size="17">handle</text>
+          </g>
+          <circle class="fobj__hit" data-action="pour" cx="142" cy="216" r="130"/>
+          <circle class="fobj__hit" data-action="grasp-teapot" cx="568" cy="330" r="140"/>
+        </g>
+
+        <!-- chair · SIT -->
+        <g class="fobj" data-obj="chair" transform="translate(1405 710) scale(0.82)">
+          <circle class="fobj__glow" data-action="sit" cx="114" cy="106" r="64" fill="url(#fglow-moss)" opacity="0"/>
+          <g class="fobj__rings fspot--moss" data-action="sit" opacity="0">
+            <circle cx="114" cy="106" r="32" stroke-width="1.2"/>
+            <circle cx="114" cy="106" r="48" stroke-width="0.8"/>
+          </g>
+          <g class="fobj__art" stroke-width="2.2">
+            <path d="M74 18 C68 52 66 82 66 112"/>
+            <path d="M86 20 C80 52 78 80 78 108" stroke-width="1.6"/>
+            <path d="M74 18 C94 14 108 14 118 18" stroke-width="1.8"/>
+            <path d="M66 112 C96 106 138 106 162 112"/>
+            <path d="M66 122 C96 116 138 116 162 122" stroke-width="1.6"/>
+            <path d="M66 112 L66 122 M162 112 L162 122" stroke-width="1.6"/>
+            <path d="M70 122 L64 178"/>
+            <path d="M156 122 L162 178"/>
+            <path d="M110 122 L112 172" stroke-width="1.2" opacity="0.5"/>
+            <path d="M40 184 L188 184" stroke-width="1" opacity="0.28"/>
+          </g>
+          <g class="fobj__label fspot--moss" data-action="sit" opacity="0">
+            <line x1="128" y1="96" x2="154" y2="60"/>
+            <text class="fobj__verb" x="134" y="48">SIT</text>
+            <text class="fobj__sub" x="134" y="48" dy="15">seat</text>
+          </g>
+          <circle class="fobj__hit" data-action="sit" cx="114" cy="110" r="88"/>
+        </g>
+      </svg>
+
+      <svg class="field field--mobile" viewBox="0 0 800 1400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <radialGradient id="fglow-moss-m"><stop offset="0%" stop-color="#3d5a45" stop-opacity="0.7"/><stop offset="62%" stop-color="#3d5a45" stop-opacity="0.26"/><stop offset="100%" stop-color="#3d5a45" stop-opacity="0"/></radialGradient>
+          <radialGradient id="fglow-ochre-m"><stop offset="0%" stop-color="#c08a2d" stop-opacity="0.72"/><stop offset="62%" stop-color="#c08a2d" stop-opacity="0.28"/><stop offset="100%" stop-color="#c08a2d" stop-opacity="0"/></radialGradient>
+          <radialGradient id="fglow-terra-m"><stop offset="0%" stop-color="#b4552d" stop-opacity="0.7"/><stop offset="62%" stop-color="#b4552d" stop-opacity="0.26"/><stop offset="100%" stop-color="#b4552d" stop-opacity="0"/></radialGradient>
+        </defs>
+
+        <!-- teapot · POUR + GRASP — the lone protagonist on small screens:
+             the hero is ~3.4× taller than the viewBox is wide here, so slice
+             cropping only leaves the x∈[~210,590] band usable -->
+        <g class="fobj" data-obj="teapot" transform="translate(200 1100) scale(0.52)">
+          <circle class="fobj__glow" data-action="pour" cx="142" cy="216" r="100" fill="url(#fglow-ochre-m)" opacity="0"/>
+          <circle class="fobj__glow" data-action="grasp-teapot" cx="568" cy="330" r="105" fill="url(#fglow-moss-m)" opacity="0"/>
+          <g class="fobj__rings fspot--ochre" data-action="pour" opacity="0">
+            <circle cx="142" cy="216" r="50" stroke-width="1.8"/>
+            <circle cx="142" cy="216" r="76" stroke-width="1.2"/>
+          </g>
+          <g class="fobj__rings fspot--moss" data-action="grasp-teapot" opacity="0">
+            <circle cx="568" cy="330" r="54" stroke-width="1.8"/>
+            <circle cx="568" cy="330" r="82" stroke-width="1.2"/>
+          </g>
+          <g class="fobj__art" stroke-width="3.2">
+            <circle cx="360" cy="150" r="11"/>
+            <path d="M360 161 C360 168 360 172 360 176" stroke-width="2"/>
+            <path d="M298 208 C306 182 330 176 360 176 C390 176 414 182 422 208"/>
+            <path d="M290 212 C314 204 406 204 430 212" stroke-width="2"/>
+            <path d="M296 214 C258 238 218 274 214 330 C210 396 258 456 300 470 C340 483 380 483 420 470 C462 456 510 396 506 330 C502 274 462 238 424 214"/>
+            <path d="M262 292 C252 318 254 352 268 382" stroke-width="1.6" opacity="0.5"/>
+            <path d="M312 476 C330 481 390 481 408 476" stroke-width="2.2"/>
+            <path d="M322 488 C340 492 380 492 398 488" stroke-width="1.8"/>
+            <path d="M236 262 C202 250 170 232 146 206 C142 202 138 199 137 197"/>
+            <path d="M244 302 C210 290 178 262 145 218" stroke-width="2.8"/>
+            <path d="M137 197 C141 203 144 210 145 218" stroke-width="2.1"/>
+            <path d="M502 258 C556 258 596 292 594 336 C592 378 556 406 512 410"/>
+            <path d="M506 282 C544 284 570 306 568 336 C566 364 542 384 514 388" stroke-width="2.2"/>
+            <path d="M150 522 L570 522" stroke-width="1.4" opacity="0.28"/>
+          </g>
+          <g class="fobj__label fspot--ochre" data-action="pour" opacity="0">
+            <line x1="128" y1="190" x2="112" y2="158" stroke-width="2"/>
+            <text class="fobj__verb" x="84" y="140" font-size="26" letter-spacing="4">POUR</text>
+          </g>
+          <g class="fobj__label fspot--moss" data-action="grasp-teapot" opacity="0">
+            <line x1="600" y1="296" x2="628" y2="256" stroke-width="2"/>
+            <text class="fobj__verb" x="610" y="240" text-anchor="end" font-size="26" letter-spacing="4">GRASP</text>
+          </g>
+          <circle class="fobj__hit" data-action="pour" cx="142" cy="216" r="150"/>
+          <circle class="fobj__hit" data-action="grasp-teapot" cx="568" cy="330" r="160"/>
+        </g>
+      </svg>
+    </div>
+    <!-- OBJECT-FIELD:END -->
+
+    <div class="container hero__inner">
+      <p class="hero__eyebrow" data-reveal><span class="legend-dots"><i class="ld ld--moss"></i><i class="ld ld--ochre"></i><i class="ld ld--terra"></i></span>Survey · Affordance Learning for Embodied AI</p>
+      <h1 class="hero__title" data-reveal style="--reveal-delay:60ms">
+        <span class="hero__title-passive">From Passive Perception</span><br />
+        <span class="hero__title-active">to Active Interaction</span>
+      </h1>
+      <blockquote class="hero__epigraph" data-reveal style="--reveal-delay:120ms">
+        <p>“The affordances of the environment are what it offers the animal, what it provides or furnishes, either for good or ill.”</p>
+        <cite>— J. J. Gibson, <span>The Ecological Approach to Visual Perception</span>, 1979</cite>
+      </blockquote>
+
+      <div data-reveal style="--reveal-delay:180ms">
+      <!-- AUTHORS:START (generated by tools/build_authors.py — edit tools/authors.json, not this) -->
+      <p class="hero__authors">
+        <span class="author">Gen Li<sup>1*‡</sup></span>
+        <span class="author">Hanqing Wang<sup>2*</sup></span>
+        <span class="author"><a href="https://jingliangli.com" target="_blank" rel="noopener">Jingliang Li</a><sup>1*</sup></span>
+        <span class="author">Yifan Han<sup>3*</sup></span>
+        <span class="author">Jindou Jia<sup>1</sup></span>
+        <span class="author">Tao Lin<sup>3</sup></span>
+        <span class="author">Yutong Wang<sup>4</sup></span>
+        <span class="author">Bo Zhao<sup>3</sup></span>
+        <span class="author">Hui Xiong<sup>2†</sup></span>
+        <span class="author"><a href="https://marslab.tech" target="_blank" rel="noopener">Jianfei Yang</a><sup>1†</sup></span>
+      </p>
+      <p class="hero__affils"><span><sup>1</sup>Nanyang Technological University</span> · <span><sup>2</sup>HKUST (Guangzhou)</span> · <span><sup>3</sup>Shanghai Jiao Tong University</span> · <span><sup>4</sup>The University of Sydney</span></p>
+      <p class="hero__marks"><span><sup>*</sup>Equal contribution</span> · <span><sup>‡</sup>Project lead</span> · <span><sup>†</sup>Corresponding author</span></p>
+      <!-- AUTHORS:END -->
+      </div>
+
+      <div class="hero__cta" data-reveal style="--reveal-delay:240ms">
+        <span class="btn btn--disabled" title="arXiv ID pending — link activates on release">arXiv <em>· soon</em></span>
+        <a class="btn btn--primary" href="https://github.com/hq-King/Awesome-Affordance-Learning" target="_blank" rel="noopener">Paper list ↗</a>
+        <a class="btn" href="#explorer">Explore the corpus ↓</a>
+      </div>
+
+      <ul class="hero__stats" data-reveal style="--reveal-delay:300ms">
+        <li class="stat"><strong data-count-to="189">0</strong><span>methods surveyed</span></li>
+        <li class="stat"><strong data-count-to="34">0</strong><span>datasets &amp; benchmarks</span></li>
+        <li class="stat"><strong data-count-to="18">0</strong><span>taxonomy leaves</span></li>
+        <li class="stat"><strong>1979→2026</strong><span>references span</span></li>
+      </ul>
+
+      <p class="hero__tagline" data-reveal style="--reveal-delay:360ms">
+        <span class="hero__tagline-desktop">Move your cursor toward the objects — perception becomes interaction.</span>
+        <span class="hero__tagline-touch">Touch the objects — perception becomes interaction.</span>
+      </p>
+    </div>
+  </header>
+
+  <!-- ============================ ABSTRACT ============================ -->
+  <section id="abstract" class="section">
+    <div class="container">
+      <div class="chapter" data-reveal><span class="chapter__num">§ 01 · Abstract</span><span class="chapter__rule"></span></div>
+      <h2 class="section-title" data-reveal>One representation, three roles</h2>
+      <div class="abstract" data-reveal style="--reveal-delay:80ms">
+        <p>Embodied AI aims to develop agents capable of perceiving, reasoning, and acting in physical environments. Beyond recognizing objects and scenes, these agents must identify possible interactions, determine which are relevant to the current task and embodiment, and translate them into executable behavior. Affordance learning supports this process by grounding perception in action possibilities and connecting it with task reasoning and control. Existing surveys, however, have largely adopted either a perception-centered or robotics-centered perspective, leaving how affordance perception, reasoning, and action jointly contribute to embodied intelligence underexplored.</p>
+        <p>To bridge this gap, this survey presents a unified framework that organizes the literature around three complementary roles: <em>affordance perception</em> identifies what and where interaction is possible; <em>affordance reasoning</em> selects opportunities relevant to the task, context, and agent state; and <em>affordance-guided action</em> uses affordance representations to support planning and policy learning. Within this framework, we develop fine-grained taxonomies, systematically compare representative methods, and trace the field's progression from passive visual recognition toward action-aware embodied learning. We further organize representative datasets and evaluation protocols, and outline open challenges and future directions.</p>
+      </div>
+
+      <div class="roles">
+        <a class="role-card role-perception" href="#explorer" data-explorer-pin="role:perception" data-reveal>
+          <span class="role-card__num">I</span>
+          <h3>Affordance Perception</h3>
+          <p class="role-card__q">“What — and where — is interaction possible?”</p>
+          <p class="role-card__desc">Detects, segments, and grounds action possibilities as masks, heatmaps, keypoints, and 3D regions.</p>
+          <span class="role-card__link">78 papers →</span>
+        </a>
+        <a class="role-card role-reasoning" href="#explorer" data-explorer-pin="role:reasoning" data-reveal style="--reveal-delay:90ms">
+          <span class="role-card__num">II</span>
+          <h3>Affordance Reasoning</h3>
+          <p class="role-card__q">“Which affordance matters for this task, context, and agent state?”</p>
+          <p class="role-card__desc">Selects task-relevant opportunities through relations, language, and agentic feasibility checks.</p>
+          <span class="role-card__link">50 papers →</span>
+        </a>
+        <a class="role-card role-action" href="#explorer" data-explorer-pin="role:action" data-reveal style="--reveal-delay:180ms">
+          <span class="role-card__num">III</span>
+          <h3>Affordance-Guided Action</h3>
+          <p class="role-card__q">“How does affordance become executable behavior?”</p>
+          <p class="role-card__desc">Turns grounded affordances into primitives, plans, and policies — explicit, implicit, or as reward.</p>
+          <span class="role-card__link">61 papers →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FRAMEWORK ============================ -->
+  <section id="framework" class="section section--band">
+    <div class="container">
+      <div class="chapter" data-reveal><span class="chapter__num">§ 02 · Unified framework</span><span class="chapter__rule"></span></div>
+      <h2 class="section-title" data-reveal>What, where, and how</h2>
+      <p class="section-lead" data-reveal style="--reveal-delay:60ms">
+        The survey formalizes affordance learning as one mapping whose outputs answer the three questions an embodied agent must ask before it acts.
+      </p>
+
+      <div class="formula" data-reveal style="--reveal-delay:100ms" role="img"
+           aria-label="F equals f theta of o, l, c, yielding a set of triples a i, r i, eta i.">
+        <span class="formula__math">𝓕 = <em>f<sub>θ</sub></em>( <b>o</b>, <b>l</b>, <b>c</b> ) = { ( <span class="f-a">a<sub>i</sub></span>, <span class="f-r">r<sub>i</sub></span>, <span class="f-eta">η<sub>i</sub></span> ) }</span>
+        <span class="formula__legend">o&nbsp;observation · l&nbsp;language / task · c&nbsp;conditioning evidence</span>
+      </div>
+
+      <div class="whatwherehow">
+        <div class="www-card role-perception" data-reveal><span class="www-card__sym">a</span><h4>What</h4><p>the action that is possible — grasp, open, pour, push</p></div>
+        <div class="www-card role-reasoning" data-reveal style="--reveal-delay:80ms"><span class="www-card__sym">r</span><h4>Where</h4><p>the grounded region — part, mask, heatmap, keypoint, 3D location</p></div>
+        <div class="www-card role-action" data-reveal style="--reveal-delay:160ms"><span class="www-card__sym">η</span><h4>How</h4><p>the execution specification — pose, direction, score, post-contact trajectory</p></div>
+      </div>
+
+      <figure class="media-block" data-reveal>
+        <div class="media-block__chrome">
+          <picture>
+            <source type="image/webp" srcset="assets/images/overview.webp?v=12" />
+            <img src="assets/images/overview.png?v=12" width="2536" height="673" loading="lazy"
+                 alt="Overview taxonomy figure: affordance perception, affordance reasoning, and affordance-guided action, each expanded into its families and leaf categories." />
+          </picture>
+        </div>
+        <figcaption class="media-block__meta">
+          <span class="media-block__label">Fig. 01 · Plate I — Taxonomy overview</span>
+          <span class="media-block__title">Three roles, eighteen leaves</span>
+          <span class="media-block__caption">The literature organized around perception, reasoning, and action — from identifying actionable possibilities to reasoning about task relevance and translating them into embodied behavior.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================ EVOLUTION ============================ -->
+  <section id="evolution" class="section">
+    <div class="container">
+      <div class="chapter" data-reveal><span class="chapter__num">§ 03 · Evolution</span><span class="chapter__rule"></span></div>
+      <h2 class="section-title" data-reveal>Five paradigm shifts</h2>
+      <p class="section-lead" data-reveal style="--reveal-delay:60ms">
+        Affordance learning has moved from supervised visual prediction of action regions to action-grounded embodied learning. Five shifts carry that arc.
+      </p>
+
+      <ol class="shifts">
+        <li class="shift" data-reveal><span class="shift__num">01</span><span class="shift__from">dense labels</span><span class="shift__arrow">⟶</span><span class="shift__to">scalable supervision</span><p>Pixel-perfect masks give way to weak labels, interaction data, and model-generated supervision.</p></li>
+        <li class="shift" data-reveal style="--reveal-delay:60ms"><span class="shift__num">02</span><span class="shift__from">2D image plane</span><span class="shift__arrow">⟶</span><span class="shift__to">3D metric space</span><p>From view-dependent heatmaps to metric grounding on point clouds and Gaussian splats.</p></li>
+        <li class="shift" data-reveal style="--reveal-delay:120ms"><span class="shift__num">03</span><span class="shift__from">static regions</span><span class="shift__arrow">⟶</span><span class="shift__to">actionable dynamics</span><p>Beyond masks: contact points, motion directions, poses, and post-contact trajectories.</p></li>
+        <li class="shift" data-reveal style="--reveal-delay:180ms"><span class="shift__num">04</span><span class="shift__from">closed-set recognition</span><span class="shift__arrow">⟶</span><span class="shift__to">open-set generalization</span><p>Fixed vocabularies dissolve into language queries and foundation-model grounding.</p></li>
+        <li class="shift" data-reveal style="--reveal-delay:240ms"><span class="shift__num">05</span><span class="shift__from">modular pipelines</span><span class="shift__arrow">⟶</span><span class="shift__to">integrated policies</span><p>Affordance moves inside diffusion and VLA policies — as condition, representation, or reward.</p></li>
+      </ol>
+
+      <figure class="corpus-chart" data-reveal aria-label="Histogram of surveyed papers per year, stacked by role.">
+        <!-- HISTOGRAM:START (generated by tools/build_histogram.py) -->
+        <svg viewBox="0 0 1180 300" role="img" aria-label="Papers per year, stacked by role; 2025 peaks at 58.">
+  <style>
+    .hg-x, .hg-leg, .hg-peak { font-family: "JetBrains Mono", monospace; fill: var(--ink-muted); }
+    .hg-x { font-size: 11px; letter-spacing: .04em; }
+    .hg-leg { font-size: 11.5px; letter-spacing: .08em; }
+    .hg-peak { font-size: 13px; fill: var(--ink); font-weight: 500; }
+  </style>
+  <line x1="20" y1="260" x2="1160" y2="260" stroke="var(--line)" stroke-width="1"/>
+  <g transform="translate(20 18)"><rect width="10" height="10" y="-9" fill="var(--moss)" rx="1"/><text class="hg-leg" x="16" y="0">Perception</text></g><g transform="translate(170 18)"><rect width="10" height="10" y="-9" fill="var(--ochre)" rx="1"/><text class="hg-leg" x="16" y="0">Reasoning</text></g><g transform="translate(320 18)"><rect width="10" height="10" y="-9" fill="var(--terra)" rx="1"/><text class="hg-leg" x="16" y="0">Action</text></g><g transform="translate(470 18)"><rect width="10" height="10" y="-9" fill="var(--ink-faint)" rx="1"/><text class="hg-leg" x="16" y="0">Datasets</text></g>
+  <rect x="36.7" y="256.2" width="54.4" height="3.8" fill="var(--ochre)" rx="1"/><rect x="124.4" y="256.2" width="54.4" height="3.8" fill="var(--ink-faint)" rx="1"/><rect x="212.0" y="252.5" width="54.4" height="7.5" fill="var(--moss)" rx="1"/><rect x="212.0" y="248.7" width="54.4" height="3.8" fill="var(--ochre)" rx="1"/><rect x="212.0" y="245.0" width="54.4" height="3.8" fill="var(--terra)" rx="1"/><rect x="212.0" y="241.2" width="54.4" height="3.8" fill="var(--ink-faint)" rx="1"/><rect x="299.7" y="241.2" width="54.4" height="18.8" fill="var(--moss)" rx="1"/><rect x="299.7" y="237.4" width="54.4" height="3.8" fill="var(--ink-faint)" rx="1"/><rect x="387.4" y="252.5" width="54.4" height="7.5" fill="var(--moss)" rx="1"/><rect x="387.4" y="248.7" width="54.4" height="3.8" fill="var(--ochre)" rx="1"/><rect x="387.4" y="241.2" width="54.4" height="7.5" fill="var(--ink-faint)" rx="1"/><rect x="475.1" y="241.2" width="54.4" height="18.8" fill="var(--moss)" rx="1"/><rect x="475.1" y="233.7" width="54.4" height="7.5" fill="var(--ochre)" rx="1"/><rect x="475.1" y="229.9" width="54.4" height="3.8" fill="var(--ink-faint)" rx="1"/><rect x="562.8" y="241.2" width="54.4" height="18.8" fill="var(--moss)" rx="1"/><rect x="562.8" y="237.4" width="54.4" height="3.8" fill="var(--ochre)" rx="1"/><rect x="562.8" y="229.9" width="54.4" height="7.5" fill="var(--terra)" rx="1"/><rect x="562.8" y="226.2" width="54.4" height="3.8" fill="var(--ink-faint)" rx="1"/><rect x="650.5" y="237.4" width="54.4" height="22.6" fill="var(--moss)" rx="1"/><rect x="650.5" y="233.7" width="54.4" height="3.8" fill="var(--ochre)" rx="1"/><rect x="650.5" y="226.2" width="54.4" height="7.5" fill="var(--terra)" rx="1"/><rect x="650.5" y="222.4" width="54.4" height="3.8" fill="var(--ink-faint)" rx="1"/><rect x="738.2" y="237.4" width="54.4" height="22.6" fill="var(--moss)" rx="1"/><rect x="738.2" y="229.9" width="54.4" height="7.5" fill="var(--ochre)" rx="1"/><rect x="738.2" y="207.4" width="54.4" height="22.6" fill="var(--terra)" rx="1"/><rect x="738.2" y="199.9" width="54.4" height="7.5" fill="var(--ink-faint)" rx="1"/><rect x="825.9" y="207.4" width="54.4" height="52.6" fill="var(--moss)" rx="1"/><rect x="825.9" y="203.6" width="54.4" height="3.8" fill="var(--ochre)" rx="1"/><rect x="825.9" y="169.8" width="54.4" height="33.8" fill="var(--terra)" rx="1"/><rect x="825.9" y="151.0" width="54.4" height="18.8" fill="var(--ink-faint)" rx="1"/><rect x="913.6" y="207.4" width="54.4" height="52.6" fill="var(--moss)" rx="1"/><rect x="913.6" y="166.0" width="54.4" height="41.3" fill="var(--ochre)" rx="1"/><rect x="913.6" y="128.4" width="54.4" height="37.6" fill="var(--terra)" rx="1"/><rect x="913.6" y="109.7" width="54.4" height="18.8" fill="var(--ink-faint)" rx="1"/><rect x="1001.3" y="203.6" width="54.4" height="56.4" fill="var(--moss)" rx="1"/><rect x="1001.3" y="136.0" width="54.4" height="67.7" fill="var(--ochre)" rx="1"/><rect x="1001.3" y="79.6" width="54.4" height="56.4" fill="var(--terra)" rx="1"/><rect x="1001.3" y="42.0" width="54.4" height="37.6" fill="var(--ink-faint)" rx="1"/><rect x="1089.0" y="245.0" width="54.4" height="15.0" fill="var(--moss)" rx="1"/><rect x="1089.0" y="203.6" width="54.4" height="41.3" fill="var(--ochre)" rx="1"/><rect x="1089.0" y="143.5" width="54.4" height="60.1" fill="var(--terra)" rx="1"/><rect x="1089.0" y="128.4" width="54.4" height="15.0" fill="var(--ink-faint)" rx="1"/>
+  <text class="hg-x" x="63.8" y="280" text-anchor="middle">’14</text><text class="hg-x" x="151.5" y="280" text-anchor="middle">’15</text><text class="hg-x" x="239.2" y="280" text-anchor="middle">’16</text><text class="hg-x" x="326.9" y="280" text-anchor="middle">’17</text><text class="hg-x" x="414.6" y="280" text-anchor="middle">’18</text><text class="hg-x" x="502.3" y="280" text-anchor="middle">’19</text><text class="hg-x" x="590.0" y="280" text-anchor="middle">’20</text><text class="hg-x" x="677.7" y="280" text-anchor="middle">’21</text><text class="hg-x" x="765.4" y="280" text-anchor="middle">’22</text><text class="hg-x" x="853.1" y="280" text-anchor="middle">’23</text><text class="hg-x" x="940.8" y="280" text-anchor="middle">’24</text><text class="hg-x" x="1028.5" y="280" text-anchor="middle">’25</text><text class="hg-peak" x="1028.5" y="30.0" text-anchor="middle">58</text><circle cx="1028.5" cy="12.0" r="0" /><text class="hg-x" x="1116.2" y="280" text-anchor="middle">’26</text>
+</svg>
+<figcaption class="media-block__meta">
+  <span class="media-block__label">The corpus over time</span>
+  <span class="media-block__caption">Surveyed methods and datasets per year, stacked by role — the field accelerates sharply after 2022, peaking in 2025.</span>
+</figcaption>
+        <!-- HISTOGRAM:END -->
+      </figure>
+
+      <figure class="media-block" data-reveal>
+        <div class="media-block__chrome">
+          <picture>
+            <source type="image/webp" srcset="assets/images/timeline.webp?v=12" />
+            <img src="assets/images/timeline.png?v=12" width="2778" height="1326" loading="lazy"
+                 alt="Timeline of representative advances and paradigm shifts in affordance learning for embodied AI." />
+          </picture>
+        </div>
+        <figcaption class="media-block__meta">
+          <span class="media-block__label">Fig. 02 · Plate II — Temporal evolution</span>
+          <span class="media-block__title">Representative advances, 2015 → 2026</span>
+          <span class="media-block__caption">Temporal evolution of representative advances and paradigm shifts in affordance learning for embodied AI.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================ EXPLORER ============================ -->
+  <section id="explorer" class="section section--band explorer-section">
+    <div class="container">
+      <div class="chapter" data-reveal><span class="chapter__num">§ 04 · Atlas index</span><span class="chapter__rule"></span></div>
+      <h2 class="section-title" data-reveal>Explore the corpus</h2>
+      <p class="section-lead" data-reveal style="--reveal-delay:60ms">
+        Every method and dataset in the survey, indexed by the taxonomy. Filter by role, leaf, year, venue, or modality — press <kbd>/</kbd> to search. Each entry carries a one-line reading of its contribution.
+      </p>
+    </div>
+
+    <div id="explorer-app" class="explorer">
+      <noscript>
+        <p class="explorer__noscript container">The interactive index needs JavaScript. The same corpus lives in the
+        <a href="https://github.com/hq-King/Awesome-Affordance-Learning">Awesome-Affordance-Learning</a> list.</p>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- ============================ TABLES ============================ -->
+  <section id="tables" class="section">
+    <div class="container">
+      <div class="chapter" data-reveal><span class="chapter__num">§ 05 · Comparisons</span><span class="chapter__rule"></span></div>
+      <h2 class="section-title" data-reveal>Method &amp; dataset tables</h2>
+      <p class="section-lead" data-reveal style="--reveal-delay:60ms">
+        The paper's four comparison tables, sortable. Dots mark input modalities and output forms; venue data follows the paper source.
+      </p>
+    </div>
+    <div id="tables-app" class="tables container-wide"></div>
+  </section>
+
+  <!-- ============================ CHALLENGES ============================ -->
+  <section id="challenges" class="section section--band">
+    <div class="container">
+      <div class="chapter" data-reveal><span class="chapter__num">§ 06 · Open problems</span><span class="chapter__rule"></span></div>
+      <h2 class="section-title" data-reveal>Challenges &amp; future directions</h2>
+
+      <ol class="challenges">
+        <li class="challenge" data-reveal>
+          <span class="challenge__num">7.1</span>
+          <h3>Representation × action integration</h3>
+          <p>Explicit, latent, and auxiliary affordance integration have never been compared under matched conditions. The field needs no-affordance / predicted / oracle ablations — and intervention tests that show the affordance is causally used.</p>
+        </li>
+        <li class="challenge" data-reveal style="--reveal-delay:60ms">
+          <span class="challenge__num">7.2</span>
+          <h3>Scalable, open-world learning</h3>
+          <p>Scalable supervision and open-world generalization are coupled problems: the label sources that scale are exactly the ones that must transfer beyond fixed object and affordance vocabularies.</p>
+        </li>
+        <li class="challenge" data-reveal style="--reveal-delay:120ms">
+          <span class="challenge__num">7.3</span>
+          <h3>Reliable autonomous grounding</h3>
+          <p>Agentic pipelines confound general affordance capability with task-specific engineering. Reliability calls for calibrated uncertainty and grounding that survives outside the curated pipeline.</p>
+        </li>
+        <li class="challenge" data-reveal style="--reveal-delay:180ms">
+          <span class="challenge__num">7.4</span>
+          <h3>Closed-loop affordance modeling</h3>
+          <p>One-shot prediction should become a state-dependent belief — updated as the agent acts, observes outcomes, and re-plans over the affordances that remain.</p>
+        </li>
+        <li class="challenge challenge--wide" data-reveal style="--reveal-delay:240ms">
+          <span class="challenge__num">7.5</span>
+          <h3>Embodied evaluation, safety &amp; trust</h3>
+          <p>Localization metrics do not establish embodiment-aware validity: a region can be found yet unusable by this robot, now. Negative and unsafe affordances — what must <em>not</em> be acted on — remain nearly unexplored.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================ CITE ============================ -->
+  <section id="cite" class="section">
+    <div class="container">
+      <div class="chapter" data-reveal><span class="chapter__num">§ 07 · Cite</span><span class="chapter__rule"></span></div>
+      <h2 class="section-title" data-reveal>BibTeX</h2>
+      <p class="bib-note" data-reveal><span class="bib-note__chip">arXiv ID pending</span> the entry will be updated on release.</p>
+      <div class="bib" data-reveal style="--reveal-delay:60ms">
+        <button class="bib__copy" type="button" data-copy-bibtex>Copy</button>
+<pre id="bibtex-source">@article{li2026affordance,
+  title   = {From Passive Perception to Active Interaction: A Survey
+             of Affordance Learning for Embodied AI},
+  author  = {Li, Gen and Wang, Hanqing and Li, Jingliang and Han, Yifan
+             and Jia, Jindou and Lin, Tao and Wang, Yutong and Zhao, Bo
+             and Xiong, Hui and Yang, Jianfei},
+  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  year    = {2026}
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__row">
+        <div class="footer__brand">
+          <img src="assets/images/mars_lablogo.png?v=12" width="132" height="46" alt="MARS Lab, Nanyang Technological University" />
+        </div>
+        <ul class="footer__links">
+          <li><a href="https://github.com/hq-King/Awesome-Affordance-Learning" target="_blank" rel="noopener">Awesome-Affordance-Learning ↗</a></li>
+          <li><a href="https://marslab.tech" target="_blank" rel="noopener">MARS Lab ↗</a></li>
+          <li><a href="mailto:jianfei.yang@ntu.edu.sg">jianfei.yang@ntu.edu.sg</a></li>
+          <li><a href="mailto:hui.xiong@ust.hk">hui.xiong@ust.hk</a></li>
+          <li><a href="#top">Back to top ↑</a></li>
+        </ul>
+      </div>
+      <p class="footer__colophon">Set in Fraunces, Inter &amp; JetBrains Mono · corpus regenerated from the paper source · plate backgrounds surveyed, not painted</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script type="module" src="scripts/main.js?v=12"></script>
+</body>
+</html>

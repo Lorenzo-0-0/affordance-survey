@@ -1,0 +1,85 @@
+/* ============================================================
+   affordance-survey-site · design tokens
+   「青白瓷·生态三色」 cool porcelain + ink, three earthy role accents.
+   Every color, size, easing on the site resolves here.
+   ============================================================ */
+:root {
+  color-scheme: light;
+
+  /* -- porcelain & ink --------------------------------------- */
+  --paper: #f7f8f5;
+  --paper-deep: #eef1eb;      /* alt bands, cards */
+  --paper-well: #e8ece5;      /* inset wells (pre, kbd) */
+  --ink: #1b1916;
+  --ink-soft: #47433c;        /* long-form body */
+  --ink-muted: #837d71;       /* captions, meta */
+  --ink-faint: #a49d8f;       /* disabled, placeholders */
+  --line: rgba(27, 25, 22, 0.16);
+  --hairline: rgba(27, 25, 22, 0.09);
+  --hairline-soft: rgba(27, 25, 22, 0.05);
+
+  /* -- the three roles -------------------------------------- */
+  --moss: #3d5a45;            /* I   · perception */
+  --moss-soft: rgba(61, 90, 69, 0.12);
+  --moss-line: rgba(61, 90, 69, 0.38);
+  --ochre: #c08a2d;           /* II  · reasoning */
+  --ochre-soft: rgba(192, 138, 45, 0.14);
+  --ochre-line: rgba(192, 138, 45, 0.45);
+  --terra: #b4552d;           /* III · action */
+  --terra-soft: rgba(180, 85, 45, 0.12);
+  --terra-line: rgba(180, 85, 45, 0.42);
+  --moss-deep: #2f4736;       /* pressed moss (primary button hover) */
+  --terra-deep: #8f4322;      /* fired clay (hero title, line 2) */
+
+  /* role binding — sections/cards re-bind these three */
+  --role: var(--ink);
+  --role-soft: rgba(27, 25, 22, 0.08);
+  --role-line: var(--line);
+
+  /* -- type -------------------------------------------------- */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Inter", -apple-system, "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Menlo, monospace;
+
+  --fs-hero: clamp(44px, 6.4vw, 96px);
+  --fs-h2: clamp(32px, 4vw, 54px);
+  --fs-h3: clamp(21px, 2.3vw, 28px);
+  --fs-lead: clamp(18px, 1.7vw, 21px);
+  --fs-body: 17px;
+  --fs-small: 15px;
+  --fs-mono: 13px;
+  --fs-micro: 11.5px;
+
+  --lh-tight: 1.04;
+  --lh-snug: 1.25;
+  --lh-body: 1.68;
+  --track-wide: 0.14em;
+  --track-wider: 0.22em;
+
+  /* -- rhythm ------------------------------------------------ */
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px;
+  --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px; --s10: 128px;
+  --container: 1200px;
+  --pad: clamp(20px, 4vw, 56px);
+  --section-gap: min(9vw, 136px);
+  --nav-h: 60px;
+
+  /* -- edges & depth ----------------------------------------- */
+  --r-xs: 3px; --r-sm: 6px; --r-md: 10px; --r-full: 999px;
+  --shadow-soft: 0 1px 2px rgba(27, 25, 22, 0.04), 0 6px 24px rgba(27, 25, 22, 0.06);
+  --shadow-lift: 0 2px 4px rgba(27, 25, 22, 0.05), 0 14px 44px rgba(27, 25, 22, 0.1);
+
+  /* -- motion ------------------------------------------------ */
+  --ease: cubic-bezier(0.22, 0.61, 0, 0.98);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --d-fast: 140ms; --d-base: 240ms; --d-slow: 420ms;
+
+  /* -- aurora wash (hero backdrop: the three role colors, barely there) */
+  --aurora:
+    radial-gradient(58% 52% at 12% 8%,  rgba(61, 90, 69, 0.08),  transparent 60%),
+    radial-gradient(46% 44% at 88% -4%, rgba(192, 138, 45, 0.05), transparent 58%),
+    radial-gradient(60% 64% at 84% 94%, rgba(180, 85, 45, 0.06),  transparent 64%);
+
+  /* -- cool grain (feTurbulence, multiply) -------------------- */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.86' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.10 0 0 0 0 0.11 0 0 0 0 0.10 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23g)'/%3E%3C/svg%3E");
+}

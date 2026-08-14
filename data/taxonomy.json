@@ -1,0 +1,398 @@
+{
+ "version": 1,
+ "roles": [
+  {
+   "slug": "perception",
+   "numeral": "I",
+   "label": "Affordance Perception",
+   "question": "What and where is interaction possible?",
+   "families": [
+    {
+     "slug": "visual-grounding",
+     "label": "Visual Affordance Grounding",
+     "leaves": [
+      {
+       "slug": "2d-object-grounding",
+       "label": "2D Object Grounding",
+       "blurb": "Affordance masks, heatmaps and part regions on RGB / RGB-D objects.",
+       "papers": [
+        "detecting-object-affordances-with-convolutional-neural-networks",
+        "object-based-affordances-detection-with-convolutional-neural-networks-and-dense-conditional-random-fields",
+        "affordance-detection-for-task-specific-grasping-using-deep-learning",
+        "affordancenet-an-end-to-end-deep-learning-approach-for-object-affordance-detection",
+        "towards-affordance-detection-for-robot-manipulation-using-affordance-for-parts-and-parts-for-affordance",
+        "context-based-affordance-segmentation-from-2d-images-for-robot-actions",
+        "recognizing-object-affordances-to-support-scene-reasoning-for-manipulation-tasks",
+        "affordancelearn-learning-affordance-segmentation-for-real-world-robotic-manipulation-via-synthetic-images",
+        "object-affordance-detection-with-relationship-aware-network",
+        "an-affordance-keypoint-detection-network-for-robot-manipulation",
+        "visual-affordance-detection-using-an-efficient-attention-convolutional-neural-network",
+        "object-affordance-detection-with-boundary-preserving-network-for-robotic-manipulation-tasks",
+        "a-large-scale-multi-view-rgbd-visual-affordance-learning-dataset",
+        "hierarchical-transformer-for-visual-affordance-understanding-using-a-large-scale-dataset",
+        "resource-efficient-affordance-grounding-with-complementary-depth-and-semantic-prompts"
+       ]
+      },
+      {
+       "slug": "2d-scene-grounding",
+       "label": "2D Scene Grounding",
+       "blurb": "Scene-level interactable regions from single images or egocentric views.",
+       "papers": [
+        "a-multi-scale-cnn-for-affordance-segmentation-in-rgb-images",
+        "learning-to-segment-affordances",
+        "phrase-based-affordance-detection-via-cyclic-bilateral-interaction",
+        "panoaffordancenet-towards-holistic-affordance-grounding-in-360-indoor-environments"
+       ]
+      },
+      {
+       "slug": "weakly-supervised",
+       "label": "Weakly-Supervised Methods",
+       "blurb": "Dense affordance learned from points, image-level labels or pseudo labels.",
+       "papers": [
+        "weakly-supervised-affordance-detection",
+        "adaptive-binarization-for-weakly-supervised-affordance-segmentation",
+        "strap-structured-object-affordance-segmentation-with-point-supervision",
+        "bayesian-deep-learning-for-affordance-segmentation-in-images",
+        "weakly-supervised-affordance-grounding-guided-by-part-level-semantic-priors"
+       ]
+      }
+     ]
+    },
+    {
+     "slug": "spatial-grounding",
+     "label": "Spatial Affordance Grounding",
+     "leaves": [
+      {
+       "slug": "3d-object-grounding",
+       "label": "3D Object Grounding",
+       "blurb": "Affordance regions on point clouds, meshes, 3D objects and object pairs.",
+       "papers": [
+        "o2o-afford-annotation-free-large-scale-object-object-affordance-learning",
+        "manipulation-oriented-object-perception-in-clutter-through-affordance-coordinate-frames",
+        "3d-affordancenet-a-benchmark-for-visual-object-affordance-understanding",
+        "partafford-part-level-affordance-discovery-from-3d-objects",
+        "grounding-3d-object-affordance-from-2d-interactions-in-images",
+        "lemon-learning-3d-human-object-interaction-relation-from-2d-images",
+        "laso-language-guided-affordance-segmentation-on-3d-object",
+        "lgafford-net-a-local-geometry-aware-affordance-detection-network-for-3d-point-clouds",
+        "learning-2d-invariant-affordance-knowledge-for-3d-affordance-grounding",
+        "3d-affordance-keypoint-detection-for-robotic-manipulation",
+        "geal-generalizable-3d-affordance-learning-with-cross-modal-consistency",
+        "iaao-interactive-affordance-learning-for-articulated-objects-in-3d-environments",
+        "glance-intermediate-connectors-and-geometric-priors-for-language-guided-affordance-segmentation-on-unseen-object-categories",
+        "unlocking-3d-affordance-segmentation-with-2d-semantic-knowledge",
+        "affostruction-3d-affordance-grounding-with-generative-reconstruction"
+       ]
+      },
+      {
+       "slug": "3d-scene-grounding",
+       "label": "3D Scene Grounding",
+       "blurb": "Navigable, placeable and interactable regions in 3D scenes and metric maps.",
+       "papers": [
+        "learning-affordance-landscapes-for-interaction-exploration-in-3d-environments",
+        "multi-label-affordance-mapping-from-egocentric-vision",
+        "scenefun3d-fine-grained-functionality-and-affordance-understanding-in-3d-scenes",
+        "grounding-3d-scene-affordance-from-egocentric-interactions",
+        "affordmatcher-affordance-learning-in-3d-scenes-from-visual-signifiers"
+       ]
+      }
+     ]
+    },
+    {
+     "slug": "interaction-derived",
+     "label": "Interaction-Derived Affordance Learning",
+     "leaves": [
+      {
+       "slug": "hoi-image",
+       "label": "HOI Image-based Learning",
+       "blurb": "Contact regions and functional parts learned from exo/egocentric HOI images.",
+       "papers": [
+        "learning-affordance-grounding-from-exocentric-images",
+        "leverage-interactive-affinity-for-affordance-learning",
+        "locate-localize-and-transfer-object-parts-for-weakly-supervised-affordance-grounding",
+        "weakly-supervised-multimodal-affordance-grounding-for-egocentric-images",
+        "grounded-affordance-from-exocentric-view",
+        "intra-interaction-relationship-aware-weakly-supervised-affordance-grounding",
+        "visual-geometric-collaborative-guidance-for-affordance-learning",
+        "reasoning-mamba-hypergraph-guided-region-relation-calculating-for-weakly-supervised-affordance-grounding",
+        "closed-loop-transfer-for-weakly-supervised-affordance-grounding",
+        "selective-contrastive-learning-for-weakly-supervised-affordance-grounding"
+       ]
+      },
+      {
+       "slug": "hoi-video",
+       "label": "HOI Video-based Learning",
+       "blurb": "Hotspots, contact and trajectories learned from human interaction videos.",
+       "papers": [
+        "demo2vec-reasoning-object-affordances-from-online-videos",
+        "grounded-human-object-interaction-hotspots-from-video",
+        "a-deep-learning-approach-to-object-affordance-segmentation",
+        "ego-topo-environment-affordances-from-egocentric-video",
+        "forecasting-human-object-interaction-joint-prediction-of-motor-attention-and-actions-in-first-person-video",
+        "joint-hand-motion-and-interaction-hotspots-prediction-from-egocentric-videos",
+        "fine-grained-affordance-annotation-for-egocentric-hand-object-interaction-videos",
+        "affordance-grounding-from-demonstration-video-to-target-image",
+        "text-driven-affordance-learning-from-egocentric-vision"
+       ]
+      }
+     ]
+    },
+    {
+     "slug": "generalizable-grounding",
+     "label": "Generalizable Affordance Grounding",
+     "leaves": [
+      {
+       "slug": "example-transfer",
+       "label": "Example-Based Transfer",
+       "blurb": "Affordance transferred from few support examples, demos or reference interactions.",
+       "papers": [
+        "one-shot-affordance-detection",
+        "one-shot-transfer-of-affordance-regions-affcorrs",
+        "one-shot-object-affordance-detection-in-the-wild",
+        "where2explore-few-shot-affordance-learning-for-unseen-novel-categories-of-articulated-objects",
+        "one-shot-affordance-grounding-of-deformable-objects-in-egocentric-organizing-scenes"
+       ]
+      },
+      {
+       "slug": "open-vocabulary",
+       "label": "Open-Vocabulary Grounding",
+       "blurb": "New affordance labels, categories and language queries via foundation models.",
+       "papers": [
+        "open-vocabulary-affordance-detection-in-3d-point-clouds",
+        "open-vocabulary-affordance-detection-using-knowledge-distillation-and-text-point-correlation",
+        "one-shot-open-affordance-learning-with-foundation-models",
+        "maskprompt-open-vocabulary-affordance-segmentation-with-object-shape-mask-prompts",
+        "affordancesam-segment-anything-once-more-in-affordance-grounding",
+        "affogato-learning-open-vocabulary-affordance-grounding-with-automated-data-generation-at-scale",
+        "uad-unsupervised-affordance-distillation-for-generalization-in-robotic-manipulation",
+        "dag-unleash-the-potential-of-diffusion-model-for-open-vocabulary-3d-affordance-grounding",
+        "ova-fields-weakly-supervised-open-vocabulary-affordance-fields-for-robot-operational-part-detection",
+        "afun-towards-an-affordance-foundation-model-for-functionality-understanding"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "reasoning",
+   "numeral": "II",
+   "label": "Affordance Reasoning",
+   "question": "Which affordance matters for this task, context and agent state?",
+   "families": [
+    {
+     "slug": "relation-based",
+     "label": "Relation-Based Reasoning",
+     "leaves": [
+      {
+       "slug": "relation-modeling",
+       "label": "Explicit Relation Modeling",
+       "blurb": "Affordance inferred through attributes, object relations, scene and knowledge graphs.",
+       "papers": [
+        "reasoning-about-object-affordances-in-a-knowledge-base-representation",
+        "bootstrapping-relational-affordances-of-object-pairs-using-transfer",
+        "learning-to-act-properly-predicting-and-explaining-affordances-from-images",
+        "learning-grasp-affordance-reasoning-through-semantic-relations",
+        "relationship-oriented-affordance-learning-through-manipulation-graph-construction",
+        "a-visual-affordance-reasoning-network-based-on-graph-attention"
+       ]
+      }
+     ]
+    },
+    {
+     "slug": "language-centric",
+     "label": "Language-Centric Reasoning",
+     "leaves": [
+      {
+       "slug": "task-intent",
+       "label": "Task & Intent Understanding",
+       "blurb": "Task-relevant affordance from instructions, implicit intent and LLM/MLLM priors.",
+       "papers": [
+        "object-affordance-based-multimodal-fusion-for-natural-human-robot-interaction",
+        "intention-related-natural-language-grounding-via-object-affordance-detection-and-intention-semantic-extraction",
+        "affordancellm-grounding-affordance-from-vision-language-models",
+        "naturalvlm-leveraging-fine-grained-natural-language-for-affordance-guided-visual-manipulation",
+        "oval-prompt-open-vocabulary-affordance-localization-for-robot-manipulation-through-llm-affordance-grounding",
+        "multimodal-attention-based-instruction-following-part-level-affordance-grounding",
+        "worldafford-affordance-grounding-based-on-natural-language-instructions",
+        "robopoint-a-vision-language-model-for-spatial-affordance-prediction-for-robotics",
+        "knowledge-enhanced-bottom-up-affordance-grounding-for-robotic-interaction",
+        "manipvqa-injecting-robotic-affordance-and-physically-grounded-information-into-multi-modal-large-language-models",
+        "pavlm-advancing-point-cloud-based-affordance-understanding-via-vision-language-model",
+        "great-geometry-intention-collaborative-inference-for-open-vocabulary-3d-object-affordance-grounding",
+        "seqafford-sequential-3d-affordance-reasoning-via-multimodal-large-language-model",
+        "3d-affordancellm-harnessing-large-language-models-for-open-vocabulary-affordance-detection-in-3d-worlds",
+        "afford-x-generalizable-and-slim-affordance-reasoning-for-task-oriented-manipulation",
+        "3daffordsplat-efficient-affordance-reasoning-with-3d-gaussians",
+        "grounding-3d-object-affordance-with-language-instructions-visual-observations-and-interactions",
+        "uniaff-a-unified-representation-of-affordances-for-tool-usage-and-articulation-with-vision-language-models",
+        "affordance-benchmark-for-mllms",
+        "functionality-understanding-and-segmentation-in-3d-scenes",
+        "instructpart-task-oriented-part-segmentation-with-instruction-reasoning",
+        "ragnet-large-scale-reasoning-based-affordance-segmentation-benchmark-towards-general-grasping",
+        "seqaffordsplat-scene-level-sequential-affordance-reasoning-on-3d-gaussian-splatting",
+        "affordance-r1-reinforcement-learning-for-generalizable-affordance-reasoning-in-multimodal-large-language-model",
+        "affordgrasp-in-context-affordance-reasoning-for-open-vocabulary-task-oriented-grasping-in-clutter",
+        "open-vocabulary-3d-affordance-understanding-via-functional-text-enhancement-and-multilevel-representation-alignment",
+        "affordbot-3d-fine-grained-embodied-reasoning-via-multimodal-large-language-models",
+        "roboafford-a-generative-ai-enhanced-dataset-for-multimodal-affordance-learning-in-robotic-manipulation-and-navigation",
+        "task-aware-3d-affordance-segmentation-via-2d-guidance-and-geometric-refinement",
+        "tracer-texture-robust-affordance-chain-of-thought-for-deformable-object-refinement",
+        "affordancegrasp-r1-leveraging-reasoning-based-affordance-segmentation-with-reinforcement-learning-for-robotic-grasping",
+        "videoafford-grounding-3d-affordance-from-human-object-interaction-videos-via-multimodal-large-language-model",
+        "part-aware-open-vocabulary-3d-affordance-grounding-via-prototypical-semantic-and-geometric-alignment",
+        "compassad-intent-driven-3d-affordance-grounding-in-functionally-competing-objects",
+        "embodied-spatial-affordance-spatial-aware-affordance-learning-for-embodied-navigation-and-manipulation"
+       ]
+      }
+     ]
+    },
+    {
+     "slug": "agentic",
+     "label": "Agentic Reasoning",
+     "leaves": [
+      {
+       "slug": "agentic-feasibility",
+       "label": "Tool-Augmented Feasibility Reasoning",
+       "blurb": "Test-time agents orchestrating tools, memory and feasibility checks over affordances.",
+       "papers": [
+        "do-as-i-can-not-as-i-say-grounding-language-in-robotic-affordances",
+        "grounded-decoding-guiding-text-generation-with-grounded-models-for-robot-control",
+        "agentic-scene-policies-unifying-space-semantics-and-affordances-for-robot-action",
+        "a4-agent-an-agentic-framework-for-zero-shot-affordance-reasoning",
+        "arg-vu-affordance-reasoning-with-physics-aware-3d-geometry-for-visual-understanding-in-robotic-surgery",
+        "sceneteract-agentic-functional-affordances-and-vlm-grounding-in-3d-scenes",
+        "a3r-agentic-affordance-reasoning-via-cross-dimensional-evidence-in-3d-gaussian-scenes",
+        "affordance-agent-harness-verification-gated-skill-orchestration",
+        "grounding-by-remembering-cross-scene-and-in-scene-memory-for-3d-functional-affordances"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "action",
+   "numeral": "III",
+   "label": "Affordance-Guided Action",
+   "question": "How does affordance become executable behavior?",
+   "families": [
+    {
+     "slug": "hierarchical",
+     "label": "Hierarchical Affordance-to-Action",
+     "leaves": [
+      {
+       "slug": "primitive-execution",
+       "label": "Primitive-based Execution",
+       "blurb": "Contact points and actionability turned into grasps, primitives and trajectories.",
+       "papers": [
+        "where2act-from-pixels-to-actions-for-articulated-3d-objects",
+        "adaafford-learning-to-adapt-manipulation-affordance-for-3d-articulated-objects-via-few-shot-interactions",
+        "learning-6-dof-task-oriented-grasp-detection-via-implicit-estimation-and-visual-affordance",
+        "vat-mart-learning-visual-action-trajectory-proposals-for-manipulating-3d-articulated-objects",
+        "affordances-from-human-videos-as-a-versatile-representation-for-robotics",
+        "dualafford-learning-collaborative-visual-affordance-for-dual-gripper-object-manipulation",
+        "defoafford-learning-foresightful-dense-visual-affordance-for-deformable-object-manipulation",
+        "learning-environment-aware-affordance-for-3d-articulated-object-manipulation-under-occlusions",
+        "language-embedded-radiance-fields-for-zero-shot-task-oriented-grasping",
+        "open-vocabulary-part-based-grasping",
+        "rt-affordance-affordances-are-versatile-intermediate-representations-for-robot-manipulation",
+        "manipgpt-is-affordance-segmentation-by-large-vision-models-enough-for-articulated-object-manipulation",
+        "afforddexgrasp-open-set-language-guided-dexterous-grasp-with-generalizable-instructive-affordance",
+        "garmentpile-point-level-visual-affordance-guided-retrieval-and-adaptation-for-cluttered-garments-manipulation",
+        "a0-an-affordance-aware-hierarchical-model-for-general-robotic-manipulation",
+        "biassemble-learning-collaborative-affordance-for-bimanual-geometric-assembly",
+        "learning-precise-affordances-from-egocentric-videos-for-robotic-manipulation",
+        "oval-grasp-open-vocabulary-affordance-localization-for-task-oriented-grasping",
+        "scaleadfg-affordance-based-dexterous-functional-grasping-via-scalable-dataset",
+        "gcngrasp-vp-affordance-guided-view-planning-for-efficient-task-oriented-grasping",
+        "a3d-adaptive-affordance-assembly-with-dual-arm-manipulation",
+        "fsag-enhancing-human-to-dexterous-hand-finger-specific-affordance-grounding-via-diffusion-models",
+        "one-shot-3-d-affordance-learning-for-multi-stage-robotic-manipulation",
+        "affordance-guided-enveloping-grasp-demonstration-toward-non-destructive-disassembly-of-pinch-infeasible-mating-parts",
+        "bridgeact-bridging-human-demonstrations-to-robot-actions-via-unified-tool-target-affordances"
+       ]
+      },
+      {
+       "slug": "retrieval-memory",
+       "label": "Correspondence & Memory-based Action",
+       "blurb": "Affordance memory, retrieval and correspondence transferred into executable actions.",
+       "papers": [
+        "robo-abc-affordance-generalization-beyond-categories-via-semantic-correspondence-for-robot-manipulation",
+        "ram-retrieval-based-affordance-transfer-for-generalizable-zero-shot-robotic-manipulation",
+        "raap-retrieval-augmented-affordance-prediction-with-cross-image-action-alignment"
+       ]
+      },
+      {
+       "slug": "action-planning",
+       "label": "Affordance-Guided Planning",
+       "blurb": "Affordance as spatial goal, constraint or cost inside planners and optimizers.",
+       "papers": [
+        "learning-affordance-space-in-physical-world-for-vision-based-robotic-object-manipulation",
+        "affordance-driven-next-best-view-planning-for-robotic-grasping",
+        "voxposer-composable-3d-value-maps-for-robotic-manipulation-with-language-models",
+        "information-driven-affordance-discovery-for-efficient-robotic-manipulation",
+        "preafford-universal-affordance-based-pre-grasping-for-diverse-objects-and-environments",
+        "glover-generalizable-open-vocabulary-affordance-reasoning-for-task-oriented-grasping",
+        "rekep-spatio-temporal-reasoning-of-relational-keypoint-constraints-for-robotic-manipulation",
+        "glover-unleashing-the-potential-of-affordance-learning-from-human-behaviors-for-robotic-manipulation",
+        "o3afford-one-shot-3d-object-to-object-affordance-grounding-for-generalizable-robotic-manipulation",
+        "affordance-field-intervention-enabling-vlas-to-escape-memory-traps-in-robotic-manipulation",
+        "bipremanip-learning-affordance-based-bimanual-preparatory-manipulation-through-anticipatory-collaboration"
+       ]
+      }
+     ]
+    },
+    {
+     "slug": "policy-learning",
+     "label": "Affordance-Guided Policy Learning",
+     "leaves": [
+      {
+       "slug": "explicit-input",
+       "label": "Affordance as Explicit Input",
+       "blurb": "Masks, points, contacts and plans conditioning policies, VLAs and diffusion policies.",
+       "papers": [
+        "affordance-based-robot-manipulation-with-flow-matching",
+        "afforddp-generalizable-diffusion-policy-with-transferable-affordance",
+        "dart-a-novel-task-driven-diffusion-based-policy-with-affordance-learning-for-generalizable-manipulation-of-articulated-objects",
+        "coa-vla-improving-vision-language-action-models-via-visual-textual-chain-of-affordance",
+        "affordance2action-task-conditioned-scene-level-affordance-grounding-for-real-time-manipulation"
+       ]
+      },
+      {
+       "slug": "implicit-representation",
+       "label": "Affordance as Implicit Representation",
+       "blurb": "Affordance as latent feature, auxiliary prediction or intermediate representation.",
+       "papers": [
+        "learning-generalizable-dexterous-manipulation-from-human-grasp-affordance",
+        "grounding-language-with-visual-affordances-over-unstructured-data",
+        "rlafford-end-to-end-affordance-learning-for-robotic-manipulation",
+        "a1-a-fully-transparent-open-source-adaptive-and-efficient-truncated-vision-language-action-model",
+        "afford-vla-action-aligned-visual-planning-via-internalized-affordance",
+        "affordvla-injecting-affordance-representations-into-vision-language-action-models-via-implicit-feature-alignment",
+        "affordancevla-a-vision-language-action-model-empowering-action-generation-through-affordance-aware-understanding",
+        "affordgen-generating-diverse-demonstrations-for-generalizable-object-manipulation-with-affordance-correspondence",
+        "agile-learning-robust-long-horizon-manipulation-via-affordance-grounded-bidirectional-latent-planning",
+        "palm-progress-aware-policy-learning-via-affordance-reasoning-for-long-horizon-robotic-manipulation"
+       ]
+      },
+      {
+       "slug": "optimization-signal",
+       "label": "Affordance as Optimization Signal",
+       "blurb": "Affordance constraining candidates, shaping rewards or specifying exploration goals.",
+       "papers": [
+        "training-agents-with-interactive-reinforcement-learning-and-contextual-affordances",
+        "learning-dexterous-grasping-with-object-centric-visual-affordances",
+        "what-can-i-do-here-learning-new-skills-by-imagining-visual-affordances",
+        "affordance-learning-from-play-for-sample-efficient-policy-learning",
+        "visual-affordance-prediction-for-guiding-robot-exploration",
+        "dora-object-affordance-guided-reinforcement-learning-for-dexterous-robotic-manipulation",
+        "towards-affordance-aware-robotic-dexterous-grasping-with-human-like-priors"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

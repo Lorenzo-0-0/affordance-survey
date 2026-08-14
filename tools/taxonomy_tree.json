@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "roles": [
+    {
+      "slug": "perception",
+      "numeral": "I",
+      "label": "Affordance Perception",
+      "question": "What and where is interaction possible?",
+      "families": [
+        {
+          "slug": "visual-grounding",
+          "label": "Visual Affordance Grounding",
+          "leaves": [
+            { "slug": "2d-object-grounding", "label": "2D Object Grounding", "blurb": "Affordance masks, heatmaps and part regions on RGB / RGB-D objects." },
+            { "slug": "2d-scene-grounding", "label": "2D Scene Grounding", "blurb": "Scene-level interactable regions from single images or egocentric views." },
+            { "slug": "weakly-supervised", "label": "Weakly-Supervised Methods", "blurb": "Dense affordance learned from points, image-level labels or pseudo labels." }
+          ]
+        },
+        {
+          "slug": "spatial-grounding",
+          "label": "Spatial Affordance Grounding",
+          "leaves": [
+            { "slug": "3d-object-grounding", "label": "3D Object Grounding", "blurb": "Affordance regions on point clouds, meshes, 3D objects and object pairs." },
+            { "slug": "3d-scene-grounding", "label": "3D Scene Grounding", "blurb": "Navigable, placeable and interactable regions in 3D scenes and metric maps." }
+          ]
+        },
+        {
+          "slug": "interaction-derived",
+          "label": "Interaction-Derived Affordance Learning",
+          "leaves": [
+            { "slug": "hoi-image", "label": "HOI Image-based Learning", "blurb": "Contact regions and functional parts learned from exo/egocentric HOI images." },
+            { "slug": "hoi-video", "label": "HOI Video-based Learning", "blurb": "Hotspots, contact and trajectories learned from human interaction videos." }
+          ]
+        },
+        {
+          "slug": "generalizable-grounding",
+          "label": "Generalizable Affordance Grounding",
+          "leaves": [
+            { "slug": "example-transfer", "label": "Example-Based Transfer", "blurb": "Affordance transferred from few support examples, demos or reference interactions." },
+            { "slug": "open-vocabulary", "label": "Open-Vocabulary Grounding", "blurb": "New affordance labels, categories and language queries via foundation models." }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "reasoning",
+      "numeral": "II",
+      "label": "Affordance Reasoning",
+      "question": "Which affordance matters for this task, context and agent state?",
+      "families": [
+        {
+          "slug": "relation-based",
+          "label": "Relation-Based Reasoning",
+          "leaves": [
+            { "slug": "relation-modeling", "label": "Explicit Relation Modeling", "blurb": "Affordance inferred through attributes, object relations, scene and knowledge graphs." }
+          ]
+        },
+        {
+          "slug": "language-centric",
+          "label": "Language-Centric Reasoning",
+          "leaves": [
+            { "slug": "task-intent", "label": "Task & Intent Understanding", "blurb": "Task-relevant affordance from instructions, implicit intent and LLM/MLLM priors." }
+          ]
+        },
+        {
+          "slug": "agentic",
+          "label": "Agentic Reasoning",
+          "leaves": [
+            { "slug": "agentic-feasibility", "label": "Tool-Augmented Feasibility Reasoning", "blurb": "Test-time agents orchestrating tools, memory and feasibility checks over affordances." }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "action",
+      "numeral": "III",
+      "label": "Affordance-Guided Action",
+      "question": "How does affordance become executable behavior?",
+      "families": [
+        {
+          "slug": "hierarchical",
+          "label": "Hierarchical Affordance-to-Action",
+          "leaves": [
+            { "slug": "primitive-execution", "label": "Primitive-based Execution", "blurb": "Contact points and actionability turned into grasps, primitives and trajectories." },
+            { "slug": "retrieval-memory", "label": "Correspondence & Memory-based Action", "blurb": "Affordance memory, retrieval and correspondence transferred into executable actions." },
+            { "slug": "action-planning", "label": "Affordance-Guided Planning", "blurb": "Affordance as spatial goal, constraint or cost inside planners and optimizers." }
+          ]
+        },
+        {
+          "slug": "policy-learning",
+          "label": "Affordance-Guided Policy Learning",
+          "leaves": [
+            { "slug": "explicit-input", "label": "Affordance as Explicit Input", "blurb": "Masks, points, contacts and plans conditioning policies, VLAs and diffusion policies." },
+            { "slug": "implicit-representation", "label": "Affordance as Implicit Representation", "blurb": "Affordance as latent feature, auxiliary prediction or intermediate representation." },
+            { "slug": "optimization-signal", "label": "Affordance as Optimization Signal", "blurb": "Affordance constraining candidates, shaping rewards or specifying exploration goals." }
+          ]
+        }
+      ]
+    }
+  ]
+}

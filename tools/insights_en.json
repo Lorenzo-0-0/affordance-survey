@@ -1,0 +1,894 @@
+{
+ "3d-affordance-keypoint-detection-for-robotic-manipulation": {
+  "en": "Predicts affordance segmentation plus 3D keypoint quadruplets from RGB-D, giving manipulators executable position, direction, and extent for each affordance.",
+  "zh_hash": "905957d7005c"
+ },
+ "3d-affordancellm-harnessing-large-language-models-for-open-vocabulary-affordance-detection-in-3d-worlds": {
+  "en": "Pairs LLM-generated open-vocabulary affordance queries with a 3D encoder-decoder that grounds them to point-level masks, showing LLM commonsense aids 3D detection.",
+  "zh_hash": "0daa0f61fdf6"
+ },
+ "3d-affordancenet": {
+  "en": "Object point clouds with per-point affordance labels, benchmarking 3D affordance segmentation/estimation under full-shape, partial-view, and rotation-invariant settings.",
+  "zh_hash": "97f149ac5e40"
+ },
+ "3d-affordancenet-a-benchmark-for-visual-object-affordance-understanding": {
+  "en": "Benchmarks dense affordance prediction on object point clouds, moving affordance grounding from 2D masks onto physically meaningful 3D surfaces.",
+  "zh_hash": "fefe8148c7b0"
+ },
+ "3daffordsplat": {
+  "en": "3D Gaussian Splatting assets with affordance annotations, benchmarking 3DGS-based affordance reasoning, segmentation, and recognition.",
+  "zh_hash": "834a9f8c0b52"
+ },
+ "3daffordsplat-efficient-affordance-reasoning-with-3d-gaussians": {
+  "en": "Represents objects with 3D Gaussian splatting and predicts task-conditioned affordances on renderable Gaussian features, making 3DGS an efficient reasoning substrate.",
+  "zh_hash": "17b1577817d7"
+ },
+ "a-deep-learning-approach-to-object-affordance-segmentation": {
+  "en": "Mines spatio-temporal cues from human-object interaction videos to supervise affordance segmentation, showing dynamics reveal usable regions static appearance misses.",
+  "zh_hash": "5b4650e21964"
+ },
+ "a-large-scale-multi-view-rgbd-visual-affordance-learning-dataset": {
+  "en": "Provides 47K multi-view RGB-D images across 37 object categories with 15 affordance labels, exposing geometric affordance biases beyond single-view 2D appearance.",
+  "zh_hash": "d05a4504f29d"
+ },
+ "a-multi-scale-cnn-for-affordance-segmentation-in-rgb-images": {
+  "en": "Fuses depth, normals, and surface cues in a multi-scale CNN to predict scene affordance maps, grounding affordance in mid-level geometry rather than object category.",
+  "zh_hash": "fc0e74977b09"
+ },
+ "a-visual-affordance-reasoning-network-based-on-graph-attention": {
+  "en": "Organizes objects and context into a visual graph and uses graph attention to aggregate affordance-relevant relations, making relational reasoning learnable.",
+  "zh_hash": "a3ee3ae3a224"
+ },
+ "a0-an-affordance-aware-hierarchical-model-for-general-robotic-manipulation": {
+  "en": "Predicts contact points and post-contact trajectories, then executes via cross-embodiment low-level controllers, using affordance as an interpretable intermediate layer.",
+  "zh_hash": "e695487e3e68"
+ },
+ "a1-a-fully-transparent-open-source-adaptive-and-efficient-truncated-vision-language-action-model": {
+  "en": "Exploits implicit affordance priors in a pretrained VLM for action generation, with truncated flow matching and budget-aware early exit for real-time VLA control.",
+  "zh_hash": "c320d49c4204"
+ },
+ "a2a-bench": {
+  "en": "Scene images with task-conditioned part affordance labels, benchmarking single- and multi-region instruction correspondence and real-time manipulation grounding.",
+  "zh_hash": "2e962f2627ef"
+ },
+ "a3d-adaptive-affordance-assembly-with-dual-arm-manipulation": {
+  "en": "Updates support and stabilization affordances from assembly feedback to adaptively generate dual-arm actions, treating assembly affordance as dynamic and cooperative.",
+  "zh_hash": "fb29b3513587"
+ },
+ "a3r-agentic-affordance-reasoning-via-cross-dimensional-evidence-in-3d-gaussian-scenes": {
+  "en": "Trains an MLLM policy with GRPO to iteratively acquire 2D view and 3D Gaussian evidence, framing scene affordance reasoning as sequential evidence acquisition.",
+  "zh_hash": "82cc78c60186"
+ },
+ "a4-agent-an-agentic-framework-for-zero-shot-affordance-reasoning": {
+  "en": "Decomposes zero-shot affordance prediction into a training-free how/what/where pipeline of Dreamer, Thinker, and Spotter agents, improving novel-object generalization.",
+  "zh_hash": "fac57a13f2ef"
+ },
+ "a4bench": {
+  "en": "Image-based QA benchmark probing MLLM affordance perception and reasoning, evaluating both constitutive and transformative affordance understanding.",
+  "zh_hash": "cc16f5dc719f"
+ },
+ "adaafford-learning-to-adapt-manipulation-affordance-for-3d-articulated-objects-via-few-shot-interactions": {
+  "en": "Adapts manipulation affordance predictions with few-shot test-time interactions, calibrating hidden articulation and dynamics that static vision cannot reveal.",
+  "zh_hash": "5b822e37bc7b"
+ },
+ "adaptive-binarization-for-weakly-supervised-affordance-segmentation": {
+  "en": "Trains affordance segmentation from sparse keypoints with adaptive threshold estimation, showing converting soft predictions into masks is a core weak-supervision step.",
+  "zh_hash": "c22d05844e79"
+ },
+ "ade-affordance": {
+  "en": "Scene images with action-object affordance annotations, benchmarking affordance reasoning along with explanation and consequence prediction.",
+  "zh_hash": "d10b568048fd"
+ },
+ "affogato": {
+  "en": "3D objects with text-paired affordance region annotations, benchmarking open-vocabulary text-to-3D affordance grounding.",
+  "zh_hash": "8405c774d275"
+ },
+ "affogato-learning-open-vocabulary-affordance-grounding-with-automated-data-generation-at-scale": {
+  "en": "Automates 150K text-object-affordance annotations to train open-vocabulary text-to-3D heatmap grounding, scaling coverage to long-tail interaction descriptions.",
+  "zh_hash": "5911ce018fcd"
+ },
+ "afford-vla-action-aligned-visual-planning-via-internalized-affordance": {
+  "en": "Jointly predicts <AFF> tokens and affordance masks alongside actions as internalized signals, organizing VLA visual planning without explicit policy conditioning.",
+  "zh_hash": "971107708fd4"
+ },
+ "afford-x-generalizable-and-slim-affordance-reasoning-for-task-oriented-manipulation": {
+  "en": "Trains a slim 187M-parameter model with verb attention and bi-fusion on the LVIS-Aff dataset, showing task-oriented affordance reasoning does not require a large MLLM.",
+  "zh_hash": "1adf6671e54a"
+ },
+ "affordance-agent-harness-verification-gated-skill-orchestration": {
+  "en": "Routes among heterogeneous perception skills with episodic memory and cost control, gating commits through an affordance verifier that triggers targeted retries.",
+  "zh_hash": "890d6b3dba21"
+ },
+ "affordance-based-robot-manipulation-with-flow-matching": {
+  "en": "Unifies prompt-tuned affordance prediction and continuous trajectory generation in one supervised flow matching framework for manipulation.",
+  "zh_hash": "1481e7776250"
+ },
+ "affordance-benchmark-for-mllms": {
+  "en": "Benchmarks MLLM affordance QA and grounding across commonsense, regional, and physical axes, exposing a gap between recognizing objects and judging interactions.",
+  "zh_hash": "b1cbfa1282a2"
+ },
+ "affordance-detection-for-task-specific-grasping-using-deep-learning": {
+  "en": "Predicts affordance maps jointly with object class and orientation, then uses them as task-specific grasp constraints, making manipulation a validation of perception.",
+  "zh_hash": "46d8ee619280"
+ },
+ "affordance-driven-next-best-view-planning-for-robotic-grasping": {
+  "en": "Imagines grasp affordances under unobserved viewpoints and selects the next-best view accordingly, folding active perception into the affordance-to-grasp loop.",
+  "zh_hash": "3a44a598a8e2"
+ },
+ "affordance-field-intervention-enabling-vlas-to-escape-memory-traps-in-robotic-manipulation": {
+  "en": "Builds 3D spatial affordance fields as a plug-in that scores and corrects VLA waypoints at runtime, detecting memory traps and restoring spatial feasibility.",
+  "zh_hash": "fdeeae123e4c"
+ },
+ "affordance-grounding-from-demonstration-video-to-target-image": {
+  "en": "Extracts interaction cues from a demonstration video to ground action-conditioned affordance heatmaps on a target image of the same object class.",
+  "zh_hash": "2219051a85f6"
+ },
+ "affordance-guided-enveloping-grasp-demonstration-toward-non-destructive-disassembly-of-pinch-infeasible-mating-parts": {
+  "en": "Generates enveloping-grasp affordance templates in physics simulation to guide teleoperated demonstrations for non-destructive disassembly of pinch-infeasible parts.",
+  "zh_hash": "ff17c1264a59"
+ },
+ "affordance-learning-from-play-for-sample-efficient-policy-learning": {
+  "en": "Extracts self-supervised visual affordances from human teleoperated play and couples them with model-based planning and RL, cutting robot interaction samples.",
+  "zh_hash": "9893df7a1feb"
+ },
+ "affordance-r1-reinforcement-learning-for-generalizable-affordance-reasoning-in-multimodal-large-language-model": {
+  "en": "Applies GRPO reinforcement learning post-training to an MLLM with format, perception, and cognition rewards, markedly improving interpretable affordance grounding.",
+  "zh_hash": "742f454009ae"
+ },
+ "affordance2action-task-conditioned-scene-level-affordance-grounding-for-real-time-manipulation": {
+  "en": "Builds task-conditioned scene-level part affordance supervision with A2A-Bench and uses it as explicit conditions or implicit representations for real-time grasping.",
+  "zh_hash": "5f6fc3700e76"
+ },
+ "affordancegrasp-r1-leveraging-reasoning-based-affordance-segmentation-with-reinforcement-learning-for-robotic-grasping": {
+  "en": "Cold-starts an MLLM with chain-of-thought data, then optimizes affordance segmentation with RL rewards to calibrate spatial grounding for grasping.",
+  "zh_hash": "2faa6e747598"
+ },
+ "affordancelearn-learning-affordance-segmentation-for-real-world-robotic-manipulation-via-synthetic-images": {
+  "en": "Generates pixel-level affordance labels in simulation and trains segmentation networks that transfer sim-to-real, showing simulation supplies scalable dense supervision.",
+  "zh_hash": "13870b671528"
+ },
+ "affordancellm-grounding-affordance-from-vision-language-models": {
+  "en": "Fuses MLLM-generated part and function priors with a visual grounding network to predict affordance heatmaps, injecting commonsense semantics beyond texture cues.",
+  "zh_hash": "b6d6c12d3075"
+ },
+ "affordancenet-an-end-to-end-deep-learning-approach-for-object-affordance-detection": {
+  "en": "Extends Mask R-CNN-style instance segmentation with an affordance branch, establishing end-to-end detection plus instance-level affordance masks as a standard baseline.",
+  "zh_hash": "09bb3bf093df"
+ },
+ "affordances-from-human-videos-as-a-versatile-representation-for-robotics": {
+  "en": "Learns contact points and post-contact trajectories from human videos, serving as a versatile affordance interface for imitation, exploration, and RL.",
+  "zh_hash": "1f6c9fc9018b"
+ },
+ "affordancesam-segment-anything-once-more-in-affordance-grounding": {
+  "en": "Adapts SAM/EVF-SAM with a lightweight affordance adapter and coarse-to-fine training, turning a segmentation foundation model into a functional-region predictor.",
+  "zh_hash": "8fa462f3ab0d"
+ },
+ "affordancevla-a-vision-language-action-model-empowering-action-generation-through-affordance-aware-understanding": {
+  "en": "Jointly predicts Which2Act, Where2Act, and How2Act signals as internal affordance representations, improving VLA interpretability and generalization in manipulation.",
+  "zh_hash": "9999fc355160"
+ },
+ "affordbot-3d-fine-grained-embodied-reasoning-via-multimodal-large-language-models": {
+  "en": "Renders 3D scenes into multi-view images for MLLM chain-of-thought reasoning that outputs affordance elements with motion type and axis, going beyond masks.",
+  "zh_hash": "a192354f13f5"
+ },
+ "affordbridge": {
+  "en": "Image-3D pairs bridging visual signifiers to 3D scenes, benchmarking scene-level affordance grounding and cross-modal keypoint matching.",
+  "zh_hash": "91a63cecaa39"
+ },
+ "afforddexgrasp-open-set-language-guided-dexterous-grasp-with-generalizable-instructive-affordance": {
+  "en": "Generates instructive affordance from language via flow matching, then samples dexterous grasps with a grasp flow, bridging open-set instructions and high-DoF hands.",
+  "zh_hash": "dd703d45561b"
+ },
+ "afforddp-generalizable-diffusion-policy-with-transferable-affordance": {
+  "en": "Conditions a diffusion policy on transferable 3D contact points and post-contact trajectories, improving generalization to unseen object instances and categories.",
+  "zh_hash": "46ad4974c64f"
+ },
+ "affordgen-generating-diverse-demonstrations-for-generalizable-object-manipulation-with-affordance-correspondence": {
+  "en": "Transfers grasp and skill trajectories to novel objects via 3D mesh affordance correspondence, expanding few demonstrations into diverse data for closed-loop policies.",
+  "zh_hash": "7e6305e8f3bb"
+ },
+ "affordgrasp-in-context-affordance-reasoning-for-open-vocabulary-task-oriented-grasping-in-clutter": {
+  "en": "Infers task goal, target object, and functional part from implicit instructions with a VLM, grounding part-level masks for task-oriented grasping in clutter.",
+  "zh_hash": "f99b76154e4d"
+ },
+ "affordmatcher-affordance-learning-in-3d-scenes-from-visual-signifiers": {
+  "en": "Matches 2D visual signifiers to 3D scene instances via cross-modal keypoint correspondence on the AffordBridge dataset, learning scene affordances from signifier cues.",
+  "zh_hash": "53b30dac40df"
+ },
+ "affordpose": {
+  "en": "3D hand-object interaction data with fine-grained affordance labels, benchmarking hand-object affordance understanding and affordance-oriented hand pose generation.",
+  "zh_hash": "37f800d5ed49"
+ },
+ "affordq": {
+  "en": "3D object point clouds paired with natural-language queries, benchmarking language-guided affordance segmentation on 3D shapes.",
+  "zh_hash": "020f5d68e954"
+ },
+ "affordvla-injecting-affordance-representations-into-vision-language-action-models-via-implicit-feature-alignment": {
+  "en": "Aligns intermediate VLA visual features with an affordance teacher through implicit losses, improving manipulation while preserving end-to-end simplicity.",
+  "zh_hash": "516058d27109"
+ },
+ "affostruction-3d-affordance-grounding-with-generative-reconstruction": {
+  "en": "Reconstructs full object geometry from partial RGB-D via generative completion, grounding text-queried affordances on occluded surfaces and guiding active view selection.",
+  "zh_hash": "ef1913879a7a"
+ },
+ "afun-towards-an-affordance-foundation-model-for-functionality-understanding": {
+  "en": "Standardizes robot, human, and simulation data into language-mask-motion labels to train a foundation model predicting where and how to interact from one RGB-D frame.",
+  "zh_hash": "19287f220d7b"
+ },
+ "agd20k": {
+  "en": "20K exocentric-egocentric image pairs for affordance grounding, benchmarking exo-to-ego transfer plus one-shot and open affordance grounding.",
+  "zh_hash": "cc8d52f67031"
+ },
+ "agddo15": {
+  "en": "Egocentric images of deformable objects in organizing scenes, benchmarking one-shot affordance grounding and functional-region localization.",
+  "zh_hash": "1691f6147e43"
+ },
+ "agentic-scene-policies-unifying-space-semantics-and-affordances-for-robot-action": {
+  "en": "Unifies semantic, spatial, and affordance queries over a queryable scene representation into an agentic interface that selects targets and primitive skills for planning.",
+  "zh_hash": "30775c169e42"
+ },
+ "agile-learning-robust-long-horizon-manipulation-via-affordance-grounded-bidirectional-latent-planning": {
+  "en": "Plans latent subgoals backward with forward-critic reachability checks, grounding each subgoal into task-relevant visual regions that condition a diffusion policy.",
+  "zh_hash": "fbaacdf8458b"
+ },
+ "agpil": {
+  "en": "Image-3D pairs for language-guided 3D affordance grounding, with evaluation splits covering full, partial, and rotation-view observations.",
+  "zh_hash": "028c2cc78d39"
+ },
+ "an-affordance-keypoint-detection-network-for-robot-manipulation": {
+  "en": "Shares one visual backbone to output affordance masks plus interaction keypoints with direction and extent, extending affordance from regions to actionable operation geometry.",
+  "zh_hash": "4de0e73966c9"
+ },
+ "arg-vu-affordance-reasoning-with-physics-aware-3d-geometry-for-visual-understanding-in-robotic-surgery": {
+  "en": "Combines 3D Gaussian splatting with XPBD physics-aware compliance energy for surgical affordance reasoning, making deformable feasibility explicit.",
+  "zh_hash": "7050b56e5a44"
+ },
+ "bayesian-deep-learning-for-affordance-segmentation-in-images": {
+  "en": "Adds Monte Carlo dropout to Mask R-CNN to estimate aleatoric and epistemic uncertainty, exposing boundary noise and visually hard regions in affordance segmentation.",
+  "zh_hash": "511d962b74b3"
+ },
+ "biassemble-learning-collaborative-affordance-for-bimanual-geometric-assembly": {
+  "en": "Predicts point-level collaborative affordances for each arm and derives grasp, support, and sequencing actions for bimanual geometric assembly.",
+  "zh_hash": "7a46b10d4905"
+ },
+ "bipremanip-learning-affordance-based-bimanual-preparatory-manipulation-through-anticipatory-collaboration": {
+  "en": "Envisions the final action first, then plans the assisting hand's preparatory affordance manipulation, encoding anticipatory collaboration in bimanual affordance.",
+  "zh_hash": "7b6961394b65"
+ },
+ "bootstrapping-relational-affordances-of-object-pairs-using-transfer": {
+  "en": "Learns transferable pairwise relations from object-pair interactions, showing affordances can be defined by functional relations between objects, not single objects.",
+  "zh_hash": "afd3648fb343"
+ },
+ "bridgeact-bridging-human-demonstrations-to-robot-actions-via-unified-tool-target-affordances": {
+  "en": "Unifies tool-target affordances from human videos, decomposing them into where-to-grasp and how-to-move signals that bridge human demonstrations to robot actions.",
+  "zh_hash": "1a9b412ebc18"
+ },
+ "cal": {
+  "en": "Paired images capturing contact-driven human-object interactions for interactive affinity learning, benchmarking affordance grounding.",
+  "zh_hash": "887b2753a67a"
+ },
+ "closed-loop-transfer-for-weakly-supervised-affordance-grounding": {
+  "en": "Cycles pseudo labels between exocentric and egocentric grounding with reverse consistency checks, letting predictions correct the noise of single-pass cross-view transfer.",
+  "zh_hash": "cd543dfbf8ba"
+ },
+ "coa-vla-improving-vision-language-action-models-via-visual-textual-chain-of-affordance": {
+  "en": "Generates object, grasp, spatial, and movement affordances as a chain and co-injects them visually and textually into a VLA policy to improve action prediction.",
+  "zh_hash": "9b47929661d1"
+ },
+ "compassad-intent-driven-3d-affordance-grounding-in-functionally-competing-objects": {
+  "en": "Grounds implicit intent in 3D scenes with functionally competing objects, showing task intent selects both the correct object and its interaction region.",
+  "zh_hash": "3a807ddb9cc3"
+ },
+ "contactdb": {
+  "en": "Paired 3D object shapes and images capturing human grasp contact maps, benchmarking functional grasp contact prediction and contact-map affordance reasoning.",
+  "zh_hash": "a38e28ca02ed"
+ },
+ "context-based-affordance-segmentation-from-2d-images-for-robot-actions": {
+  "en": "Fuses object, part, and scene-context cues for 2D affordance segmentation, showing contextual part relations track action possibility better than object category alone.",
+  "zh_hash": "2f2e067b0eb9"
+ },
+ "dag-unleash-the-potential-of-diffusion-model-for-open-vocabulary-3d-affordance-grounding": {
+  "en": "Extracts frozen diffusion features from HOI images and affordance text and fuses them with point clouds, turning generative priors into open-vocabulary 3D grounding.",
+  "zh_hash": "089fe6107ec2"
+ },
+ "dart-a-novel-task-driven-diffusion-based-policy-with-affordance-learning-for-generalizable-manipulation-of-articulated-objects": {
+  "en": "Couples LTL task semantics with affordance interaction points in a diffusion policy, showing logic and affordance jointly improve articulated-object generalization.",
+  "zh_hash": "ecce6e0568a8"
+ },
+ "defoafford-learning-foresightful-dense-visual-affordance-for-deformable-object-manipulation": {
+  "en": "Learns dense foresightful affordance value maps that predict multi-step deformation outcomes, guiding pick-and-place actions for deformable object manipulation.",
+  "zh_hash": "05c2eb8f7b0e"
+ },
+ "demo2vec-reasoning-object-affordances-from-online-videos": {
+  "en": "Encodes demonstration videos into embeddings that ground interaction regions and actions on object images, showing online videos supply cheap affordance supervision.",
+  "zh_hash": "7e2914fb9601"
+ },
+ "detecting-object-affordances-with-convolutional-neural-networks": {
+  "en": "Feeds RGB and HHA depth encodings into a CNN to detect pixel-level object affordances, showing learned deep features replace handcrafted geometry for real grasping.",
+  "zh_hash": "addbdb450761"
+ },
+ "do-as-i-can-not-as-i-say-grounding-language-in-robotic-affordances": {
+  "en": "Scores LLM-proposed skills with learned value functions as affordances, multiplying language plausibility by embodied feasibility to select executable robot actions.",
+  "zh_hash": "b17858b827c2"
+ },
+ "dora-object-affordance-guided-reinforcement-learning-for-dexterous-robotic-manipulation": {
+  "en": "Injects affordance maps into dexterous RL as action priors, constraints, and reward shaping, narrowing search while calibrating functional contact.",
+  "zh_hash": "3526201ccf7a"
+ },
+ "dualafford-learning-collaborative-visual-affordance-for-dual-gripper-object-manipulation": {
+  "en": "Decomposes dual-gripper manipulation into collaborative sub-tasks that predict paired contact affordances, showing bimanual affordance is not additive over single arms.",
+  "zh_hash": "d63f3d2d7e69"
+ },
+ "ego-topo-environment-affordances-from-egocentric-video": {
+  "en": "Organizes egocentric video into activity-centric zones linked in a topological graph, showing affordances attach to functional environment zones, not single objects.",
+  "zh_hash": "b6badaee3591"
+ },
+ "embodied-spatial-affordance-spatial-aware-affordance-learning-for-embodied-navigation-and-manipulation": {
+  "en": "Jointly reasons over object and free-space affordances in a hierarchical vision-language model, lifting 2D keypoints through depth into 3D actionable coordinates.",
+  "zh_hash": "0072874de74d"
+ },
+ "epic-aff": {
+  "en": "Egocentric kitchen videos lifted into 3D, benchmarking multi-label affordance segmentation, 3D spatial affordance mapping, and task-oriented navigation.",
+  "zh_hash": "8d8403474e9c"
+ },
+ "epic-kitchens-affordance": {
+  "en": "Egocentric kitchen video frames with affordance labels, benchmarking affordance recognition, hand-object interaction hotspot prediction, and cross-domain evaluation.",
+  "zh_hash": "3cc45e624c86"
+ },
+ "esa": {
+  "en": "RGB and RGB-D images annotated with object and free-space affordance keypoints, benchmarking spatial affordance reasoning for embodied navigation and manipulation.",
+  "zh_hash": "dfe87a0c470a"
+ },
+ "fine-grained-affordance-annotation-for-egocentric-hand-object-interaction-videos": {
+  "en": "Defines affordance through motor actions and grasp types, adding fine-grained hand-object labels to EPIC-KITCHENS that separate functionality, goal action, and motor capacity.",
+  "zh_hash": "f6699699b49c"
+ },
+ "forecasting-human-object-interaction-joint-prediction-of-motor-attention-and-actions-in-first-person-video": {
+  "en": "Jointly forecasts hand motion, motor attention, and future actions in first-person video, framing future contact hotspots as a temporal form of affordance prediction.",
+  "zh_hash": "7131c71cd04d"
+ },
+ "fsag-enhancing-human-to-dexterous-hand-finger-specific-affordance-grounding-via-diffusion-models": {
+  "en": "Extracts finger-specific contact affordances from human videos via diffusion models and retargets them to varied dexterous hands, enabling finger-level transfer.",
+  "zh_hash": "5a039933d7b0"
+ },
+ "functionality-understanding-and-segmentation-in-3d-scenes": {
+  "en": "Chains LLM reasoning over task descriptions with VLM multi-view segmentation lifted to 3D point clouds, giving a training-free baseline for functionality grounding.",
+  "zh_hash": "bb69e2022c76"
+ },
+ "garmentpile-point-level-visual-affordance-guided-retrieval-and-adaptation-for-cluttered-garments-manipulation": {
+  "en": "Learns point-level pull and grasp affordances on garment piles and rearranges entangled items before grasping, modeling inter-object relations in deformable clutter.",
+  "zh_hash": "5fea8203d30a"
+ },
+ "gcngrasp-vp-affordance-guided-view-planning-for-efficient-task-oriented-grasping": {
+  "en": "Uses a jointly predicted affordance field as the information-gain metric for next-best-view planning, showing affordances guide where to look as well as where to grasp.",
+  "zh_hash": "4369b4a5d061"
+ },
+ "geal-generalizable-3d-affordance-learning-with-cross-modal-consistency": {
+  "en": "Distills 2D foundation semantics into 3D via Gaussian-splatting-based cross-modal consistency, keeping affordance predictions robust on novel and corrupted point clouds.",
+  "zh_hash": "286c3848dce5"
+ },
+ "glance-intermediate-connectors-and-geometric-priors-for-language-guided-affordance-segmentation-on-unseen-object-categories": {
+  "en": "Inserts intermediate connectors between language queries and point features and adds geometric priors, stabilizing affordance masks on unseen object categories.",
+  "zh_hash": "8a3a9180e8d6"
+ },
+ "glover-generalizable-open-vocabulary-affordance-reasoning-for-task-oriented-grasping": {
+  "en": "Reasons about graspable parts with LLM/VLM open-vocabulary inference and converts affordance regions into grasp poses through an AGE planner.",
+  "zh_hash": "e0358decaaf6"
+ },
+ "glover-unleashing-the-potential-of-affordance-learning-from-human-behaviors-for-robotic-manipulation": {
+  "en": "Mines affordance supervision from human behavior videos to build HOVA-500K, showing large-scale human data markedly broadens transferable robotic affordance grounding.",
+  "zh_hash": "afa63d0bcf3b"
+ },
+ "great-geometry-intention-collaborative-inference-for-open-vocabulary-3d-object-affordance-grounding": {
+  "en": "Combines geometric analogy with interaction-intention chain-of-thought reasoning, grounding open-vocabulary 3D affordances by inferring both cues jointly on novel objects.",
+  "zh_hash": "b81481a00949"
+ },
+ "grounded-affordance-from-exocentric-view": {
+  "en": "Extracts affordance-specific features from exocentric interactions and transfers them across views, tackling person-specific interaction bias in egocentric grounding.",
+  "zh_hash": "208556403155"
+ },
+ "grounded-decoding-guiding-text-generation-with-grounded-models-for-robot-control": {
+  "en": "Injects grounded model scores into LLM decoding to re-rank action tokens, bringing affordance constraints into generation itself rather than post-hoc filtering.",
+  "zh_hash": "b66ea8478766"
+ },
+ "grounded-human-object-interaction-hotspots-from-video": {
+  "en": "Learns interaction hotspots from unlabeled videos by hallucinating active features on static images, turning human demonstrations into weak affordance supervision.",
+  "zh_hash": "59d97205417e"
+ },
+ "grounding-3d-object-affordance-from-2d-interactions-in-images": {
+  "en": "Aligns 2D human-object interaction images with point clouds to ground 3D object affordance, showing interaction cues transfer across modalities to functional regions.",
+  "zh_hash": "7e34dcb0bfb9"
+ },
+ "grounding-3d-object-affordance-with-language-instructions-visual-observations-and-interactions": {
+  "en": "Fuses language instructions, 2D observations, 3D geometry, and interaction cues to ground 3D object affordances, exploiting the complementarity of the three evidence types.",
+  "zh_hash": "0822a515489c"
+ },
+ "grounding-3d-scene-affordance-from-egocentric-interactions": {
+  "en": "Aggregates egocentric interaction evidence onto scene point clouds, using first-person interaction history as supervision for 3D scene affordance grounding.",
+  "zh_hash": "a61428894a8f"
+ },
+ "grounding-by-remembering-cross-scene-and-in-scene-memory-for-3d-functional-affordances": {
+  "en": "Augments a frozen VLM with cross-scene affordance memory and in-scene spatial memory retrieval, compensating for VLM neglect of small functional parts.",
+  "zh_hash": "1bf4e81ef461"
+ },
+ "grounding-language-with-visual-affordances-over-unstructured-data": {
+  "en": "Learns a visuo-lingual affordance model from unstructured reset-free data, enabling long-horizon language-conditioned real-robot tasks with few annotations.",
+  "zh_hash": "86da73e999bf"
+ },
+ "hierarchical-transformer-for-visual-affordance-understanding-using-a-large-scale-dataset": {
+  "en": "Applies a hierarchical vision transformer over multiple scales to segment multi-view RGB-D object affordances, handling varied object sizes and multi-region labels.",
+  "zh_hash": "742622e9586c"
+ },
+ "hova-500k": {
+  "en": "500K-scale image collection of human-object interactions for human-behavior affordance grounding and affordance transfer to robotic manipulation.",
+  "zh_hash": "b554d51664ad"
+ },
+ "iaao-interactive-affordance-learning-for-articulated-objects-in-3d-environments": {
+  "en": "Builds 3DGS-based object and articulation models updated through interaction, jointly refining part motion estimates and affordances of articulated objects.",
+  "zh_hash": "68fbabde0ad4"
+ },
+ "iit-aff": {
+  "en": "RGB images of everyday objects annotated for object detection, instance/semantic segmentation, and pixel-level affordance detection and segmentation.",
+  "zh_hash": "670ea8dcd1b4"
+ },
+ "information-driven-affordance-discovery-for-efficient-robotic-manipulation": {
+  "en": "Selects interaction actions by information gain to actively discover object affordances, making data collection itself driven by affordance uncertainty.",
+  "zh_hash": "688fcb651b69"
+ },
+ "instructpart": {
+  "en": "Images paired with task instructions and part-level masks, benchmarking task-oriented part segmentation, instruction-conditioned grounding, and VLM part reasoning.",
+  "zh_hash": "df6be505a80b"
+ },
+ "instructpart-task-oriented-part-segmentation-with-instruction-reasoning": {
+  "en": "Builds a benchmark of hand-labeled part masks paired with task instructions, revealing VLMs still treat objects as wholes and must ground tasks at the part level.",
+  "zh_hash": "9b3b3730be19"
+ },
+ "intention-related-natural-language-grounding-via-object-affordance-detection-and-intention-semantic-extraction": {
+  "en": "Combines attention-based affordance detection with intention semantic extraction to ground implicit queries, treating affordance as the intent-to-target semantic bridge.",
+  "zh_hash": "fe9c3703614e"
+ },
+ "intra-interaction-relationship-aware-weakly-supervised-affordance-grounding": {
+  "en": "Learns text-conditioned affordance maps from exocentric images alone via interaction-relation contrastive learning, dropping the need for paired egocentric data.",
+  "zh_hash": "8ccfde368c71"
+ },
+ "joint-hand-motion-and-interaction-hotspots-prediction-from-egocentric-videos": {
+  "en": "Predicts future hand trajectories and interaction hotspots jointly from egocentric video with an object-centric transformer, letting the two cues reinforce each other.",
+  "zh_hash": "cb686d8a31eb"
+ },
+ "knowledge-enhanced-bottom-up-affordance-grounding-for-robotic-interaction": {
+  "en": "Fuses knowledge-enhanced text features with multilevel visual features bottom-up, showing commonsense is key for mapping implicit instructions to affordance parts.",
+  "zh_hash": "7620e6d20d15"
+ },
+ "language-embedded-radiance-fields-for-zero-shot-task-oriented-grasping": {
+  "en": "Distills CLIP embeddings into a 3D language field and queries object parts with DINO-masked text, ranking grasp candidates for zero-shot task-oriented grasping.",
+  "zh_hash": "707391a1bbe8"
+ },
+ "laso-language-guided-affordance-segmentation-on-3d-object": {
+  "en": "Segments 3D object affordance from language queries by generating dynamic kernels from text that convolve point features, conditioning masks on referring expressions.",
+  "zh_hash": "b8fb441b9fdc"
+ },
+ "learning-2d-invariant-affordance-knowledge-for-3d-affordance-grounding": {
+  "en": "Distills an invariant affordance dictionary from multiple 2D interaction images into point features, making cross-image consensus steadier than single-image HOI cues.",
+  "zh_hash": "d07955e172fb"
+ },
+ "learning-6-dof-task-oriented-grasp-detection-via-implicit-estimation-and-visual-affordance": {
+  "en": "Estimates 3D affordance heatmaps with implicit shape representations from point clouds, then generates and scores task-oriented 6-DoF grasp poses.",
+  "zh_hash": "ad37ecd37b15"
+ },
+ "learning-affordance-grounding-from-exocentric-images": {
+  "en": "Learns object affordance heatmaps from exocentric human-object interaction images, establishing AGD20K and human behavior as low-cost affordance supervision.",
+  "zh_hash": "c2a6bbae1fd9"
+ },
+ "learning-affordance-landscapes-for-interaction-exploration-in-3d-environments": {
+  "en": "Trains an RL agent to explore 3D scenes for interaction rewards while distilling an affordance segmenter, showing active interaction self-supervises scene affordance.",
+  "zh_hash": "00d8f65aa85e"
+ },
+ "learning-affordance-space-in-physical-world-for-vision-based-robotic-object-manipulation": {
+  "en": "Learns a physical affordance space from visual observations and uses the predicted actionable regions to plan robotic object manipulation.",
+  "zh_hash": "03517b7eedb1"
+ },
+ "learning-dexterous-grasping-with-object-centric-visual-affordances": {
+  "en": "Embeds object-centric grasp affordance priors into deep RL rewards and observations, constraining high-dimensional dexterous hand policy search.",
+  "zh_hash": "e22871a6b74d"
+ },
+ "learning-environment-aware-affordance-for-3d-articulated-object-manipulation-under-occlusions": {
+  "en": "Fuses occluded point clouds, environment geometry, and robot morphology to predict feasible action regions, showing manipulability depends on scene and embodiment.",
+  "zh_hash": "702eabaadfed"
+ },
+ "learning-generalizable-dexterous-manipulation-from-human-grasp-affordance": {
+  "en": "Generates large-scale demonstrations from a human grasp affordance model to train dexterous policies that generalize across object categories.",
+  "zh_hash": "dbede6e393b1"
+ },
+ "learning-grasp-affordance-reasoning-through-semantic-relations": {
+  "en": "Uses Markov Logic Networks over attribute-affordance relations to infer task-specific grasp regions, selecting functional grasps instead of enumerating graspable areas.",
+  "zh_hash": "b9698caecfde"
+ },
+ "learning-precise-affordances-from-egocentric-videos-for-robotic-manipulation": {
+  "en": "Extracts precise hand-object contact masks from egocentric videos to train an affordance detector, showing fine masks outperform coarse heatmaps for functional grasping.",
+  "zh_hash": "9a8a3419249e"
+ },
+ "learning-to-act-properly-predicting-and-explaining-affordances-from-images": {
+  "en": "Builds ADE-Affordance and propagates scene-level object relations with a GNN, showing affordances depend on social norms and context, not just local geometry.",
+  "zh_hash": "1bbd6b46fe7f"
+ },
+ "learning-to-segment-affordances": {
+  "en": "Derives dense scene affordance labels from object and part annotations and refines them with a CNN, showing part structure serves as effective intermediate supervision.",
+  "zh_hash": "07e2fecab97e"
+ },
+ "lemon-learning-3d-human-object-interaction-relation-from-2d-images": {
+  "en": "Jointly infers human contact, object affordance, and 3D spatial relation from one image, arguing these interaction cues should be modeled together, not in isolation.",
+  "zh_hash": "dc24334344b1"
+ },
+ "leverage-interactive-affinity-for-affordance-learning": {
+  "en": "Extracts body-part-to-object contact affinities from HOI images via pose heuristics, reducing label ambiguity when transferring affordance to non-interactive objects.",
+  "zh_hash": "eca0bc2eb2e7"
+ },
+ "lgafford-net-a-local-geometry-aware-affordance-detection-network-for-3d-point-clouds": {
+  "en": "Encodes local surface geometry and neighborhood structure for point-cloud affordance detection, showing regional cues beat purely global features for localization.",
+  "zh_hash": "cf19f51cddad"
+ },
+ "llmaff": {
+  "en": "Images annotated for natural-language affordance grounding, benchmarking language-conditioned affordance localization across multiple objects per scene.",
+  "zh_hash": "014a7d972c86"
+ },
+ "locate-localize-and-transfer-object-parts-for-weakly-supervised-affordance-grounding": {
+  "en": "Localizes and transfers object-part prototypes between exocentric and egocentric views, using part priors to curb region drift under weak supervision.",
+  "zh_hash": "9c1fe9235434"
+ },
+ "manipgpt-is-affordance-segmentation-by-large-vision-models-enough-for-articulated-object-manipulation": {
+  "en": "Pairs large-vision-model affordance segmentation with an impedance-adaptive controller, showing LVM masks need lightweight control adaptation for articulated objects.",
+  "zh_hash": "291f6e894a9c"
+ },
+ "manipulation-oriented-object-perception-in-clutter-through-affordance-coordinate-frames": {
+  "en": "Detects object parts in clutter and predicts category-level affordance coordinate frames, unifying functional parts and 3D pose into one manipulation-ready output.",
+  "zh_hash": "eba74dd49394"
+ },
+ "manipvqa-injecting-robotic-affordance-and-physically-grounded-information-into-multi-modal-large-language-models": {
+  "en": "Fine-tunes an MLLM on robotic affordance and physics VQA instruction data, showing generic MLLMs need manipulation-specific supervision to ground tool concepts.",
+  "zh_hash": "51d7077d54ea"
+ },
+ "maskprompt-open-vocabulary-affordance-segmentation-with-object-shape-mask-prompts": {
+  "en": "Injects object shape mask prompts into visual and text features, showing part boundaries are a strong prior linking geometry to open-vocabulary function words.",
+  "zh_hash": "4db8f12222d2"
+ },
+ "multi-label-affordance-mapping-from-egocentric-vision": {
+  "en": "Builds EPIC-Aff by localizing egocentric interactions in 3D maps, training multi-label segmentation that lets one scene region carry several spatial affordances.",
+  "zh_hash": "315a8743de81"
+ },
+ "multi-view-rgbd-visual-affordance-dataset": {
+  "en": "Multi-view RGB-D captures of objects with affordance annotations, benchmarking affordance segmentation and recognition across viewpoints.",
+  "zh_hash": "3c78b41b51ae"
+ },
+ "multimodal-attention-based-instruction-following-part-level-affordance-grounding": {
+  "en": "Fuses sentence-level and task-specific text features with multiscale visual features via attention to segment part-level affordances, not just object-level regions.",
+  "zh_hash": "a0324a305a9f"
+ },
+ "naturalvlm-leveraging-fine-grained-natural-language-for-affordance-guided-visual-manipulation": {
+  "en": "Decomposes long-horizon instructions with an MLLM into contact points and end-effector poses, treating manipulation as task-conditioned affordance constraint reasoning.",
+  "zh_hash": "5d056bac74cd"
+ },
+ "nyuv2-affordance-annotations": {
+  "en": "Affordance annotations layered on NYUv2 indoor scene images, benchmarking scene-level affordance segmentation in cluttered real-world environments.",
+  "zh_hash": "0e67785f802c"
+ },
+ "o2o-afford-annotation-free-large-scale-object-object-affordance-learning": {
+  "en": "Simulates object-object interactions and uses object-kernel point convolution to learn fine-grained cross-object affordance maps without human annotation.",
+  "zh_hash": "233b6deb24b8"
+ },
+ "o3afford-one-shot-3d-object-to-object-affordance-grounding-for-generalizable-robotic-manipulation": {
+  "en": "Grounds object-to-object relation affordances from a single example and transfers them via correspondence and LLM-derived task constraints into executable manipulation.",
+  "zh_hash": "3f8566a16a89"
+ },
+ "object-affordance-based-multimodal-fusion-for-natural-human-robot-interaction": {
+  "en": "Fuses CNN-detected object affordances with spoken-intention parsing to select and grasp the intended object, mapping implicit needs like thirst to affordances.",
+  "zh_hash": "774df842d549"
+ },
+ "object-affordance-detection-with-boundary-preserving-network-for-robotic-manipulation-tasks": {
+  "en": "Preserves object and part boundaries during affordance segmentation, showing boundary supervision keeps actionable regions from bleeding past part edges.",
+  "zh_hash": "f33d09a27a17"
+ },
+ "object-affordance-detection-with-relationship-aware-network": {
+  "en": "Models affordance co-occurrence and object-affordance relations for dense labeling, showing functional co-occurrence structure improves segmentation consistency.",
+  "zh_hash": "de7133ffc537"
+ },
+ "object-based-affordances-detection-with-convolutional-neural-networks-and-dense-conditional-random-fields": {
+  "en": "Couples object detection with CNN affordance prediction and dense-CRF boundary refinement, showing localize-then-refine outperforms whole-image segmentation in clutter.",
+  "zh_hash": "6f6f9e03eff7"
+ },
+ "one-shot-3-d-affordance-learning-for-multi-stage-robotic-manipulation": {
+  "en": "Lifts one-shot 2D verb-centric affordance labels into a view-consistent 3D Gaussian splatting field, then executes GPD 6-DoF grasps for multi-stage manipulation.",
+  "zh_hash": "d960c4a75556"
+ },
+ "one-shot-affordance-detection": {
+  "en": "Transfers affordance from a single human-interaction exemplar to novel objects, showing affordance generalizes across categories from one support image.",
+  "zh_hash": "04e3df8c68c4"
+ },
+ "one-shot-affordance-grounding-of-deformable-objects-in-egocentric-organizing-scenes": {
+  "en": "Grounds one-shot affordances of deformable objects in egocentric organizing scenes via structural semantics, keypoint geometry, and instance-conditional prompts.",
+  "zh_hash": "feafa791205c"
+ },
+ "one-shot-object-affordance-detection-in-the-wild": {
+  "en": "Estimates action purpose from a support image and transfers it to detect matching affordance regions across cluttered natural scenes beyond fixed category supervision.",
+  "zh_hash": "16f6f5a6b83d"
+ },
+ "one-shot-open-affordance-learning-with-foundation-models": {
+  "en": "Leverages semantic and correspondence priors of CLIP and DINOv2 to learn open-vocabulary affordance grounding from a single annotated example per base class.",
+  "zh_hash": "5413a56b1315"
+ },
+ "one-shot-transfer-of-affordance-regions-affcorrs": {
+  "en": "Transfers affordance masks from one annotated exemplar via dense correspondences built on foundation visual features, requiring no category-level training.",
+  "zh_hash": "c9086cab045a"
+ },
+ "open-vocabulary-3d-affordance-understanding-via-functional-text-enhancement-and-multilevel-representation-alignment": {
+  "en": "Enhances functional text descriptions and aligns them with point features at multiple levels to ground both labels and questions in open-vocabulary 3D affordance.",
+  "zh_hash": "6e105dd2674f"
+ },
+ "open-vocabulary-affordance-detection-in-3d-point-clouds": {
+  "en": "Aligns CLIP text embeddings with point-cloud features through a text-conditioned decoder, enabling open-vocabulary affordance detection beyond fixed 3D label sets.",
+  "zh_hash": "0ba254ebd687"
+ },
+ "open-vocabulary-affordance-detection-using-knowledge-distillation-and-text-point-correlation": {
+  "en": "Distills open-vocabulary knowledge into a 3D point cloud backbone and correlates text with points, handling unseen affordance labels while keeping geometric robustness.",
+  "zh_hash": "06de5ee75ab0"
+ },
+ "open-vocabulary-part-based-grasping": {
+  "en": "Chains open-vocabulary detection, part segmentation, and 6-DoF grasp prediction to grasp language-specified object parts without task-specific training.",
+  "zh_hash": "4d9720d8fd02"
+ },
+ "opra": {
+  "en": "Product demonstration videos paired with static object images, benchmarking video-to-image affordance grounding and interaction hotspot prediction.",
+  "zh_hash": "76818cb0ebfb"
+ },
+ "ova-fields-weakly-supervised-open-vocabulary-affordance-fields-for-robot-operational-part-detection": {
+  "en": "Aligns open-vocabulary operation descriptions with continuous 3D affordance fields under weak supervision, localizing robot operational parts beyond fixed part labels.",
+  "zh_hash": "06c334c4407b"
+ },
+ "oval-grasp-open-vocabulary-affordance-localization-for-task-oriented-grasping": {
+  "en": "Uses an LLM to select task-relevant parts and a VLM to segment them into actionable heatmaps, executing open-vocabulary task-oriented grasps on real objects.",
+  "zh_hash": "32add0b1f203"
+ },
+ "oval-prompt-open-vocabulary-affordance-localization-for-robot-manipulation-through-llm-affordance-grounding": {
+  "en": "Prompts an LLM for task-relevant part descriptions and localizes them with VLM/SAM, enabling open-vocabulary affordance localization without policy training.",
+  "zh_hash": "6efea9122776"
+ },
+ "palm-progress-aware-policy-learning-via-affordance-reasoning-for-long-horizon-robotic-manipulation": {
+  "en": "Distills interaction-centric affordance features and predicts continuous subtask progress inside a VLA, stabilizing stage transitions in long-horizon manipulation.",
+  "zh_hash": "912bca027d07"
+ },
+ "panoaffordancenet-towards-holistic-affordance-grounding-in-360-indoor-environments": {
+  "en": "Grounds scene affordances in 360-degree panoramas via distortion-aware spectral modulation and spherical densification, extending grounding beyond perspective views.",
+  "zh_hash": "493354fd42eb"
+ },
+ "part-aware-open-vocabulary-3d-affordance-grounding-via-prototypical-semantic-and-geometric-alignment": {
+  "en": "Generates part-aware queries with an LLM and aligns semantic and geometric prototypes for point grounding, enabling cross-object part-level open-vocabulary transfer.",
+  "zh_hash": "ab50a40ff38b"
+ },
+ "partafford": {
+  "en": "3D objects with part-level annotations for cross-category affordance discovery, benchmarking weakly supervised part-affordance correspondence learning.",
+  "zh_hash": "36fcb6d4f808"
+ },
+ "partafford-part-level-affordance-discovery-from-3d-objects": {
+  "en": "Discovers 3D part-affordance correspondences from object-level affordance sets alone, combining slot attention with cuboidal primitive regularization.",
+  "zh_hash": "be779a3d6ff6"
+ },
+ "pavlm-advancing-point-cloud-based-affordance-understanding-via-vision-language-model": {
+  "en": "Aligns point-cloud tokens with language queries in a VLM for 3D affordance QA and segmentation, using LLM semantics to supply open-vocabulary affordance labels.",
+  "zh_hash": "35d6e8bdc89c"
+ },
+ "phrase-based-affordance-detection-via-cyclic-bilateral-interaction": {
+  "en": "Detects scene regions matching an affordance phrase via cyclic bilateral vision-language interaction, letting free-form action purposes select image areas.",
+  "zh_hash": "780f2995b2e0"
+ },
+ "piad": {
+  "en": "Paired 2D interaction images and 3D object point clouds, benchmarking the grounding of 3D affordance regions from demonstrations shown in 2D imagery.",
+  "zh_hash": "6a101dacc388"
+ },
+ "preafford-universal-affordance-based-pre-grasping-for-diverse-objects-and-environments": {
+  "en": "Predicts point-level affordances for pre-grasp pushing and reorientation, planning preparatory actions via relay training that make hard objects graspable.",
+  "zh_hash": "03b7e5456f99"
+ },
+ "raap-retrieval-augmented-affordance-prediction-with-cross-image-action-alignment": {
+  "en": "Retrieves similar interaction images and aligns actions across them to predict contact and direction, letting small-data robots generalize affordance to unseen objects.",
+  "zh_hash": "2d34cddb7cf8"
+ },
+ "ragnet": {
+  "en": "Images with reasoning-linked affordance masks, benchmarking reasoning-based affordance segmentation and general grasping affordance grounding.",
+  "zh_hash": "bd0200b63b9f"
+ },
+ "ragnet-large-scale-reasoning-based-affordance-segmentation-benchmark-towards-general-grasping": {
+  "en": "Builds a large-scale reasoning-rich grasp affordance segmentation benchmark and trains language-conditioned models, pushing grasp affordance beyond single-label masks.",
+  "zh_hash": "56e45d2539ca"
+ },
+ "ram-retrieval-based-affordance-transfer-for-generalizable-zero-shot-robotic-manipulation": {
+  "en": "Retrieves 2D affordances from a unified memory of robot, HOI, and custom data via language, then lifts them to 3D executable affordances for zero-shot manipulation.",
+  "zh_hash": "0630ca5878fa"
+ },
+ "reasoning-about-object-affordances-in-a-knowledge-base-representation": {
+  "en": "Encodes object, attribute, and affordance facts in a Markov Logic Network knowledge base, enabling zero-shot affordance inference without per-affordance classifiers.",
+  "zh_hash": "64727c675c92"
+ },
+ "reasoning-mamba-hypergraph-guided-region-relation-calculating-for-weakly-supervised-affordance-grounding": {
+  "en": "Models region relations with a hypergraph-guided Mamba for weakly supervised grounding, combining local part cues with global region context from interaction images.",
+  "zh_hash": "298becb9aeec"
+ },
+ "recognizing-object-affordances-to-support-scene-reasoning-for-manipulation-tasks": {
+  "en": "Pairs category-agnostic region proposals with affordance recognition, shifting manipulation reasoning from category priors to region-level function on novel objects.",
+  "zh_hash": "2416aedb6b4f"
+ },
+ "rekep-spatio-temporal-reasoning-of-relational-keypoint-constraints-for-robotic-manipulation": {
+  "en": "Generates 3D semantic keypoints and constraint functions from VLMs, then solves hierarchical optimization to produce SE(3) pose sequences for multi-stage tasks.",
+  "zh_hash": "2d64d2c29f7c"
+ },
+ "relationship-oriented-affordance-learning-through-manipulation-graph-construction": {
+  "en": "Builds a manipulation relationship graph to predict object-object action relations, grounding scene affordances in inter-object function, not per-object attributes.",
+  "zh_hash": "0a89c1d8f532"
+ },
+ "resource-efficient-affordance-grounding-with-complementary-depth-and-semantic-prompts": {
+  "en": "Injects depth as bypass prompts and text-guided attention-head selection into an RGB encoder, cutting parameters while sharpening functional region localization.",
+  "zh_hash": "065bc2394bd5"
+ },
+ "rlafford-end-to-end-affordance-learning-for-robotic-manipulation": {
+  "en": "Trains affordance representations end-to-end inside RL using contact success signals, letting affordance emerge as internal policy features from interaction.",
+  "zh_hash": "6aa524d5de52"
+ },
+ "robo-abc-affordance-generalization-beyond-categories-via-semantic-correspondence-for-robot-manipulation": {
+  "en": "Builds an affordance memory and transfers contact regions to novel objects via diffusion-based semantic correspondence, generalizing manipulation beyond categories.",
+  "zh_hash": "5971ca3f351b"
+ },
+ "roboafford": {
+  "en": "Image-based affordance VQA data covering object affordance recognition and prediction plus spatial affordance localization for robotic manipulation.",
+  "zh_hash": "fe9966c8de6e"
+ },
+ "roboafford-a-generative-ai-enhanced-dataset-for-multimodal-affordance-learning-in-robotic-manipulation-and-navigation": {
+  "en": "Builds a generative-AI-expanded VQA dataset covering object, placement, and navigation affordances, moving MLLMs from scene understanding toward actionability.",
+  "zh_hash": "e0d7b510141f"
+ },
+ "robopoint-a-vision-language-model-for-spatial-affordance-prediction-for-robotics": {
+  "en": "Instruction-tunes a VLM on synthetic visual-prompting data to predict spatial interaction points, converting high-level language into executable spatial constraints.",
+  "zh_hash": "63e33e260704"
+ },
+ "robopoint-data": {
+  "en": "Image data with spatial affordance point annotations, benchmarking point-level affordance prediction for robot manipulation, navigation, and AR assistance.",
+  "zh_hash": "94ad19c6a29b"
+ },
+ "rt-affordance-affordances-are-versatile-intermediate-representations-for-robot-manipulation": {
+  "en": "Proposes language-conditioned affordance plans at the high level and conditions a low-level policy on them, offering a lighter interface than goal images or sketches.",
+  "zh_hash": "f98adee1d2a6"
+ },
+ "scaleadfg": {
+  "en": "3D data pairing object affordances with dexterous hand grasps, benchmarking affordance-based functional grasp generation.",
+  "zh_hash": "51e158c4a6fd"
+ },
+ "scaleadfg-affordance-based-dexterous-functional-grasping-via-scalable-dataset": {
+  "en": "Automatically synthesizes a scalable affordance-based functional dexterous grasp dataset and trains a lightweight grasp generator, resolving hand-object scale mismatch.",
+  "zh_hash": "7b1baefee64e"
+ },
+ "scenefun3d": {
+  "en": "3D indoor scene data annotated with functional interactive elements, benchmarking functionality segmentation, task-driven affordance grounding, and 3D motion estimation.",
+  "zh_hash": "d463772cf5ec"
+ },
+ "scenefun3d-fine-grained-functionality-and-affordance-understanding-in-3d-scenes": {
+  "en": "Annotates fine-grained functional elements, interaction regions, and motions in real indoor scans, benchmarking affordance understanding at scene rather than object level.",
+  "zh_hash": "a841eeca099b"
+ },
+ "sceneteract-agentic-functional-affordances-and-vlm-grounding-in-3d-scenes": {
+  "en": "Pairs VLM activity decomposition with 3D reachability and clearance checks, casting scene affordance as agent-specific physical feasibility and a reward engine.",
+  "zh_hash": "deff2094edf0"
+ },
+ "selective-contrastive-learning-for-weakly-supervised-affordance-grounding": {
+  "en": "Applies selective prototypical and pixel contrastive learning that adapts between part and object granularity, matching supervision granularity to each affordance.",
+  "zh_hash": "8ddd15228276"
+ },
+ "seqafford-sequential-3d-affordance-reasoning-via-multimodal-large-language-model": {
+  "en": "Decomposes complex instructions with an MLLM and sequentially generates 3D affordance maps, treating affordance as a step-varying state in long-horizon tasks.",
+  "zh_hash": "6e73091fab74"
+ },
+ "seqaffordsplat-scene-level-sequential-affordance-reasoning-on-3d-gaussian-splatting": {
+  "en": "Performs multi-step instruction decomposition and sequential affordance updates on 3D Gaussian splatting scenes, using the renderable representation as scene memory.",
+  "zh_hash": "46307f6a1bf6"
+ },
+ "sor3d-aff": {
+  "en": "Human-object interaction videos with affordance masks, benchmarking affordance segmentation from HOI footage and cross-dataset affordance evaluation.",
+  "zh_hash": "f4c984b60301"
+ },
+ "strap-structured-object-affordance-segmentation-with-point-supervision": {
+  "en": "Recovers dense affordance masks from sparse point labels by modeling label and spatial affinities, exploiting multi-label co-occurrence structure in a transformer.",
+  "zh_hash": "1c463914195e"
+ },
+ "task-aware-3d-affordance-segmentation-via-2d-guidance-and-geometric-refinement": {
+  "en": "Couples language-driven 2D affordance detection with 3D geometric refinement, letting semantic cues locate targets while geometry enforces physical consistency.",
+  "zh_hash": "1e6eb58759fb"
+ },
+ "text-driven-affordance-learning-from-egocentric-vision": {
+  "en": "Predicts 2D contact points and trajectories from egocentric video using text-driven supervision scaled by TextAFF80K, extending affordance labels without manual masks.",
+  "zh_hash": "43d326aae5dd"
+ },
+ "towards-affordance-aware-robotic-dexterous-grasping-with-human-like-priors": {
+  "en": "Combines human motion priors, negative-affordance segmentation, and teacher-student distillation so dexterous grasps avoid functionally forbidden regions.",
+  "zh_hash": "ab268cad43de"
+ },
+ "towards-affordance-detection-for-robot-manipulation-using-affordance-for-parts-and-parts-for-affordance": {
+  "en": "Couples part segmentation and affordance detection so each supervises the other, showing geometric part structure strongly explains object function.",
+  "zh_hash": "10b27ba2c391"
+ },
+ "tracer-texture-robust-affordance-chain-of-thought-for-deformable-object-refinement": {
+  "en": "Decomposes task semantics via tree-structured affordance chain-of-thought and refines boundaries into continuous functional regions on deformable objects.",
+  "zh_hash": "0210a1800d8f"
+ },
+ "training-agents-with-interactive-reinforcement-learning-and-contextual-affordances": {
+  "en": "Integrates contextual affordances into interactive RL to avoid failure states, showing affordances can act as prior constraints on action selection.",
+  "zh_hash": "02d05bbf7129"
+ },
+ "uad-unsupervised-affordance-distillation-for-generalization-in-robotic-manipulation": {
+  "en": "Distills VLM-generated instruction-affordance pseudo labels into a light decoder on frozen visual features, yielding task-conditioned affordance without human labels.",
+  "zh_hash": "0280ed4239aa"
+ },
+ "umd-rgb-d-part-affordance-dataset": {
+  "en": "RGB-D images of tools with pixel-wise part affordance labels, benchmarking part affordance detection/segmentation and generalization to novel tools and categories.",
+  "zh_hash": "cbf5ad9c9e0e"
+ },
+ "uniaff-a-unified-representation-of-affordances-for-tool-usage-and-articulation-with-vision-language-models": {
+  "en": "Unifies tool-use and articulation affordances with 3D motion constraints, using a VLM to infer motion type and axes for interpretable manipulation reasoning.",
+  "zh_hash": "c67aecbfe08e"
+ },
+ "unlocking-3d-affordance-segmentation-with-2d-semantic-knowledge": {
+  "en": "Transfers 2D VFM semantic affinities into a 3D encoder for prompt-aware affordance segmentation, using dense 2D relations to offset sparse, noisy point clouds.",
+  "zh_hash": "ef7cc9f0348b"
+ },
+ "vat-mart-learning-visual-action-trajectory-proposals-for-manipulating-3d-articulated-objects": {
+  "en": "Learns per-point actionability with post-contact trajectory proposals via interaction in simulation, extending affordance beyond contact points for articulated objects.",
+  "zh_hash": "c89318db4d00"
+ },
+ "vida": {
+  "en": "Videos paired with 3D geometry for video-based 3D affordance grounding, benchmarking affordance reasoning and segmentation.",
+  "zh_hash": "1b5dea82528f"
+ },
+ "videoafford-grounding-3d-affordance-from-human-object-interaction-videos-via-multimodal-large-language-model": {
+  "en": "Grounds 3D affordance from human-object interaction videos via a latent action encoder and MLLM, exploiting dynamic video as causal and temporal affordance evidence.",
+  "zh_hash": "ad37e4c39a72"
+ },
+ "visual-affordance-detection-using-an-efficient-attention-convolutional-neural-network": {
+  "en": "Embeds lightweight attention and dilated residual features in an encoder-decoder, capturing long-range multi-scale functional relations for pixel-wise affordance masks.",
+  "zh_hash": "d9b5984afc0f"
+ },
+ "visual-affordance-prediction-for-guiding-robot-exploration": {
+  "en": "Predicts plausible future states with a Transformer over a VQ-VAE latent space and samples them as exploration goals for goal-conditioned policy learning.",
+  "zh_hash": "5478baf50f3a"
+ },
+ "visual-geometric-collaborative-guidance-for-affordance-learning": {
+  "en": "Combines visual and geometric cues to mine interactive affinity from human-object interactions, adding geometric priors that improve cross-environment generalization.",
+  "zh_hash": "9a5d87c80960"
+ },
+ "voxposer-composable-3d-value-maps-for-robotic-manipulation-with-language-models": {
+  "en": "Uses LLM-written code with VLM grounding to compose 3D value maps of affordances and constraints, which a model-based planner turns into 6-DoF trajectories.",
+  "zh_hash": "a56b7a513376"
+ },
+ "weakly-supervised-affordance-detection": {
+  "en": "Learns object affordance regions from weak image-level and keypoint labels, showing affordances are learnable from incomplete annotation but lean on category priors.",
+  "zh_hash": "03a82c52ff9f"
+ },
+ "weakly-supervised-affordance-grounding-guided-by-part-level-semantic-priors": {
+  "en": "Generates and refines pseudo masks from VFM part-level semantic priors, showing part priors sharply cut pixel-annotation cost for weakly supervised grounding.",
+  "zh_hash": "5aa4376f1345"
+ },
+ "weakly-supervised-multimodal-affordance-grounding-for-egocentric-images": {
+  "en": "Fuses exocentric interaction cues with textual action descriptions to ground egocentric affordances, cutting the need for pixel-level supervision.",
+  "zh_hash": "3329a9062fcc"
+ },
+ "what-can-i-do-here-learning-new-skills-by-imagining-visual-affordances": {
+  "en": "Imagines plausible outcomes with a generative visual affordance model to direct goal-conditioned exploration, accelerating acquisition of new skills.",
+  "zh_hash": "7e5deb0af5af"
+ },
+ "where2act-from-pixels-to-actions-for-articulated-3d-objects": {
+  "en": "Predicts per-point actionability, action proposals, and success scores on articulated objects, then executes them through parameterized motion primitives.",
+  "zh_hash": "c2cccd71a3de"
+ },
+ "where2explore-few-shot-affordance-learning-for-unseen-novel-categories-of-articulated-objects": {
+  "en": "Selects informative interaction trials on cross-category similar local geometry, adapting actionability models to unseen articulated categories from few interactions.",
+  "zh_hash": "6243cc771308"
+ },
+ "worldafford-affordance-grounding-based-on-natural-language-instructions": {
+  "en": "Parses instructions into object-part-function queries and grounds them to affordance masks, an open-set interface for embodied perception.",
+  "zh_hash": "262114ca275c"
+ }
+}
