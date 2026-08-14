@@ -8,15 +8,15 @@
   },
   "marks": { "*": "Equal contribution", "‡": "Project lead", "†": "Corresponding author" },
   "authors": [
-    { "name": "Gen Li", "affils": [1], "marks": ["*", "‡"] },
-    { "name": "Hanqing Wang", "affils": [2], "marks": ["*"] },
+    { "name": "Gen Li", "affils": [1], "marks": ["*", "‡"], "url": "https://reagan1311.github.io/" },
+    { "name": "Hanqing Wang", "affils": [2], "marks": ["*"], "url": "https://hq-king.github.io/" },
     { "name": "Jingliang Li", "affils": [1], "marks": ["*"], "url": "https://jingliangli.com" },
-    { "name": "Yifan Han", "affils": [3], "marks": ["*"] },
-    { "name": "Jindou Jia", "affils": [1], "marks": [] },
-    { "name": "Tao Lin", "affils": [3], "marks": [] },
-    { "name": "Yutong Wang", "affils": [4], "marks": [] },
-    { "name": "Bo Zhao", "affils": [3], "marks": [] },
-    { "name": "Hui Xiong", "affils": [2], "marks": ["†"] },
+    { "name": "Yifan Han", "affils": [3], "marks": ["*"], "url": "https://sailing-yifan.github.io/" },
+    { "name": "Jindou Jia", "affils": [1], "marks": [], "url": "https://jiajindou.github.io/" },
+    { "name": "Tao Lin", "affils": [3], "marks": [], "url": "https://dorayakilin.github.io/" },
+    { "name": "Yutong Wang", "affils": [4], "marks": [], "url": "https://yutongwang1012.github.io/" },
+    { "name": "Bo Zhao", "affils": [3], "marks": [], "url": "https://www.bozhao.me/" },
+    { "name": "Hui Xiong", "affils": [2], "marks": ["†"], "url": "https://hkustai.github.io/" },
     { "name": "Jianfei Yang", "affils": [1], "marks": ["†"], "url": "https://marslab.tech" }
   ]
 }

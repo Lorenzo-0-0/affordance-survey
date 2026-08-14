@@ -1,10 +1,10 @@
 /* entry: boots every feature in its own try/catch — one failure never cascades */
-import { initReveal } from './reveal.js?v=14';
-import { initScrollProgress } from './scroll-progress.js?v=14';
-import { initCopyBibtex } from './copy-bibtex.js?v=14';
-import { initHeroTopo } from './hero-topo.js?v=14';
-import { initTables } from './tables.js?v=14';
-import { initExplorer } from './explorer/index.js?v=14';
+import { initReveal } from './reveal.js?v=16';
+import { initScrollProgress } from './scroll-progress.js?v=16';
+import { initCopyBibtex } from './copy-bibtex.js?v=16';
+import { initHeroTopo } from './hero-topo.js?v=16';
+import { initTables } from './tables.js?v=16';
+import { initExplorer } from './explorer/index.js?v=16';
 
 const V = document.documentElement.dataset.assetV || '1';
 const boot = (name, fn) => { try { fn(); } catch (err) { console.error(`[${name}]`, err); } };
@@ -43,18 +43,11 @@ addEventListener('load', () => boot('lenis', () => {
 /* nav scroll state + scroll-spy */
 boot('nav', () => {
   const nav = document.querySelector('.nav');
-  const hero = document.querySelector('.hero');
   const links = [...document.querySelectorAll('.nav__link')];
   const byId = Object.fromEntries(links.map((l) => [l.getAttribute('href').slice(1), l]));
-  // cache the threshold: reading hero.offsetHeight inside the scroll handler
-  // forces a synchronous layout every frame while Lenis eases
-  let threshold = 280;
-  const measure = () => { threshold = (hero?.offsetHeight || 400) - 120; };
-  measure();
-  addEventListener('load', measure);
-  addEventListener('resize', measure, { passive: true });
+  // nav is transparent over the hero top; any real scroll solidifies it
   addEventListener('scroll', () => {
-    nav.classList.toggle('is-scrolled', scrollY > threshold);
+    nav.classList.toggle('is-scrolled', scrollY > 24);
   }, { passive: true });
   const spy = new IntersectionObserver((entries) => {
     for (const e of entries) {

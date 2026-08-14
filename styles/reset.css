@@ -42,7 +42,7 @@ h1, h2, h3, h4 { line-height: var(--lh-snug); text-wrap: balance; font-weight: i
 a { color: inherit; text-decoration-color: var(--line); text-underline-offset: 3px; }
 a:hover { text-decoration-color: var(--role, var(--ink)); }
 
-::selection { background: rgba(36, 71, 197, 0.20); }
+::selection { background: rgba(106, 147, 232, 0.25); }
 
 :focus-visible {
   outline: 2px solid var(--role, var(--ink));

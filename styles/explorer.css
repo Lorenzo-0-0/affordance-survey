@@ -19,9 +19,10 @@
   display: grid;
   gap: var(--s5);
   border: 1px solid var(--hairline);
-  border-radius: var(--r-sm);
-  background: var(--paper);
-  padding: var(--s5);
+  border-radius: var(--r-md);
+  background: var(--paper-elev);
+  box-shadow: var(--shadow-soft);
+  padding: calc(var(--s5) + 4px);
   max-height: calc(100dvh - var(--nav-h) - 32px);
   overflow-y: auto;
 }
@@ -46,12 +47,17 @@
 .rail__search input {
   width: 100%;
   font-size: var(--fs-small);
-  padding: 10px 34px 10px 12px;
+  padding: 12px 34px 12px 12px;
   border: 1px solid var(--line);
   border-radius: var(--r-sm);
   background: var(--paper);
+  transition: border-color var(--d-fast) var(--ease), box-shadow var(--d-fast) var(--ease);
 }
-.rail__search input:focus { outline: none; border-color: var(--ink); }
+.rail__search input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--moss-soft);
+}
 .rail__search kbd { position: absolute; right: 9px; top: 50%; transform: translateY(-50%); color: var(--ink-faint); }
 
 .rail__group { display: grid; gap: var(--s2); }
@@ -83,7 +89,7 @@
   padding: 4px 11px;
   transition: all var(--d-fast) var(--ease);
 }
-.chip:hover { border-color: var(--line); }
+.chip:hover { border-color: var(--line); transform: translateY(-1px); }
 .chip.is-on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .rail__clear {
   font-family: var(--font-mono);
@@ -103,7 +109,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--s5);
 }
-.tree__role { border-top: 2px solid var(--role); padding-top: var(--s3); min-width: 0; }
+.tree__role { border-top: 2px solid var(--role-fill, var(--role)); padding-top: var(--s3); min-width: 0; }
 .tree__rolehead {
   display: flex;
   align-items: baseline;
@@ -116,7 +122,7 @@
 .tree__rolehead:hover, .tree__rolehead.is-on { background: var(--role-soft); }
 .tree__numeral { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.06em; color: var(--role); }
 .tree__rolename { font-family: var(--font-display); font-weight: 600; font-size: 17.5px; flex: 1; }
-.tree__question { font-size: 13px; color: var(--ink-muted); margin: var(--s2) 0 var(--s3) 4px; }
+.tree__question { font-size: 14px; color: var(--ink-muted); margin: var(--s2) 0 var(--s3) 4px; }
 .tree__family { margin-bottom: var(--s3); }
 .tree__familyname {
   display: block;
@@ -254,7 +260,7 @@
 .paper__chips { grid-area: chips; display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
 .pchip {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.04em;
   color: var(--ink-muted);
   border: 1px solid var(--hairline);

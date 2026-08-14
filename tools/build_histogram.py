@@ -10,8 +10,8 @@ SITE = Path(__file__).resolve().parent.parent
 papers = json.loads((SITE / "data" / "papers.json").read_text())
 
 ROLES = ["perception", "reasoning", "action", "datasets"]
-COLORS = {"perception": "var(--moss)", "reasoning": "var(--ochre)",
-          "action": "var(--terra)", "datasets": "var(--ink-faint)"}
+COLORS = {"perception": "var(--moss-fill)", "reasoning": "var(--ochre-fill)",
+          "action": "var(--terra-fill)", "datasets": "var(--data-fill)"}
 LABELS = {"perception": "Perception", "reasoning": "Reasoning",
           "action": "Action", "datasets": "Datasets"}
 
@@ -63,9 +63,9 @@ legend = "".join(
 svg = f'''<svg viewBox="0 0 {W} {H}" role="img" aria-label="Papers per year, stacked by role; {peak_year} peaks at {totals[peak_year]}.">
   <style>
     .hg-x, .hg-leg, .hg-peak {{ font-family: "JetBrains Mono", monospace; fill: var(--ink-muted); }}
-    .hg-x {{ font-size: 11px; letter-spacing: .04em; }}
-    .hg-leg {{ font-size: 11.5px; letter-spacing: .08em; }}
-    .hg-peak {{ font-size: 13px; fill: var(--ink); font-weight: 500; }}
+    .hg-x {{ font-size: 12px; letter-spacing: .04em; }}
+    .hg-leg {{ font-size: 12.5px; letter-spacing: .08em; }}
+    .hg-peak {{ font-size: 14px; fill: var(--ink); font-weight: 500; }}
   </style>
   <line x1="{PADL}" y1="{H - PADB}" x2="{W - PADR}" y2="{H - PADB}" stroke="var(--line)" stroke-width="1"/>
   {legend}
@@ -73,7 +73,7 @@ svg = f'''<svg viewBox="0 0 {W} {H}" role="img" aria-label="Papers per year, sta
   {''.join(labels)}
 </svg>
 <figcaption class="media-block__meta">
-  <span class="media-block__label">The corpus over time</span>
+  <span class="media-block__label">Fig. 03 · The corpus over time</span>
   <span class="media-block__caption">Surveyed methods and datasets per year, stacked by role — the field accelerates sharply after 2022, peaking in {peak_year}.</span>
 </figcaption>'''
 

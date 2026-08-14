@@ -1,9 +1,9 @@
 /* components: role binding, hero, cards, shifts, challenges, bib, tables */
 
-/* ---- role accent binding ---- */
-.role-perception { --role: var(--moss);  --role-soft: var(--moss-soft);  --role-line: var(--moss-line); }
-.role-reasoning  { --role: var(--ochre); --role-soft: var(--ochre-soft); --role-line: var(--ochre-line); }
-.role-action     { --role: var(--terra); --role-soft: var(--terra-soft); --role-line: var(--terra-line); }
+/* ---- role accent binding (two-tier: --role text, --role-fill decor) ---- */
+.role-perception { --role: var(--moss);  --role-fill: var(--moss-fill);  --role-soft: var(--moss-soft);  --role-line: var(--moss-line); }
+.role-reasoning  { --role: var(--ochre); --role-fill: var(--ochre-fill); --role-soft: var(--ochre-soft); --role-line: var(--ochre-line); }
+.role-action     { --role: var(--terra); --role-fill: var(--terra-fill); --role-soft: var(--terra-soft); --role-line: var(--terra-line); }
 
 /* ============================ HERO ============================ */
 .hero {
@@ -28,11 +28,11 @@
 .hero__topo {
   position: absolute;
   inset: 0;
-  opacity: 0.62;
+  opacity: 0.66;
   pointer-events: none;
-  /* clear well behind the centered masthead; wires live at the periphery */
-  mask-image: radial-gradient(52% 46% at 50% 42%, transparent 44%, #000 76%);
-  -webkit-mask-image: radial-gradient(52% 46% at 50% 42%, transparent 44%, #000 76%);
+  /* continuous falloff: a whisper behind the masthead, full at the frame */
+  mask-image: radial-gradient(75% 68% at 50% 40%, transparent 6%, rgba(0, 0, 0, 0.10) 26%, rgba(0, 0, 0, 0.34) 48%, rgba(0, 0, 0, 0.66) 66%, #000 84%);
+  -webkit-mask-image: radial-gradient(75% 68% at 50% 40%, transparent 6%, rgba(0, 0, 0, 0.10) 26%, rgba(0, 0, 0, 0.34) 48%, rgba(0, 0, 0, 0.66) 66%, #000 84%);
 }
 .hero__topo svg { width: 100%; height: 100%; display: block; }
 
@@ -86,23 +86,23 @@
   letter-spacing: 0.08em;
   color: var(--ink-muted);
 }
-.hero__epigraph cite span { font-style: italic; font-family: var(--font-body); font-size: 12px; }
+.hero__epigraph cite span { font-style: italic; font-family: var(--font-body); font-size: 13px; }
 
 /* masthead roster: measures tighten as the type gets smaller */
 .hero__authors {
   font-size: 16px;
   line-height: 2;
-  max-width: 1000px;
+  max-width: 880px;
   margin-inline: auto;
   color: var(--ink);
 }
 .hero__authors .author { white-space: nowrap; margin: 0 0.45em; }
 .hero__authors a {
-  text-decoration-color: rgba(22, 24, 29, 0.25);
+  text-decoration-color: rgba(22, 24, 29, 0.18);
   transition: color var(--d-fast) var(--ease), text-decoration-color var(--d-fast) var(--ease);
 }
 .hero__authors a:hover { color: var(--accent); text-decoration-color: var(--accent); }
-.hero__authors sup { font-size: 0.68em; color: var(--moss); font-weight: 600; margin-left: 1px; }
+.hero__authors sup { font-size: 0.72em; color: var(--moss); font-weight: 600; margin-left: 1px; }
 .hero__affils, .hero__marks {
   margin-top: var(--s3);
   margin-inline: auto;
@@ -152,12 +152,12 @@
   background: var(--moss);
   color: var(--paper-elev);
   border-color: var(--moss);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 10px 26px -12px rgba(36, 71, 197, 0.45);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 10px 26px -12px rgba(61, 99, 194, 0.45);
 }
 .btn--primary:hover {
   background: var(--moss-deep);
   border-color: var(--moss-deep);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 16px 38px -14px rgba(36, 71, 197, 0.55);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 16px 38px -14px rgba(61, 99, 194, 0.55);
 }
 .btn--disabled { color: var(--ink-faint); border-style: dashed; background: transparent; box-shadow: none; cursor: default; }
 .btn--disabled:hover { transform: none; border-color: var(--border-strong); background: transparent; box-shadow: none; }
@@ -206,52 +206,82 @@
   color: var(--ink-muted);
 }
 
-/* ============================ ROLE CARDS ============================ */
+/* ============================ ROLE COLUMNS (editorial, unboxed) ============================ */
 .roles {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--s5);
   margin-top: var(--s8);
+  border-top: 1px solid var(--line);
 }
 .role-card {
   display: block;
   position: relative;
   text-decoration: none;
-  border: 1px solid var(--hairline);
-  border-top: 2px solid var(--role);
-  border-radius: var(--r-sm);
-  background: var(--paper);
-  padding: var(--s5);
-  transition: transform var(--d-base) var(--ease), box-shadow var(--d-base) var(--ease);
+  padding: var(--s6) var(--s5) var(--s5);
+  transition: background var(--d-base) var(--ease);
 }
-.role-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+.role-card + .role-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: var(--s5);
+  bottom: var(--s4);
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--border-strong) 24%, var(--border-strong) 76%, transparent);
+}
+.role-card:hover { background: var(--role-soft); }
 .role-card__num {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
   font-family: var(--font-mono);
-  font-size: 13.5px;
-  letter-spacing: 0.08em;
+  font-size: 13px;
+  letter-spacing: 0.14em;
   color: var(--role);
+}
+.role-card__num::after {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: var(--role-line);
 }
 .role-card h3 {
   font-family: var(--font-display);
-  font-size: var(--fs-h3);
+  font-size: clamp(24px, 2.4vw, 30px);
   font-weight: 600;
-  margin: var(--s2) 0 var(--s3);
+  letter-spacing: -0.01em;
+  margin: var(--s4) 0 var(--s3);
+  min-height: 2.5em;
+}
+@media (max-width: 760px) {
+  .role-card h3 { min-height: 0; }
 }
 .role-card__q {
-  font-family: var(--font-display);
-  font-size: 16.5px;
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 17px;
+  font-weight: 400;
   color: var(--ink-soft);
   margin-bottom: var(--s3);
+  max-width: 30ch;
 }
-.role-card__desc { font-size: var(--fs-small); color: var(--ink-muted); margin-bottom: var(--s5); }
+.role-card__desc { font-size: var(--fs-small); color: var(--ink-muted); margin-bottom: var(--s5); max-width: 34ch; }
 .role-card__link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
   font-family: var(--font-mono);
-  font-size: var(--fs-micro);
+  font-size: 12.5px;
   letter-spacing: var(--track-wide);
   text-transform: uppercase;
   color: var(--role);
+  border-bottom: 1px solid var(--role-line);
+  padding-bottom: 2px;
+  transition: border-color var(--d-fast) var(--ease);
 }
+.role-card__link .arr { display: inline-block; transition: transform var(--d-base) var(--ease-out); }
+.role-card:hover .role-card__link { border-bottom-color: var(--role); }
+.role-card:hover .role-card__link .arr { transform: translateX(4px); }
 
 /* ============================ ABSTRACT ============================ */
 .abstract { columns: 2; column-gap: var(--s7); max-width: 100%; }
@@ -300,7 +330,7 @@
   gap: var(--s5);
 }
 .www-card {
-  border-left: 2px solid var(--role);
+  border-left: 2px solid var(--role-fill, var(--role));
   padding: var(--s2) 0 var(--s2) var(--s4);
 }
 .www-card__sym {
@@ -355,7 +385,7 @@
   font-size: 16.5px;
   font-weight: 600;
 }
-.shift p { font-size: 12.5px; color: var(--ink-muted); line-height: 1.55; margin-top: var(--s2); }
+.shift p { font-size: 13.5px; color: var(--ink-muted); line-height: 1.55; margin-top: var(--s2); }
 
 .corpus-chart { margin-block: var(--s8); }
 .corpus-chart svg { width: 100%; height: auto; }
@@ -522,7 +552,7 @@ kbd {
   padding-block: 5px;
 }
 .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; }
-.dot--on  { background: var(--role, var(--ink)); }
+.dot--on  { background: var(--role-fill, var(--role, var(--ink))); }
 .dot--off { border: 1px solid var(--line); }
 .td-c { text-align: center; }
 .ctable .link-cell a { text-decoration: none; color: inherit; border-bottom: 1px dashed var(--line); }
@@ -543,7 +573,9 @@ kbd {
   .shift:nth-child(odd) { transform: none; }
 }
 @media (max-width: 760px) {
-  .roles { grid-template-columns: 1fr; }
+  .roles { grid-template-columns: 1fr; border-top: none; }
+  .role-card { padding-inline: 0; border-top: 1px solid var(--line); }
+  .role-card + .role-card::before { display: none; }
   .whatwherehow { grid-template-columns: 1fr; gap: var(--s4); }
   .challenges { grid-template-columns: 1fr; }
   .shifts {

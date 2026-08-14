@@ -12,9 +12,9 @@ export function initHeroTopo() {
 
   // theme-driven: read palette from CSS variables so the topology follows tokens.css
   const css = getComputedStyle(document.documentElement);
-  const EDGE = (css.getPropertyValue('--border-strong') || '#B9C2CD').trim();
-  const PULSE = (css.getPropertyValue('--accent') || '#4F46E5').trim();
-  const SPARK = (css.getPropertyValue('--accent-spark') || '#22D3EE').trim();
+  const EDGE = (css.getPropertyValue('--border-strong') || '#C4CBD6').trim();
+  const PULSE = (css.getPropertyValue('--accent') || '#3D63C2').trim();
+  const SPARK = (css.getPropertyValue('--accent-spark') || '#A9C2F8').trim();
 
   const NS = 'http://www.w3.org/2000/svg';
   const mk = (tag, attrs) => {
