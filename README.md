@@ -3,6 +3,8 @@
 Project page for **“From Passive Perception to Active Interaction: A Survey of Affordance
 Learning for Embodied AI”** (MARS Lab, NTU · HKUST-GZ · SJTU · USyd).
 
+**Live: https://jingliangli.com/affordance-survey/**
+
 Pure static site — no bundler, no framework; one CDN dependency (Lenis smooth-scroll).
 Deployable at any subpath (relative URLs throughout).
 
@@ -11,10 +13,11 @@ Deployable at any subpath (relative URLs throughout).
 - `index.html` — single page. Two generated blocks live between HTML markers:
   `AUTHORS` (from `tools/authors.json`) and `HISTOGRAM` (from `data/papers.json`).
   Never edit those blocks by hand.
-- `styles/` — `tokens.css` holds every design variable (「瓷与钴」 porcelain-cobalt
-  palette; NOTE: the role tokens keep their legacy names `--moss/--ochre/--terra`
-  but now hold cobalt / gold / vermilion — renaming them would break the baked
-  HISTOGRAM block); the other files consume it.
+- `styles/` — `tokens.css` holds every design variable (「粉彩双档」 two-tier pastel
+  palette: DEEP tier for text/links, PASTEL `-fill` tier for chart fills; NOTE: the
+  role tokens keep their legacy names `--moss/--ochre/--terra` but hold cornflower /
+  celadon / coral — renaming them would break the baked HISTOGRAM block); the other
+  files consume it.
 - `scripts/` — vanilla ES modules. `main.js` is the only versioned entry.
   `hero-topo.js` draws the hero topology backdrop (seeded layout, colors read from
   CSS tokens at init; single rAF, dash-offset writes only, IO pause offscreen).
@@ -47,9 +50,8 @@ tools/build_all.sh --src /path/to/paper_src   # the Overleaf/LaTeX source direct
 
 `.claude/launch.json` (in `mac_vis_pack/`) has an `affordance-survey` entry → port 8470.
 
-## Before deploy (open items)
+## Open items
 
-- canonical + `og:url`: the paper's declared `ntumars.github.io/wm-robot-survey/` slug is
-  stale — decide the final URL (marked `TODO` in `index.html` head).
-- BibTeX carries `arXiv:XXXX.XXXXX` placeholder until the arXiv ID exists.
+- BibTeX carries `arXiv:XXXX.XXXXX` placeholder until the arXiv ID exists (also gate
+  the disabled hero arXiv button on release).
 - No HuggingFace link in the paper source yet (logo asset exists if one appears).
