@@ -24,9 +24,9 @@ body::before {
   position: fixed;
   inset: 0;
   background-image: var(--grain);
-  background-size: 140px 140px;
+  background-size: 160px 160px;
   mix-blend-mode: multiply;
-  opacity: 0.32;
+  opacity: 0.3;
   pointer-events: none;
   z-index: 0;
 }
@@ -42,7 +42,7 @@ h1, h2, h3, h4 { line-height: var(--lh-snug); text-wrap: balance; font-weight: i
 a { color: inherit; text-decoration-color: var(--line); text-underline-offset: 3px; }
 a:hover { text-decoration-color: var(--role, var(--ink)); }
 
-::selection { background: rgba(192, 138, 45, 0.28); }
+::selection { background: rgba(36, 71, 197, 0.20); }
 
 :focus-visible {
   outline: 2px solid var(--role, var(--ink));

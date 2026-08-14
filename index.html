@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-asset-v="12" class="no-js">
+<html lang="en" data-asset-v="14" class="no-js">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="light" />
-  <meta name="theme-color" content="#F7F8F5" />
+  <meta name="theme-color" content="#F7F8FA" />
   <title>From Passive Perception to Active Interaction · A Survey of Affordance Learning for Embodied AI</title>
   <meta name="description" content="A unified survey of affordance learning for embodied AI: affordance perception, affordance reasoning, and affordance-guided action — 189 methods, 34 datasets, from Gibson 1979 to today." />
   <!-- TODO: final deploy URL — the paper's declared ntumars.github.io/wm-robot-survey/ slug is stale; set canonical + og:url before deploy -->
@@ -16,12 +16,12 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="styles/tokens.css?v=12" />
-  <link rel="stylesheet" href="styles/reset.css?v=12" />
-  <link rel="stylesheet" href="styles/layout.css?v=12" />
-  <link rel="stylesheet" href="styles/components.css?v=12" />
-  <link rel="stylesheet" href="styles/explorer.css?v=12" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles/tokens.css?v=14" />
+  <link rel="stylesheet" href="styles/reset.css?v=14" />
+  <link rel="stylesheet" href="styles/layout.css?v=14" />
+  <link rel="stylesheet" href="styles/components.css?v=14" />
+  <link rel="stylesheet" href="styles/explorer.css?v=14" />
   <script>document.documentElement.classList.remove('no-js');</script>
 </head>
 <body>
@@ -44,232 +44,12 @@
 
   <!-- ============================ HERO ============================ -->
   <header id="top" class="hero">
-    <!-- OBJECT-FIELD:START (hand-authored line art — bespoke artwork, edit by hand; no build tool) -->
-    <div class="hero__field" aria-hidden="true">
-      <svg class="field field--desktop" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <radialGradient id="fglow-moss"><stop offset="0%" stop-color="#3d5a45" stop-opacity="0.7"/><stop offset="62%" stop-color="#3d5a45" stop-opacity="0.26"/><stop offset="100%" stop-color="#3d5a45" stop-opacity="0"/></radialGradient>
-          <radialGradient id="fglow-ochre"><stop offset="0%" stop-color="#c08a2d" stop-opacity="0.72"/><stop offset="62%" stop-color="#c08a2d" stop-opacity="0.28"/><stop offset="100%" stop-color="#c08a2d" stop-opacity="0"/></radialGradient>
-          <radialGradient id="fglow-terra"><stop offset="0%" stop-color="#b4552d" stop-opacity="0.7"/><stop offset="62%" stop-color="#b4552d" stop-opacity="0.26"/><stop offset="100%" stop-color="#b4552d" stop-opacity="0"/></radialGradient>
-        </defs>
-
-        <!-- door handle · TURN -->
-        <g class="fobj" data-obj="door-handle" transform="translate(120 150) scale(0.9)">
-          <circle class="fobj__glow" data-action="turn" cx="140" cy="100" r="64" fill="url(#fglow-ochre)" opacity="0"/>
-          <g class="fobj__rings fspot--ochre" data-action="turn" opacity="0">
-            <circle cx="140" cy="100" r="32" stroke-width="1.2"/>
-            <circle cx="140" cy="100" r="48" stroke-width="0.8"/>
-          </g>
-          <g class="fobj__art" stroke-width="2.2">
-            <circle cx="70" cy="100" r="34"/>
-            <circle cx="70" cy="100" r="27" stroke-width="1.2" opacity="0.5"/>
-            <circle cx="70" cy="100" r="10" stroke-width="1.8"/>
-            <path d="M79 92 C118 84 156 84 174 90 C183 93 183 107 174 110 C156 116 118 116 82 108"/>
-            <path d="M174 90 C180 96 180 104 174 110" stroke-width="1.6"/>
-          </g>
-          <g class="fobj__label fspot--ochre" data-action="turn" opacity="0">
-            <line x1="152" y1="82" x2="176" y2="46"/>
-            <text class="fobj__verb" x="140" y="34">TURN</text>
-            <text class="fobj__sub" x="140" y="34" dy="15">lever</text>
-          </g>
-          <circle class="fobj__hit" data-action="turn" cx="140" cy="100" r="88"/>
-        </g>
-
-        <!-- mug · GRASP -->
-        <g class="fobj" data-obj="mug" transform="translate(90 430) scale(0.95)">
-          <circle class="fobj__glow" data-action="grasp-mug" cx="184" cy="110" r="62" fill="url(#fglow-moss)" opacity="0"/>
-          <g class="fobj__rings fspot--moss" data-action="grasp-mug" opacity="0">
-            <circle cx="184" cy="110" r="30" stroke-width="1.2"/>
-            <circle cx="184" cy="110" r="46" stroke-width="0.8"/>
-          </g>
-          <g class="fobj__art" stroke-width="2.2">
-            <path d="M40 42 C40 32 62 26 100 26 C138 26 160 32 160 42 C160 52 138 58 100 58 C62 58 40 52 40 42"/>
-            <path d="M40 44 C38 92 42 132 52 152 C62 168 138 168 148 152 C158 132 162 92 160 44"/>
-            <path d="M56 50 C76 57 124 57 144 50" stroke-width="1.2" opacity="0.5"/>
-            <path d="M160 74 C196 72 210 94 206 114 C202 136 182 148 156 148"/>
-            <path d="M160 86 C186 86 194 100 191 113 C188 128 176 136 157 136" stroke-width="1.6"/>
-            <path d="M64 178 L136 178" stroke-width="1" opacity="0.28"/>
-          </g>
-          <g class="fobj__label fspot--moss" data-action="grasp-mug" opacity="0">
-            <line x1="196" y1="86" x2="216" y2="52"/>
-            <text class="fobj__verb" x="180" y="40">GRASP</text>
-            <text class="fobj__sub" x="180" y="40" dy="15">handle</text>
-          </g>
-          <circle class="fobj__hit" data-action="grasp-mug" cx="184" cy="110" r="86"/>
-        </g>
-
-        <!-- scissors · CUT -->
-        <g class="fobj" data-obj="scissors" transform="translate(110 700) scale(0.95)">
-          <circle class="fobj__glow" data-action="cut" cx="118" cy="100" r="64" fill="url(#fglow-terra)" opacity="0"/>
-          <g class="fobj__rings fspot--terra" data-action="cut" opacity="0">
-            <circle cx="118" cy="100" r="32" stroke-width="1.2"/>
-            <circle cx="118" cy="100" r="48" stroke-width="0.8"/>
-          </g>
-          <g class="fobj__art" stroke-width="2.2">
-            <path d="M100 100 L182 58"/>
-            <path d="M104 92 C132 80 160 68 182 58" stroke-width="1.6"/>
-            <path d="M100 100 L182 142"/>
-            <path d="M104 108 C132 120 160 132 182 142" stroke-width="1.6"/>
-            <circle cx="100" cy="100" r="5" stroke-width="1.8"/>
-            <path d="M94 96 L64 78"/>
-            <path d="M94 104 L64 122"/>
-            <circle cx="46" cy="68" r="20"/>
-            <circle cx="46" cy="132" r="20"/>
-          </g>
-          <g class="fobj__label fspot--terra" data-action="cut" opacity="0">
-            <line x1="130" y1="84" x2="152" y2="44"/>
-            <text class="fobj__verb" x="120" y="32">CUT</text>
-            <text class="fobj__sub" x="120" y="32" dy="15">blades</text>
-          </g>
-          <circle class="fobj__hit" data-action="cut" cx="118" cy="100" r="90"/>
-        </g>
-
-        <!-- light switch · FLIP -->
-        <g class="fobj" data-obj="switch" transform="translate(1370 140) scale(0.9)">
-          <circle class="fobj__glow" data-action="flip" cx="100" cy="90" r="60" fill="url(#fglow-terra)" opacity="0"/>
-          <g class="fobj__rings fspot--terra" data-action="flip" opacity="0">
-            <circle cx="100" cy="90" r="30" stroke-width="1.2"/>
-            <circle cx="100" cy="90" r="46" stroke-width="0.8"/>
-          </g>
-          <g class="fobj__art" stroke-width="2.2">
-            <rect x="56" y="28" width="88" height="144" rx="10"/>
-            <rect x="84" y="82" width="32" height="44" rx="4" stroke-width="1.6"/>
-            <path d="M94 100 L94 66 C94 60 106 60 106 66 L106 100"/>
-            <circle cx="100" cy="48" r="3.5" stroke-width="1.4"/>
-            <circle cx="100" cy="152" r="3.5" stroke-width="1.4"/>
-          </g>
-          <g class="fobj__label fspot--terra" data-action="flip" opacity="0">
-            <line x1="118" y1="74" x2="148" y2="44"/>
-            <text class="fobj__verb" x="126" y="32">FLIP</text>
-            <text class="fobj__sub" x="126" y="32" dy="15">toggle</text>
-          </g>
-          <circle class="fobj__hit" data-action="flip" cx="100" cy="92" r="88"/>
-        </g>
-
-        <!-- teapot · POUR + GRASP (the returning protagonist) -->
-        <g class="fobj" data-obj="teapot" transform="translate(1215 380) scale(0.56)">
-          <circle class="fobj__glow" data-action="pour" cx="142" cy="216" r="92" fill="url(#fglow-ochre)" opacity="0"/>
-          <circle class="fobj__glow" data-action="grasp-teapot" cx="568" cy="330" r="98" fill="url(#fglow-moss)" opacity="0"/>
-          <g class="fobj__rings fspot--ochre" data-action="pour" opacity="0">
-            <circle cx="142" cy="216" r="46" stroke-width="1.6"/>
-            <circle cx="142" cy="216" r="70" stroke-width="1"/>
-          </g>
-          <g class="fobj__rings fspot--moss" data-action="grasp-teapot" opacity="0">
-            <circle cx="568" cy="330" r="50" stroke-width="1.6"/>
-            <circle cx="568" cy="330" r="76" stroke-width="1"/>
-          </g>
-          <g class="fobj__art" stroke-width="2.4">
-            <circle cx="360" cy="150" r="11"/>
-            <path d="M360 161 C360 168 360 172 360 176" stroke-width="1.6"/>
-            <path d="M298 208 C306 182 330 176 360 176 C390 176 414 182 422 208"/>
-            <path d="M290 212 C314 204 406 204 430 212" stroke-width="1.6"/>
-            <path d="M296 214 C258 238 218 274 214 330 C210 396 258 456 300 470 C340 483 380 483 420 470 C462 456 510 396 506 330 C502 274 462 238 424 214"/>
-            <path d="M262 292 C252 318 254 352 268 382" stroke-width="1.2" opacity="0.5"/>
-            <path d="M312 476 C330 481 390 481 408 476" stroke-width="1.8"/>
-            <path d="M322 488 C340 492 380 492 398 488" stroke-width="1.4"/>
-            <path d="M236 262 C202 250 170 232 146 206 C142 202 138 199 137 197"/>
-            <path d="M244 302 C210 290 178 262 145 218" stroke-width="2.2"/>
-            <path d="M137 197 C141 203 144 210 145 218" stroke-width="1.7"/>
-            <path d="M502 258 C556 258 596 292 594 336 C592 378 556 406 512 410"/>
-            <path d="M506 282 C544 284 570 306 568 336 C566 364 542 384 514 388" stroke-width="1.8"/>
-            <path d="M150 522 L570 522" stroke-width="1" opacity="0.28"/>
-          </g>
-          <g class="fobj__label fspot--ochre" data-action="pour" opacity="0">
-            <line x1="128" y1="190" x2="104" y2="150" stroke-width="1.8"/>
-            <text class="fobj__verb" x="46" y="134" font-size="22" letter-spacing="3.5">POUR</text>
-            <text class="fobj__sub" x="46" y="134" dy="26" font-size="17">spout</text>
-          </g>
-          <g class="fobj__label fspot--moss" data-action="grasp-teapot" opacity="0">
-            <line x1="600" y1="296" x2="628" y2="252" stroke-width="1.8"/>
-            <text class="fobj__verb" x="600" y="236" text-anchor="end" font-size="22" letter-spacing="3.5">GRASP</text>
-            <text class="fobj__sub" x="600" y="236" dy="26" text-anchor="end" font-size="17">handle</text>
-          </g>
-          <circle class="fobj__hit" data-action="pour" cx="142" cy="216" r="130"/>
-          <circle class="fobj__hit" data-action="grasp-teapot" cx="568" cy="330" r="140"/>
-        </g>
-
-        <!-- chair · SIT -->
-        <g class="fobj" data-obj="chair" transform="translate(1405 710) scale(0.82)">
-          <circle class="fobj__glow" data-action="sit" cx="114" cy="106" r="64" fill="url(#fglow-moss)" opacity="0"/>
-          <g class="fobj__rings fspot--moss" data-action="sit" opacity="0">
-            <circle cx="114" cy="106" r="32" stroke-width="1.2"/>
-            <circle cx="114" cy="106" r="48" stroke-width="0.8"/>
-          </g>
-          <g class="fobj__art" stroke-width="2.2">
-            <path d="M74 18 C68 52 66 82 66 112"/>
-            <path d="M86 20 C80 52 78 80 78 108" stroke-width="1.6"/>
-            <path d="M74 18 C94 14 108 14 118 18" stroke-width="1.8"/>
-            <path d="M66 112 C96 106 138 106 162 112"/>
-            <path d="M66 122 C96 116 138 116 162 122" stroke-width="1.6"/>
-            <path d="M66 112 L66 122 M162 112 L162 122" stroke-width="1.6"/>
-            <path d="M70 122 L64 178"/>
-            <path d="M156 122 L162 178"/>
-            <path d="M110 122 L112 172" stroke-width="1.2" opacity="0.5"/>
-            <path d="M40 184 L188 184" stroke-width="1" opacity="0.28"/>
-          </g>
-          <g class="fobj__label fspot--moss" data-action="sit" opacity="0">
-            <line x1="128" y1="96" x2="154" y2="60"/>
-            <text class="fobj__verb" x="134" y="48">SIT</text>
-            <text class="fobj__sub" x="134" y="48" dy="15">seat</text>
-          </g>
-          <circle class="fobj__hit" data-action="sit" cx="114" cy="110" r="88"/>
-        </g>
-      </svg>
-
-      <svg class="field field--mobile" viewBox="0 0 800 1400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <radialGradient id="fglow-moss-m"><stop offset="0%" stop-color="#3d5a45" stop-opacity="0.7"/><stop offset="62%" stop-color="#3d5a45" stop-opacity="0.26"/><stop offset="100%" stop-color="#3d5a45" stop-opacity="0"/></radialGradient>
-          <radialGradient id="fglow-ochre-m"><stop offset="0%" stop-color="#c08a2d" stop-opacity="0.72"/><stop offset="62%" stop-color="#c08a2d" stop-opacity="0.28"/><stop offset="100%" stop-color="#c08a2d" stop-opacity="0"/></radialGradient>
-          <radialGradient id="fglow-terra-m"><stop offset="0%" stop-color="#b4552d" stop-opacity="0.7"/><stop offset="62%" stop-color="#b4552d" stop-opacity="0.26"/><stop offset="100%" stop-color="#b4552d" stop-opacity="0"/></radialGradient>
-        </defs>
-
-        <!-- teapot · POUR + GRASP — the lone protagonist on small screens:
-             the hero is ~3.4× taller than the viewBox is wide here, so slice
-             cropping only leaves the x∈[~210,590] band usable -->
-        <g class="fobj" data-obj="teapot" transform="translate(200 1100) scale(0.52)">
-          <circle class="fobj__glow" data-action="pour" cx="142" cy="216" r="100" fill="url(#fglow-ochre-m)" opacity="0"/>
-          <circle class="fobj__glow" data-action="grasp-teapot" cx="568" cy="330" r="105" fill="url(#fglow-moss-m)" opacity="0"/>
-          <g class="fobj__rings fspot--ochre" data-action="pour" opacity="0">
-            <circle cx="142" cy="216" r="50" stroke-width="1.8"/>
-            <circle cx="142" cy="216" r="76" stroke-width="1.2"/>
-          </g>
-          <g class="fobj__rings fspot--moss" data-action="grasp-teapot" opacity="0">
-            <circle cx="568" cy="330" r="54" stroke-width="1.8"/>
-            <circle cx="568" cy="330" r="82" stroke-width="1.2"/>
-          </g>
-          <g class="fobj__art" stroke-width="3.2">
-            <circle cx="360" cy="150" r="11"/>
-            <path d="M360 161 C360 168 360 172 360 176" stroke-width="2"/>
-            <path d="M298 208 C306 182 330 176 360 176 C390 176 414 182 422 208"/>
-            <path d="M290 212 C314 204 406 204 430 212" stroke-width="2"/>
-            <path d="M296 214 C258 238 218 274 214 330 C210 396 258 456 300 470 C340 483 380 483 420 470 C462 456 510 396 506 330 C502 274 462 238 424 214"/>
-            <path d="M262 292 C252 318 254 352 268 382" stroke-width="1.6" opacity="0.5"/>
-            <path d="M312 476 C330 481 390 481 408 476" stroke-width="2.2"/>
-            <path d="M322 488 C340 492 380 492 398 488" stroke-width="1.8"/>
-            <path d="M236 262 C202 250 170 232 146 206 C142 202 138 199 137 197"/>
-            <path d="M244 302 C210 290 178 262 145 218" stroke-width="2.8"/>
-            <path d="M137 197 C141 203 144 210 145 218" stroke-width="2.1"/>
-            <path d="M502 258 C556 258 596 292 594 336 C592 378 556 406 512 410"/>
-            <path d="M506 282 C544 284 570 306 568 336 C566 364 542 384 514 388" stroke-width="2.2"/>
-            <path d="M150 522 L570 522" stroke-width="1.4" opacity="0.28"/>
-          </g>
-          <g class="fobj__label fspot--ochre" data-action="pour" opacity="0">
-            <line x1="128" y1="190" x2="112" y2="158" stroke-width="2"/>
-            <text class="fobj__verb" x="84" y="140" font-size="26" letter-spacing="4">POUR</text>
-          </g>
-          <g class="fobj__label fspot--moss" data-action="grasp-teapot" opacity="0">
-            <line x1="600" y1="296" x2="628" y2="256" stroke-width="2"/>
-            <text class="fobj__verb" x="610" y="240" text-anchor="end" font-size="26" letter-spacing="4">GRASP</text>
-          </g>
-          <circle class="fobj__hit" data-action="pour" cx="142" cy="216" r="150"/>
-          <circle class="fobj__hit" data-action="grasp-teapot" cx="568" cy="330" r="160"/>
-        </g>
-      </svg>
+    <div class="hero__topo" aria-hidden="true">
+      <svg id="hero-topo" preserveAspectRatio="xMidYMid slice"></svg>
     </div>
-    <!-- OBJECT-FIELD:END -->
 
     <div class="container hero__inner">
-      <p class="hero__eyebrow" data-reveal><span class="legend-dots"><i class="ld ld--moss"></i><i class="ld ld--ochre"></i><i class="ld ld--terra"></i></span>Survey · Affordance Learning for Embodied AI</p>
+      <p class="hero__eyebrow" data-reveal>Survey · Affordance Learning for Embodied AI</p>
       <h1 class="hero__title" data-reveal style="--reveal-delay:60ms">
         <span class="hero__title-passive">From Passive Perception</span><br />
         <span class="hero__title-active">to Active Interaction</span>
@@ -311,10 +91,6 @@
         <li class="stat"><strong>1979→2026</strong><span>references span</span></li>
       </ul>
 
-      <p class="hero__tagline" data-reveal style="--reveal-delay:360ms">
-        <span class="hero__tagline-desktop">Move your cursor toward the objects — perception becomes interaction.</span>
-        <span class="hero__tagline-touch">Touch the objects — perception becomes interaction.</span>
-      </p>
     </div>
   </header>
 
@@ -378,8 +154,8 @@
       <figure class="media-block" data-reveal>
         <div class="media-block__chrome">
           <picture>
-            <source type="image/webp" srcset="assets/images/overview.webp?v=12" />
-            <img src="assets/images/overview.png?v=12" width="2536" height="673" loading="lazy"
+            <source type="image/webp" srcset="assets/images/overview.webp?v=14" />
+            <img src="assets/images/overview.png?v=14" width="2536" height="673" loading="lazy"
                  alt="Overview taxonomy figure: affordance perception, affordance reasoning, and affordance-guided action, each expanded into its families and leaf categories." />
           </picture>
         </div>
@@ -433,8 +209,8 @@
       <figure class="media-block" data-reveal>
         <div class="media-block__chrome">
           <picture>
-            <source type="image/webp" srcset="assets/images/timeline.webp?v=12" />
-            <img src="assets/images/timeline.png?v=12" width="2778" height="1326" loading="lazy"
+            <source type="image/webp" srcset="assets/images/timeline.webp?v=14" />
+            <img src="assets/images/timeline.png?v=14" width="2778" height="1326" loading="lazy"
                  alt="Timeline of representative advances and paradigm shifts in affordance learning for embodied AI." />
           </picture>
         </div>
@@ -538,7 +314,7 @@
     <div class="container">
       <div class="footer__row">
         <div class="footer__brand">
-          <img src="assets/images/mars_lablogo.png?v=12" width="132" height="46" alt="MARS Lab, Nanyang Technological University" />
+          <img src="assets/images/mars_lablogo.png?v=14" width="132" height="46" alt="MARS Lab, Nanyang Technological University" />
         </div>
         <ul class="footer__links">
           <li><a href="https://github.com/hq-King/Awesome-Affordance-Learning" target="_blank" rel="noopener">Awesome-Affordance-Learning ↗</a></li>
@@ -548,11 +324,11 @@
           <li><a href="#top">Back to top ↑</a></li>
         </ul>
       </div>
-      <p class="footer__colophon">Set in Fraunces, Inter &amp; JetBrains Mono · corpus regenerated from the paper source · plate backgrounds surveyed, not painted</p>
+      <p class="footer__colophon">Set in Space Grotesk, Inter Tight &amp; JetBrains Mono · corpus regenerated from the paper source</p>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
-  <script type="module" src="scripts/main.js?v=12"></script>
+  <script type="module" src="scripts/main.js?v=14"></script>
 </body>
 </html>

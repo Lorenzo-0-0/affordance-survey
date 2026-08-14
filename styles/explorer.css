@@ -89,9 +89,10 @@
   font-family: var(--font-mono);
   font-size: var(--fs-micro);
   letter-spacing: 0.06em;
-  color: var(--terra);
+  color: var(--ink-muted);
   text-align: left;
 }
+.rail__clear:hover { color: var(--ink); }
 .rail__status { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--ink-muted); letter-spacing: 0.06em; }
 
 /* ---- main: tree + list ---- */
@@ -113,8 +114,8 @@
   border-radius: var(--r-xs);
 }
 .tree__rolehead:hover, .tree__rolehead.is-on { background: var(--role-soft); }
-.tree__numeral { font-family: var(--font-display); font-style: italic; font-size: 16px; color: var(--role); }
-.tree__rolename { font-family: var(--font-display); font-weight: 560; font-size: 17.5px; flex: 1; }
+.tree__numeral { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.06em; color: var(--role); }
+.tree__rolename { font-family: var(--font-display); font-weight: 600; font-size: 17.5px; flex: 1; }
 .tree__question { font-size: 13px; color: var(--ink-muted); margin: var(--s2) 0 var(--s3) 4px; }
 .tree__family { margin-bottom: var(--s3); }
 .tree__familyname {

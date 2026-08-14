@@ -10,14 +10,14 @@ Deployable at any subpath (relative URLs throughout).
 
 - `index.html` — single page. Two generated blocks live between HTML markers:
   `AUTHORS` (from `tools/authors.json`) and `HISTOGRAM` (from `data/papers.json`).
-  Never edit those blocks by hand. The `OBJECT-FIELD` block (hero line-art objects)
-  is hand-authored artwork — edit it directly, there is no build tool for it.
-- `styles/` — `tokens.css` holds every design variable (青白瓷 cool-porcelain palette,
-  role accents, type, grain); the other files consume it.
+  Never edit those blocks by hand.
+- `styles/` — `tokens.css` holds every design variable (「瓷与钴」 porcelain-cobalt
+  palette; NOTE: the role tokens keep their legacy names `--moss/--ochre/--terra`
+  but now hold cobalt / gold / vermilion — renaming them would break the baked
+  HISTOGRAM block); the other files consume it.
 - `scripts/` — vanilla ES modules. `main.js` is the only versioned entry.
-  `hero-field.js` drives the hero object field: cursor proximity develops each
-  object's affordance (glow + rings + verb label); passive pointer events, one rAF,
-  cached geometry, no SVG filters — see the file header before touching it.
+  `hero-topo.js` draws the hero topology backdrop (seeded layout, colors read from
+  CSS tokens at init; single rAF, dash-offset writes only, IO pause offscreen).
 - `data/` — **generated, never hand-edited**: `papers.json` (189 methods + 34 datasets),
   `taxonomy.json` (3 roles → 18 leaves), `tables.json` (the paper's 4 comparison tables).
 - `tools/` — the build pipeline (stdlib Python + bash; no venv needed).
