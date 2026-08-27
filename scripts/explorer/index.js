@@ -1,10 +1,10 @@
 /* §04 atlas index — wiring: data → state → url → filters/tree/list */
-import { createState } from './state.js?v=26';
-import { buildIndex, filterPapers } from './data.js?v=26';
-import { initUrl } from './url.js?v=26';
-import { initFilters } from './filters.js?v=26';
-import { initTree } from './tree.js?v=26';
-import { initList } from './list.js?v=26';
+import { createState } from './state.js?v=27';
+import { buildIndex, filterPapers } from './data.js?v=27';
+import { initUrl } from './url.js?v=27';
+import { initFilters } from './filters.js?v=27';
+import { initTree } from './tree.js?v=27';
+import { initList } from './list.js?v=27';
 
 export function initExplorer(root, papers, taxonomy) {
   if (!root) return;

@@ -282,18 +282,6 @@ export function initHeroNet() {
         ctx.fill();
       }
       ctx.restore();
-      // the anchor: a quiet electric halo around the pointer
-      const halo = ctx.createRadialGradient(cx, cy, 0, cx, cy, 20);
-      halo.addColorStop(0, `rgba(${VOLT[0]},${VOLT[1]},${VOLT[2]},${(0.18 * ca).toFixed(3)})`);
-      halo.addColorStop(1, `rgba(${VOLT[0]},${VOLT[1]},${VOLT[2]},0)`);
-      ctx.fillStyle = halo;
-      ctx.beginPath();
-      ctx.arc(cx, cy, 20, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.fillStyle = `rgba(${VOLT[0]},${VOLT[1]},${VOLT[2]},${(0.65 * ca).toFixed(3)})`;
-      ctx.beginPath();
-      ctx.arc(cx, cy, 1.9, 0, Math.PI * 2);
-      ctx.fill();
     }
 
     // joints: near = periwinkle and larger, far = mist and finer;

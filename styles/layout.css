@@ -48,25 +48,13 @@
   justify-content: space-between;
   gap: var(--s5);
 }
-/* brand lockup: a miniature of the hero wire-net (the three role pins)
-   beside a two-deck wordmark — the site's motif, restated at 26px */
+/* brand: a single-deck wordmark */
 .nav__brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
   white-space: nowrap;
 }
-.brand__glyph { width: 27px; height: 27px; flex: none; overflow: visible; }
-.glyph__wire { stroke: var(--topo-edge); stroke-width: 1.2; stroke-linecap: round; }
-.glyph__wire--far { opacity: 0.4; }
-.glyph__node { transition: filter var(--d-base) var(--ease); }
-.glyph__node--volt { fill: var(--accent); }
-.glyph__node--cela { fill: var(--ochre-fill); }
-.glyph__node--cora { fill: var(--terra-fill); }
-.glyph__node--mist { fill: var(--topo-edge); }
-.nav__brand:hover .glyph__node--volt { filter: drop-shadow(0 0 3.5px rgba(111, 194, 255, 0.95)); }
-.brand__word { display: flex; flex-direction: column; gap: 3px; }
 .brand__title {
   font-family: var(--font-display);
   font-size: 15.5px;
@@ -77,17 +65,6 @@
 }
 /* Space Grotesk has no italic — the second word speaks in cornflower instead */
 .brand__title em { font-style: normal; font-weight: 500; color: var(--accent); }
-.brand__sub {
-  font-family: var(--font-mono);
-  font-size: 8.5px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  line-height: 1;
-  color: var(--ink-faint);
-  transition: color var(--d-base) var(--ease);
-}
-.nav__brand:hover .brand__sub { color: var(--accent); }
 
 .nav__links {
   display: flex;
@@ -96,9 +73,8 @@
   list-style: none;
   padding: 0;
 }
-/* contents-style entries: a folio numeral floats above each label
-   (absolutely positioned — costs no row width), and a gradient
-   filament sweeps in underneath on hover/active */
+/* contents-style entries: a gradient filament sweeps in underneath
+   on hover/active */
 .nav__link {
   position: relative;
   display: inline-block;
@@ -116,21 +92,8 @@
   background-size: 0% 1.5px;
   transition: color var(--d-fast) var(--ease), background-size var(--d-base) var(--ease-out);
 }
-.nav__link::before {
-  content: attr(data-idx);
-  position: absolute;
-  top: -9px;
-  left: 1px;
-  font-size: 8px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  color: var(--ink-faint);
-  transition: color var(--d-fast) var(--ease);
-}
 .nav__link:hover,
 .nav__link.is-active { color: var(--ink); background-size: 100% 1.5px; }
-.nav__link:hover::before,
-.nav__link.is-active::before { color: var(--accent); }
 
 .nav__cta {
   display: inline-flex;
