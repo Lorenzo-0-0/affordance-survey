@@ -104,13 +104,14 @@
    numbered registry line — quiet chrome, everything earns its ink */
 .hero__authors {
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: 16.5px;
   font-weight: 500;
   letter-spacing: 0.002em;
-  line-height: 2.15;
-  max-width: 880px;
+  line-height: 2.05;
+  max-width: 1000px;
   margin-inline: auto;
   color: var(--ink);
+  text-wrap: balance;
 }
 .hero__authors .author { white-space: nowrap; margin: 0 0.55em; }
 .hero__authors a {
@@ -131,38 +132,64 @@
   color: var(--accent);
   margin-left: 3px;
 }
+/* the nine institutions as a registry of porcelain chips — glassy plates
+   with a numbered seal that inks solid on hover */
 .hero__affils {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: var(--s2) clamp(16px, 2.4vw, 30px);
+  gap: 8px 9px;
   margin-top: var(--s4);
   margin-inline: auto;
-  max-width: 940px;
+  max-width: 1020px;
 }
 .hero__affils .affil {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 13.5px;
-  letter-spacing: 0.015em;
+  padding: 4px 14px 4px 5px;
+  font-size: 13px;
+  letter-spacing: 0.012em;
   color: var(--ink-soft);
   white-space: nowrap;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-full);
+  background: color-mix(in srgb, var(--paper-elev) 64%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 1px 2px rgba(16, 32, 48, 0.04);
+  transition: border-color var(--d-base) var(--ease), background var(--d-base) var(--ease),
+              transform var(--d-base) var(--ease-out), box-shadow var(--d-base) var(--ease-out),
+              color var(--d-fast) var(--ease);
+}
+.hero__affils .affil:hover {
+  color: var(--ink);
+  border-color: var(--moss-line);
+  background: var(--paper-elev);
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 #fff, 0 10px 22px -14px rgba(61, 99, 194, 0.5);
 }
 .affil__num {
   font-family: var(--font-mono);
   font-style: normal;
   font-size: 10px;
+  font-weight: 500;
   line-height: 1;
-  width: 18px;
-  height: 18px;
+  width: 19px;
+  height: 19px;
   display: grid;
   place-items: center;
-  border: 1px solid var(--moss-line);
+  border: 1px solid color-mix(in srgb, var(--moss-line) 75%, transparent);
   border-radius: 50%;
   color: var(--accent);
-  background: color-mix(in srgb, var(--moss-soft) 55%, transparent);
+  background: color-mix(in srgb, var(--moss-soft) 80%, transparent);
+  transition: background var(--d-base) var(--ease), color var(--d-base) var(--ease),
+              border-color var(--d-base) var(--ease), box-shadow var(--d-base) var(--ease-out);
+}
+.hero__affils .affil:hover .affil__num {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--paper-elev);
+  box-shadow: 0 0 10px rgba(46, 91, 235, 0.4);
 }
 .hero__marks {
   display: flex;
@@ -225,39 +252,75 @@
   .btn:hover, .btn:active { transform: none; }
 }
 
+/* the survey's instrument row: each count sits under a gradient tick
+   riding the hairline rule, numerals inked with a cornflower undertone */
 .hero__stats {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--s5) var(--s7);
   list-style: none;
-  padding: var(--s6) 0 0;
+  padding: calc(var(--s6) - 4px) 0 0;
   margin-top: var(--s7);
   border-top: 1px solid var(--hairline);
 }
+.stat { position: relative; text-align: center; flex: none; }
 @media (min-width: 720px) {
   .hero__stats { gap: var(--s5) 0; }
-  .stat { position: relative; padding-inline: clamp(20px, 2.4vw, 36px); }
+  .stat { padding-inline: clamp(18px, 2vw, 30px); }
   .stat + .stat::before {
     content: "";
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    height: 70%;
+    height: 64%;
     width: 1px;
-    background: linear-gradient(180deg, transparent, var(--border-strong) 28%, var(--border-strong) 72%, transparent);
+    background: linear-gradient(180deg, transparent, var(--border-strong) 32%, var(--border-strong) 68%, transparent);
+  }
+  /* index tick: a short gradient filament seated on the rule above */
+  .stat::after {
+    content: "";
+    position: absolute;
+    top: calc(-1 * (var(--s6) - 4px) - 2px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 34px;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-spark));
+    box-shadow: 0 0 10px rgba(46, 91, 235, 0.28);
   }
 }
 .stat strong {
   display: block;
+  white-space: nowrap;
   font-family: var(--font-display);
-  font-size: clamp(26px, 2.6vw, 36px);
+  font-size: clamp(30px, 3vw, 42px);
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.022em;
+  line-height: 1.12;
   font-variant-numeric: lining-nums tabular-nums;
+  color: var(--ink);
 }
-.stat span {
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .stat strong {
+    background: linear-gradient(155deg, var(--ink) 46%, var(--moss-deep) 130%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.stat__arr {
+  font-weight: 400;
+  font-size: 0.85em;
+  margin-inline: 2px;
+  color: var(--accent);
+  -webkit-text-fill-color: var(--accent);
+}
+.stat > span {
+  display: block;
+  margin-top: 4px;
   font-family: var(--font-mono);
   font-size: var(--fs-micro);
   letter-spacing: var(--track-wide);

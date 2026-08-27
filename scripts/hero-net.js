@@ -7,9 +7,12 @@
    @1.6Mpx, link radius 200, link alpha 0.30 linear falloff, size/opacity
    jitter, grab 312/0.6), rebuilt here in true 3D: nodes live in a shallow
    z-slab, perspective projection supplies the size/alpha depth jitter
-   physically, and the camera leans toward the cursor. Palette is drawn from
-   tokens.css — a morning-mist periwinkle base with sparse celadon/coral
-   pinpricks echoing the survey's three roles. Perf contract: canvas2d, zero
+   physically, and the camera leans toward the cursor. The grab is tighter
+   than SNU's: a 150px reach, at most 10 filaments, drawn as volt→spark
+   gradients under a faint glow — a small electric fan, not a starburst.
+   Palette is drawn from tokens.css — a morning-mist periwinkle base with
+   sparse haloed celadon/coral pinpricks echoing the survey's three roles.
+   Perf contract: canvas2d, zero
    deps, single rAF, spatial hash, IO + visibility pause, reduced-motion
    static frame, DPR ≤ 2, no layout reads in the frame loop. */
 export function initHeroNet() {
@@ -33,6 +36,7 @@ export function initHeroNet() {
   const CELA = hex(tok('--ochre-fill', '#66bfa3'), '66bfa3');      // role Ⅱ pinpricks
   const CORA = hex(tok('--terra-fill', '#f0836f'), 'f0836f');      // role Ⅲ pinpricks
   const SPARK = hex(tok('--accent-spark', '#6fc2ff'), '6fc2ff');   // sky tint, upper-left
+  const VOLT = hex(tok('--accent-volt', '#2e5beb'), '2e5beb');     // electric grab filaments
 
   // deterministic layout between loads
   let seed = 20260827;
@@ -46,9 +50,10 @@ export function initHeroNet() {
   const M = 110;              // drift margin beyond the frame
   const TENSION = 0.012;      // spring back to the home position
   const FRICTION = 0.9;       // per-frame velocity decay (60fps basis)
-  const PULL = 0.32;          // cursor gather — present, restrained
-  const MAXOFF = 64;          // px a node may be displaced by the cursor
-  const GRAB = 312;           // cursor link reach (screen px)
+  const PULL = 0.2;           // cursor gather — a breath, not a vortex
+  const MAXOFF = 34;          // px a node may be displaced by the cursor
+  const GRAB = 150;           // cursor link reach (screen px) — tight
+  const MAXGRAB = 10;         // at most this many filaments touch the cursor
 
   function size() {
     const r = canvas.getBoundingClientRect();
@@ -139,7 +144,7 @@ export function initHeroNet() {
     camX += ((wantCursor ? (cx / W - 0.5) * 2 : swayX) - camX) * lean;
     camY += ((wantCursor ? (cy / H - 0.5) * 2 : swayY) - camY) * lean;
 
-    const AR = R * 1.5;       // gather field
+    const AR = R * 0.85;      // gather field — local, close to the grab reach
 
     // -- update + project -------------------------------------------------
     for (const n of nodes) {
@@ -187,7 +192,7 @@ export function initHeroNet() {
       let v = 0.8 + 0.2 * (u * u * (3 - 2 * u));
       if (ca > 0.01) {
         const d = Math.hypot(x - cx, y - cy);
-        if (d < AR) v = Math.min(1, v + (1 - v) * ca * Math.pow(1 - d / AR, 2) * 1.6);
+        if (d < AR) v = Math.min(1, v + (1 - v) * ca * Math.pow(1 - d / AR, 2) * 1.25);
       }
       return v;
     };
@@ -222,12 +227,20 @@ export function initHeroNet() {
             let alpha = (1 - d / R) * 0.27
               * (0.74 + 0.26 * (depthMul - 0.68) / 0.64)
               * vig(mx, my);
+            const ta = a.col, tb = nb.col;
+            let cr = (ta[0] + tb[0]) >> 1, cg = (ta[1] + tb[1]) >> 1, cb = (ta[2] + tb[2]) >> 1;
             if (ca > 0.01) {
               const dm = Math.hypot(mx - cx, my - cy);
-              if (dm < AR) alpha *= 1 + 0.8 * ca * Math.pow(1 - dm / AR, 2);
+              if (dm < AR) {
+                // near the cursor: a gentle lift, and the graphite goes electric
+                const k = ca * Math.pow(1 - dm / AR, 2);
+                alpha *= 1 + 0.5 * k;
+                cr += (VOLT[0] - cr) * k * 0.6;
+                cg += (VOLT[1] - cg) * k * 0.6;
+                cb += (VOLT[2] - cb) * k * 0.6;
+              }
             }
-            const ta = a.col, tb = nb.col;
-            ctx.strokeStyle = `rgba(${(ta[0] + tb[0]) >> 1},${(ta[1] + tb[1]) >> 1},${(ta[2] + tb[2]) >> 1},${Math.min(alpha, 0.5).toFixed(3)})`;
+            ctx.strokeStyle = `rgba(${cr | 0},${cg | 0},${cb | 0},${Math.min(alpha, 0.5).toFixed(3)})`;
             ctx.beginPath();
             ctx.moveTo(a.px, a.py);
             ctx.lineTo(nb.px, nb.py);
@@ -237,23 +250,49 @@ export function initHeroNet() {
       }
     }
 
-    // grab: the cursor reaches into the mesh — solid hairlines, SNU 312/0.6
+    // grab: a small electric fan — only the nearest few nodes reach the
+    // cursor, as volt→spark gradient filaments under a faint glow
     if (ca > 0.02) {
-      ctx.lineWidth = 0.8;
+      const cand = [];
       for (const n of nodes) {
         const d = Math.hypot(n.px - cx, n.py - cy);
-        if (d > GRAB || d < 2) continue;
-        const alpha = (1 - d / GRAB) * 0.6 * ca * (0.6 + 0.4 * n.sc);
-        ctx.strokeStyle = `rgba(${DEEP[0]},${DEEP[1]},${DEEP[2]},${alpha.toFixed(3)})`;
-        ctx.beginPath();
-        ctx.moveTo(n.px, n.py);
-        ctx.lineTo(cx, cy);
-        ctx.stroke();
+        if (d < GRAB && d > 2) cand.push({ d, n });
       }
-      // a quiet anchor where the mesh meets the pointer
-      ctx.fillStyle = `rgba(${DEEP[0]},${DEEP[1]},${DEEP[2]},${(0.55 * ca).toFixed(3)})`;
+      cand.sort((p, q) => p.d - q.d);
+      const m = Math.min(cand.length, MAXGRAB);
+      ctx.save();
+      ctx.lineWidth = 1.05;
+      ctx.shadowBlur = 9;
+      ctx.shadowColor = `rgba(${VOLT[0]},${VOLT[1]},${VOLT[2]},${(0.6 * ca).toFixed(3)})`;
+      for (let k = 0; k < m; k++) {
+        const { d, n } = cand[k];
+        const alpha = Math.pow(1 - d / GRAB, 1.3) * 0.68 * ca * (0.6 + 0.4 * n.sc);
+        const g = ctx.createLinearGradient(cx, cy, n.px, n.py);
+        g.addColorStop(0, `rgba(${VOLT[0]},${VOLT[1]},${VOLT[2]},${alpha.toFixed(3)})`);
+        g.addColorStop(1, `rgba(${SPARK[0]},${SPARK[1]},${SPARK[2]},${(alpha * 0.5).toFixed(3)})`);
+        ctx.strokeStyle = g;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(n.px, n.py);
+        ctx.stroke();
+        // a pin of light where each filament lands
+        ctx.fillStyle = `rgba(${SPARK[0]},${SPARK[1]},${SPARK[2]},${Math.min(1, alpha * 1.1).toFixed(3)})`;
+        ctx.beginPath();
+        ctx.arc(n.px, n.py, 1.3 * n.sc + 0.4, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+      // the anchor: a quiet electric halo around the pointer
+      const halo = ctx.createRadialGradient(cx, cy, 0, cx, cy, 20);
+      halo.addColorStop(0, `rgba(${VOLT[0]},${VOLT[1]},${VOLT[2]},${(0.18 * ca).toFixed(3)})`);
+      halo.addColorStop(1, `rgba(${VOLT[0]},${VOLT[1]},${VOLT[2]},0)`);
+      ctx.fillStyle = halo;
       ctx.beginPath();
-      ctx.arc(cx, cy, 1.8, 0, Math.PI * 2);
+      ctx.arc(cx, cy, 20, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = `rgba(${VOLT[0]},${VOLT[1]},${VOLT[2]},${(0.65 * ca).toFixed(3)})`;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 1.9, 0, Math.PI * 2);
       ctx.fill();
     }
 
@@ -268,6 +307,13 @@ export function initHeroNet() {
         Math.round(n.col[2] + (PERI[2] - n.col[2]) * warm),
       ];
       const alpha = (0.4 + 0.32 * depthT) * n.jitter * vig(n.px, n.py);
+      if (n.tint) {
+        // role pins carry a soft halo — pinpricks of instrument light
+        ctx.fillStyle = `rgba(${n.tint[0]},${n.tint[1]},${n.tint[2]},${(alpha * 0.15).toFixed(3)})`;
+        ctx.beginPath();
+        ctx.arc(n.px, n.py, n.r * n.sc * 3.1, 0, Math.PI * 2);
+        ctx.fill();
+      }
       ctx.fillStyle = `rgba(${base[0]},${base[1]},${base[2]},${alpha.toFixed(3)})`;
       ctx.beginPath();
       ctx.arc(n.px, n.py, n.r * n.sc, 0, Math.PI * 2);

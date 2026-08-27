@@ -1,14 +1,19 @@
 {
-  "_note": "Author ORDER is TBD in the paper source (% ORDER TBD). Reorder here and rerun tools/build_authors.py.",
+  "_note": "Order follows the 2026-08 paper byline (15 authors, 9 affiliations). Every url was WebFetch-verified against name+affiliation. hxu.rocks is HTTP-only (its HTTPS cert is broken) — keep http://.",
   "affiliations": {
     "1": "Nanyang Technological University",
     "2": "HKUST (Guangzhou)",
     "3": "Shanghai Jiao Tong University",
-    "4": "The University of Sydney"
+    "4": "The University of Sydney",
+    "5": "University of Liverpool",
+    "6": "The University of Edinburgh",
+    "7": "ETH Zurich",
+    "8": "MBZUAI",
+    "9": "Tsinghua University"
   },
   "marks": { "*": "Equal contribution", "‡": "Project lead", "†": "Corresponding author" },
   "authors": [
-    { "name": "Gen Li", "affils": [1], "marks": ["*", "‡"], "url": "https://reagan1311.github.io/" },
+    { "name": "Gen Li", "affils": [1], "marks": ["*", "‡"], "url": "https://www.genli.top/" },
     { "name": "Hanqing Wang", "affils": [2], "marks": ["*"], "url": "https://hq-king.github.io/" },
     { "name": "Jingliang Li", "affils": [1], "marks": ["*"], "url": "https://jingliangli.com" },
     { "name": "Yifan Han", "affils": [3], "marks": ["*"], "url": "https://sailing-yifan.github.io/" },
@@ -16,6 +21,11 @@
     { "name": "Tao Lin", "affils": [3], "marks": [], "url": "https://dorayakilin.github.io/" },
     { "name": "Yutong Wang", "affils": [4], "marks": [], "url": "https://yutongwang1012.github.io/" },
     { "name": "Bo Zhao", "affils": [3], "marks": [], "url": "https://www.bozhao.me/" },
+    { "name": "Anh Nguyen", "affils": [5], "marks": [], "url": "https://cgi.csc.liv.ac.uk/~anguyen/" },
+    { "name": "Laura Sevilla-Lara", "affils": [6], "marks": [], "url": "https://laurasevilla.me" },
+    { "name": "Oier Mees", "affils": [7], "marks": [], "url": "https://www.oiermees.com" },
+    { "name": "Gregory Chirikjian", "affils": [8], "marks": [], "url": "https://mbzuai.ac.ae/study/faculty/gregory-chirikjian/" },
+    { "name": "Huazhe Xu", "affils": [9], "marks": [], "url": "http://hxu.rocks" },
     { "name": "Hui Xiong", "affils": [2], "marks": ["†"], "url": "https://hkustai.github.io/" },
     { "name": "Jianfei Yang", "affils": [1], "marks": ["†"], "url": "https://marsyang.site/" }
   ]
