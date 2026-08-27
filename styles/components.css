@@ -30,11 +30,24 @@
   inset: 0;
   opacity: 0.9;
   pointer-events: none;
-  /* gentle falloff: the wires stay readable behind the masthead, full at the frame */
-  mask-image: radial-gradient(78% 70% at 50% 42%, rgba(0, 0, 0, 0.34) 0%, rgba(0, 0, 0, 0.42) 32%, rgba(0, 0, 0, 0.6) 54%, rgba(0, 0, 0, 0.84) 72%, #000 88%);
-  -webkit-mask-image: radial-gradient(78% 70% at 50% 42%, rgba(0, 0, 0, 0.34) 0%, rgba(0, 0, 0, 0.42) 32%, rgba(0, 0, 0, 0.6) 54%, rgba(0, 0, 0, 0.84) 72%, #000 88%);
+  /* falloff lives in the canvas (hero-net.js vignette): quiet behind the
+     masthead, full at the frame — and locally lifted around the cursor */
 }
-.hero__topo svg { width: 100%; height: 100%; display: block; }
+.hero__topo canvas { width: 100%; height: 100%; display: block; }
+
+/* fieldnote: a quiet plate caption that names the interaction */
+.hero__fieldnote {
+  position: absolute;
+  right: clamp(16px, 3vw, 44px);
+  bottom: 16px;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  color: var(--ink-faint);
+  pointer-events: none;
+}
+@media (hover: none), (max-width: 760px) { .hero__fieldnote { display: none; } }
 
 /* ---- centered masthead ---- */
 .hero__inner {
@@ -502,23 +515,55 @@
   gap: var(--s5);
 }
 .challenge {
+  position: relative;
+  overflow: hidden;
   border: 1px solid var(--hairline);
-  border-radius: var(--r-sm);
-  background: var(--paper);
-  padding: var(--s5);
+  border-radius: var(--r-md);
+  background: var(--paper-elev);
+  box-shadow: var(--shadow-soft);
+  padding: calc(var(--s5) + 4px) var(--s5) var(--s5);
+  /* keeps [data-reveal]'s opacity/transform choreography, adds hover shadow */
+  transition: opacity var(--d-slow) var(--ease) var(--reveal-delay, 0ms),
+              transform var(--d-slow) var(--ease) var(--reveal-delay, 0ms),
+              box-shadow var(--d-base) var(--ease-out), border-color var(--d-base) var(--ease);
 }
+.challenge::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-spark) 70%, transparent);
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: transform var(--d-slow) var(--ease-out);
+}
+.challenge:hover { box-shadow: var(--shadow-lift); border-color: var(--moss-line); }
+.challenge:hover::before { transform: scaleX(1); }
 .challenge--wide { grid-column: 1 / -1; }
 .challenge__num {
-  font-family: var(--font-mono);
-  font-size: var(--fs-mono);
-  letter-spacing: 0.1em;
-  color: var(--ink-faint);
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--ghost-stroke);
+  user-select: none;
+  pointer-events: none;
+}
+@supports not (-webkit-text-stroke: 1px black) {
+  .challenge__num { color: var(--ghost-fill); }
 }
 .challenge h3 {
   font-family: var(--font-display);
   font-size: var(--fs-h3);
   font-weight: 600;
-  margin: var(--s2) 0 var(--s3);
+  margin: 0 0 var(--s3);
+  padding-right: 84px;
 }
 .challenge p { font-size: var(--fs-small); color: var(--ink-soft); max-width: 75ch; }
 

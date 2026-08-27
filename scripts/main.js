@@ -1,10 +1,10 @@
 /* entry: boots every feature in its own try/catch — one failure never cascades */
-import { initReveal } from './reveal.js?v=19';
-import { initScrollProgress } from './scroll-progress.js?v=19';
-import { initCopyBibtex } from './copy-bibtex.js?v=19';
-import { initHeroTopo } from './hero-topo.js?v=19';
-import { initTables } from './tables.js?v=19';
-import { initExplorer } from './explorer/index.js?v=19';
+import { initReveal } from './reveal.js?v=21';
+import { initScrollProgress } from './scroll-progress.js?v=21';
+import { initCopyBibtex } from './copy-bibtex.js?v=21';
+import { initHeroNet } from './hero-net.js?v=21';
+import { initTables } from './tables.js?v=21';
+import { initExplorer } from './explorer/index.js?v=21';
 
 const V = document.documentElement.dataset.assetV || '1';
 const boot = (name, fn) => { try { fn(); } catch (err) { console.error(`[${name}]`, err); } };
@@ -12,7 +12,7 @@ const boot = (name, fn) => { try { fn(); } catch (err) { console.error(`[${name}
 boot('reveal', initReveal);
 boot('scroll-progress', initScrollProgress);
 boot('copy-bibtex', initCopyBibtex);
-boot('hero-topo', initHeroTopo);
+boot('hero-net', initHeroNet);
 
 /* Lenis smooth scroll (CDN, optional) + anchor handling.
    Init on window load so it measures a settled document height. */

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-asset-v="19" class="no-js">
+<html lang="en" data-asset-v="21" class="no-js">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -18,11 +18,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="styles/tokens.css?v=19" />
-  <link rel="stylesheet" href="styles/reset.css?v=19" />
-  <link rel="stylesheet" href="styles/layout.css?v=19" />
-  <link rel="stylesheet" href="styles/components.css?v=19" />
-  <link rel="stylesheet" href="styles/explorer.css?v=19" />
+  <link rel="stylesheet" href="styles/tokens.css?v=21" />
+  <link rel="stylesheet" href="styles/reset.css?v=21" />
+  <link rel="stylesheet" href="styles/layout.css?v=21" />
+  <link rel="stylesheet" href="styles/components.css?v=21" />
+  <link rel="stylesheet" href="styles/explorer.css?v=21" />
   <script>document.documentElement.classList.remove('no-js');</script>
 </head>
 <body>
@@ -46,11 +46,11 @@
   <!-- ============================ HERO ============================ -->
   <header id="top" class="hero">
     <div class="hero__topo" aria-hidden="true">
-      <svg id="hero-topo" preserveAspectRatio="xMidYMid slice"></svg>
+      <canvas id="hero-net"></canvas>
     </div>
 
     <div class="container hero__inner">
-      <p class="hero__eyebrow" data-reveal>Survey · Affordance Learning for Embodied AI</p>
+      <p class="hero__eyebrow" data-reveal>Affordance Learning for Embodied AI · A Unified Survey</p>
       <h1 class="hero__title" data-reveal style="--reveal-delay:60ms">
         <span class="hero__title-passive">From Passive Perception</span><br />
         <span class="hero__title-active">to Active Interaction</span>
@@ -98,6 +98,8 @@
       </ul>
 
     </div>
+
+    <p class="hero__fieldnote" aria-hidden="true">fig. 0 · the corpus, adrift — it gathers at your cursor</p>
   </header>
 
   <!-- ============================ ABSTRACT ============================ -->
@@ -160,8 +162,8 @@
       <figure class="media-block" data-reveal>
         <div class="media-block__chrome">
           <picture>
-            <source type="image/webp" srcset="assets/images/overview.webp?v=19" />
-            <img src="assets/images/overview.png?v=19" width="2536" height="673" loading="lazy"
+            <source type="image/webp" srcset="assets/images/overview.webp?v=21" />
+            <img src="assets/images/overview.png?v=21" width="2536" height="673" loading="lazy"
                  alt="Overview taxonomy figure: affordance perception, affordance reasoning, and affordance-guided action, each expanded into its families and leaf categories." />
           </picture>
         </div>
@@ -215,8 +217,8 @@
       <figure class="media-block" data-reveal>
         <div class="media-block__chrome">
           <picture>
-            <source type="image/webp" srcset="assets/images/timeline.webp?v=19" />
-            <img src="assets/images/timeline.png?v=19" width="2778" height="1326" loading="lazy"
+            <source type="image/webp" srcset="assets/images/timeline.webp?v=21" />
+            <img src="assets/images/timeline.png?v=21" width="2778" height="1326" loading="lazy"
                  alt="Timeline of representative advances and paradigm shifts in affordance learning for embodied AI." />
           </picture>
         </div>
@@ -253,7 +255,7 @@
       <div class="chapter" data-reveal><span class="chapter__num">§ 05 · Comparisons</span><span class="chapter__rule"></span></div>
       <h2 class="section-title" data-reveal>Method &amp; dataset tables</h2>
       <p class="section-lead" data-reveal style="--reveal-delay:60ms">
-        The paper's four comparison tables, sortable. Dots mark input modalities and output forms; venue data follows the paper source.
+        All four comparison tables from the paper, sortable in place. Dots mark input modalities and output forms; venues follow the paper source.
       </p>
     </div>
     <div id="tables-app" class="tables container-wide"></div>
@@ -264,6 +266,9 @@
     <div class="container">
       <div class="chapter" data-reveal><span class="chapter__num">§ 06 · Open problems</span><span class="chapter__rule"></span></div>
       <h2 class="section-title" data-reveal>Challenges &amp; future directions</h2>
+      <p class="section-lead" data-reveal style="--reveal-delay:60ms">
+        Where the current toolkit runs out — five problems that decide whether affordance becomes a load-bearing part of embodied intelligence.
+      </p>
 
       <ol class="challenges">
         <li class="challenge" data-reveal>
@@ -320,7 +325,7 @@
     <div class="container">
       <div class="footer__row">
         <div class="footer__brand">
-          <img src="assets/images/mars_lablogo.png?v=19" width="132" height="46" alt="MARS Lab, Nanyang Technological University" />
+          <img src="assets/images/mars_lablogo.png?v=21" width="132" height="46" alt="MARS Lab, Nanyang Technological University" />
         </div>
         <ul class="footer__links">
           <li><a href="https://github.com/hq-King/Awesome-Affordance-Learning" target="_blank" rel="noopener">Awesome-Affordance-Learning ↗</a></li>
@@ -335,6 +340,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
-  <script type="module" src="scripts/main.js?v=19"></script>
+  <script type="module" src="scripts/main.js?v=21"></script>
 </body>
 </html>
