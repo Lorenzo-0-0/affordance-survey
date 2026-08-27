@@ -28,7 +28,6 @@
 .hero__topo {
   position: absolute;
   inset: 0;
-  opacity: 0.9;
   pointer-events: none;
   /* falloff lives in the canvas (hero-net.js vignette): quiet behind the
      masthead, full at the frame — and locally lifted around the cursor */
