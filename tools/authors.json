@@ -1,15 +1,15 @@
 {
   "_note": "Order follows the 2026-08 paper byline (15 authors, 9 affiliations). Every url was WebFetch-verified against name+affiliation. hxu.rocks is HTTP-only (its HTTPS cert is broken) — keep http://.",
   "affiliations": {
-    "1": "Nanyang Technological University",
-    "2": "HKUST (Guangzhou)",
-    "3": "Shanghai Jiao Tong University",
-    "4": "The University of Sydney",
-    "5": "University of Liverpool",
-    "6": "The University of Edinburgh",
-    "7": "ETH Zurich",
-    "8": "MBZUAI",
-    "9": "Tsinghua University"
+    "1": { "name": "Nanyang Technological University", "logo": "ntu.svg", "w": 15, "h": 19 },
+    "2": { "name": "HKUST (Guangzhou)", "logo": "hkust-gz.svg", "w": 12, "h": 19 },
+    "3": { "name": "Shanghai Jiao Tong University", "logo": "sjtu.png", "w": 19, "h": 19 },
+    "4": { "name": "The University of Sydney", "logo": "sydney.svg", "w": 17, "h": 19 },
+    "5": { "name": "University of Liverpool", "logo": "liverpool.svg", "w": 12, "h": 19 },
+    "6": { "name": "The University of Edinburgh", "logo": "edinburgh.svg", "w": 19, "h": 19 },
+    "7": { "name": "ETH Zurich", "logo": "eth.svg", "w": 72, "h": 12 },
+    "8": { "name": "MBZUAI", "logo": "mbzuai.svg", "w": 47, "h": 13 },
+    "9": { "name": "Tsinghua University", "logo": "tsinghua.svg", "w": 19, "h": 19 }
   },
   "marks": { "*": "Equal contribution", "‡": "Project lead", "†": "Corresponding author" },
   "authors": [

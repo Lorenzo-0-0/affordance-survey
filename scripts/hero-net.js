@@ -87,10 +87,10 @@ export function initHeroNet() {
       // blueprint graphite: a mid-deep cornflower-mist wire tone whose HUE
       // (not lightness) drifts with the aurora — cobalt upper-left, a breath
       // of celadon lower-right; crisp at low alpha, never milky
-      const wbase = mix(DEEP, MIST, 0.42);
+      const wbase = mix(DEEP, MIST, 0.30);
       const kx = Math.max(0, Math.min(0.5, 0.5 - hx / W));
       const ky = Math.max(0, Math.min(0.5, (hx / W + hy / H) / 2 - 0.5));
-      const col = tint || mix(mix(wbase, DEEP, kx * 0.5), CELA, ky * 0.4);
+      const col = tint || mix(mix(wbase, DEEP, kx * 0.6), CELA, ky * 0.4);
       const speed = 14 + rand() * 26;                 // SNU-brisk drift
       const dir = rand() * Math.PI * 2;
       nodes.push({
@@ -102,7 +102,7 @@ export function initHeroNet() {
         r: (0.7 + rand() * 1.5) * (tint ? 1.2 : 1),
         tint,
         col,
-        jitter: 0.45 + rand() * 0.55,                 // per-node opacity jitter
+        jitter: 0.52 + rand() * 0.48,                 // per-node opacity jitter
       });
     }
   }
@@ -189,7 +189,7 @@ export function initHeroNet() {
       const nx = (x - W * 0.5) / (W * 0.62), ny = (y - H * 0.42) / (H * 0.52);
       const rr = Math.sqrt(nx * nx + ny * ny);
       const u = Math.min(1, Math.max(0, (rr - 0.3) / 0.62));
-      let v = 0.8 + 0.2 * (u * u * (3 - 2 * u));
+      let v = 0.74 + 0.26 * (u * u * (3 - 2 * u));
       if (ca > 0.01) {
         const d = Math.hypot(x - cx, y - cy);
         if (d < AR) v = Math.min(1, v + (1 - v) * ca * Math.pow(1 - d / AR, 2) * 1.25);
@@ -206,7 +206,7 @@ export function initHeroNet() {
     }
 
     // wire mesh: SNU's linear falloff, graphite-crisp at a lower ceiling
-    ctx.lineWidth = 0.7;
+    ctx.lineWidth = 0.8;
     for (let i = 0; i < nodes.length; i++) {
       const a = nodes[i];
       const gx = (a.px / cell) | 0, gy = (a.py / cell) | 0;
@@ -224,8 +224,8 @@ export function initHeroNet() {
             if (d > R) continue;
             const mx = (a.px + nb.px) / 2, my = (a.py + nb.py) / 2;
             const depthMul = (a.sc + nb.sc) / 2;      // near lines read fuller
-            let alpha = (1 - d / R) * 0.27
-              * (0.74 + 0.26 * (depthMul - 0.68) / 0.64)
+            let alpha = (1 - d / R) * 0.34
+              * (0.68 + 0.32 * (depthMul - 0.68) / 0.64)
               * vig(mx, my);
             const ta = a.col, tb = nb.col;
             let cr = (ta[0] + tb[0]) >> 1, cg = (ta[1] + tb[1]) >> 1, cb = (ta[2] + tb[2]) >> 1;
@@ -240,7 +240,7 @@ export function initHeroNet() {
                 cb += (VOLT[2] - cb) * k * 0.6;
               }
             }
-            ctx.strokeStyle = `rgba(${cr | 0},${cg | 0},${cb | 0},${Math.min(alpha, 0.5).toFixed(3)})`;
+            ctx.strokeStyle = `rgba(${cr | 0},${cg | 0},${cb | 0},${Math.min(alpha, 0.58).toFixed(3)})`;
             ctx.beginPath();
             ctx.moveTo(a.px, a.py);
             ctx.lineTo(nb.px, nb.py);
@@ -294,7 +294,7 @@ export function initHeroNet() {
         Math.round(n.col[1] + (PERI[1] - n.col[1]) * warm),
         Math.round(n.col[2] + (PERI[2] - n.col[2]) * warm),
       ];
-      const alpha = (0.4 + 0.32 * depthT) * n.jitter * vig(n.px, n.py);
+      const alpha = (0.46 + 0.36 * depthT) * n.jitter * vig(n.px, n.py);
       if (n.tint) {
         // role pins carry a soft halo — pinpricks of instrument light
         ctx.fillStyle = `rgba(${n.tint[0]},${n.tint[1]},${n.tint[2]},${(alpha * 0.15).toFixed(3)})`;

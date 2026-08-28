@@ -17,10 +17,16 @@ for a in data["authors"]:
     parts.append(f'<span class="author">{inner}<sup>{sup}</sup></span>')
 authors_html = "\n        ".join(parts)
 
-affils_html = "\n        ".join(
-    f'<span class="affil"><i class="affil__num">{n}</i>{label}</span>'
-    for n, label in data["affiliations"].items()
-)
+def affil_html(n, a):
+    if isinstance(a, str):  # legacy plain-string form
+        a = {"name": a}
+    logo = ""
+    if a.get("logo"):
+        logo = (f'<img class="affil__logo" src="assets/logos/{a["logo"]}" '
+                f'width="{a["w"]}" height="{a["h"]}" alt="" decoding="async" />')
+    return f'<span class="affil">{logo}<i class="affil__num">{n}</i>{a["name"]}</span>'
+
+affils_html = "\n        ".join(affil_html(n, a) for n, a in data["affiliations"].items())
 marks_html = " ".join(
     f'<span class="mark"><b>{m}</b>{label}</span>' for m, label in data["marks"].items()
 )
