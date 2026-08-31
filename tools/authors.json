@@ -1,5 +1,5 @@
 {
-  "_note": "Order follows the 2026-08 paper byline (15 authors, 9 affiliations). Every url was WebFetch-verified against name+affiliation. hxu.rocks is HTTP-only (its HTTPS cert is broken) — keep http://.",
+  "_note": "Order follows the 2026-08-31 paper byline (17 authors, 9 affiliations). Every url was WebFetch-verified against name+affiliation. hxu.rocks is HTTP-only (its HTTPS cert is broken) — keep http://. Yutong Wang deliberately points at this project page (user request: the github.io namesake is a different person).",
   "affiliations": {
     "1": { "name": "Nanyang Technological University", "logo": "ntu.svg", "w": 15, "h": 19 },
     "2": { "name": "HKUST (Guangzhou)", "logo": "hkust-gz.svg", "w": 12, "h": 19 },
@@ -7,9 +7,9 @@
     "4": { "name": "The University of Sydney", "logo": "sydney.svg", "w": 17, "h": 19 },
     "5": { "name": "University of Liverpool", "logo": "liverpool.svg", "w": 12, "h": 19 },
     "6": { "name": "The University of Edinburgh", "logo": "edinburgh.svg", "w": 19, "h": 19 },
-    "7": { "name": "ETH Zurich", "logo": "eth.svg", "w": 72, "h": 12 },
-    "8": { "name": "MBZUAI", "logo": "mbzuai.svg", "w": 47, "h": 13 },
-    "9": { "name": "Tsinghua University", "logo": "tsinghua.svg", "w": 19, "h": 19 }
+    "7": { "name": "MBZUAI", "logo": "mbzuai.svg", "w": 47, "h": 13 },
+    "8": { "name": "Tsinghua University", "logo": "tsinghua.svg", "w": 19, "h": 19 },
+    "9": { "name": "ETH Zurich", "logo": "eth.svg", "w": 72, "h": 12 }
   },
   "marks": { "*": "Equal contribution", "‡": "Project lead", "†": "Corresponding author" },
   "authors": [
@@ -19,13 +19,15 @@
     { "name": "Yifan Han", "affils": [3], "marks": ["*"], "url": "https://sailing-yifan.github.io/" },
     { "name": "Jindou Jia", "affils": [1], "marks": [], "url": "https://jiajindou.github.io/" },
     { "name": "Tao Lin", "affils": [3], "marks": [], "url": "https://dorayakilin.github.io/" },
-    { "name": "Yutong Wang", "affils": [4], "marks": [], "url": "https://yutongwang1012.github.io/" },
+    { "name": "Yutong Wang", "affils": [4], "marks": [], "url": "https://jingliangli.com/affordance-survey/" },
     { "name": "Bo Zhao", "affils": [3], "marks": [], "url": "https://www.bozhao.me/" },
+    { "name": "Fangqiang Ding", "affils": [2], "marks": [], "url": "https://fangqiangding.com/" },
     { "name": "Anh Nguyen", "affils": [5], "marks": [], "url": "https://cgi.csc.liv.ac.uk/~anguyen/" },
     { "name": "Laura Sevilla-Lara", "affils": [6], "marks": [], "url": "https://laurasevilla.me" },
-    { "name": "Oier Mees", "affils": [7], "marks": [], "url": "https://www.oiermees.com" },
-    { "name": "Gregory Chirikjian", "affils": [8], "marks": [], "url": "https://mbzuai.ac.ae/study/faculty/gregory-chirikjian/" },
-    { "name": "Huazhe Xu", "affils": [9], "marks": [], "url": "http://hxu.rocks" },
+    { "name": "Gregory S. Chirikjian", "affils": [7], "marks": [], "url": "https://mbzuai.ac.ae/study/faculty/gregory-chirikjian/" },
+    { "name": "Huazhe Xu", "affils": [8], "marks": [], "url": "http://hxu.rocks" },
+    { "name": "Marc Pollefeys", "affils": [9], "marks": [], "url": "https://people.inf.ethz.ch/pomarc/" },
+    { "name": "Oier Mees", "affils": [9], "marks": [], "url": "https://www.oiermees.com" },
     { "name": "Hui Xiong", "affils": [2], "marks": ["†"], "url": "https://hkustai.github.io/" },
     { "name": "Jianfei Yang", "affils": [1], "marks": ["†"], "url": "https://marsyang.site/" }
   ]

@@ -26,15 +26,15 @@ const SPECS = {
   },
   reasoning: {
     label: 'Reasoning', roleClass: 'role-reasoning', nameKey: 'method', grouped: 'paradigm',
-    groups: [['', 4], ['Output', 4]],
+    groups: [],
     cols: [
       { k: 'method', l: 'Method', sort: 'alpha' },
       { k: 'venue_raw', l: 'Venue & Year', sort: 'year' },
       { k: 'setting', l: 'Setting' },
       { k: 'text_form', l: 'Text form' },
-      ...['M', 'H', 'P', 'Mo'].map((m) => ({ k: `out_${m}`, l: m, dot: 'out' })),
+      { k: 'output', l: 'Output form' },
     ],
-    legend: `Text form — how language enters: an action term, an explicit instruction, or implicit intent ("--" = no direct language input) &ensp; ${KEY('out', 'Output')} M mask · H heatmap · P keypoint · Mo motion`,
+    legend: `Text form — how language enters: an action term, an explicit instruction, or implicit intent ("–" = no direct language input) &ensp; Output form — the principal affordance predictions exposed by each method`,
   },
   action: {
     label: 'Action', roleClass: 'role-action', nameKey: 'method', grouped: 'paradigm',

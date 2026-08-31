@@ -16,7 +16,7 @@ SITE = Path(__file__).resolve().parent.parent
 EXPECTED = {
     "methods": {"perception": 78, "reasoning": 50, "action": 61},
     "datasets": 34,
-    "tables": {"perception": 36, "reasoning": 33, "action": 48, "datasets": 32},
+    "tables": {"perception": 36, "reasoning": 36, "action": 48, "datasets": 32},
     "leaves": 18,
     "roles": 3,
 }

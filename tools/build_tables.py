@@ -26,9 +26,8 @@ SPECS = {
     },
     "reasoning": {
         "file": "reasoning_tab.tex",
-        "expected_rows": 33,
-        "cols": ["method", "venue_raw", "setting", "text_form",
-                 "out_M", "out_H", "out_P", "out_Mo"],
+        "expected_rows": 36,
+        "cols": ["method", "venue_raw", "setting", "text_form", "output"],
         "has_paradigm": True,
     },
     "action": {
@@ -50,7 +49,16 @@ SPECS = {
 }
 
 MULTIROW_RE = re.compile(r"\\multirow(?:\[[^\]]*\])?\{[^}]*\}\{[^}]*\}\{(.*)\}\s*$")
-CITE_RE = re.compile(r"~?\\citep?\{([^}]+)\}")
+CITE_RE = re.compile(r"~?\\cite[tp]?\{([^}]+)\}")
+CITET_RE = re.compile(r"\\citet\{([^}]+)\}")
+# \citet{} rows render as author names in the paper; mirror that here
+CITET_NAMES = {
+    "zhu2014reasoning": "Zhu et al.",
+    "fichtl2016bootstrapping": "Fichtl et al.",
+    "learn2act_properly": "Chuang et al.",
+    "aff_semantic_relations": "Ardón et al.",
+    "xin2022visual": "Xin et al.",
+}
 VENUE_RE = re.compile(r"^(.*?)\s+(\d{4})$")
 
 
@@ -70,6 +78,7 @@ def clean_cell(cell: str):
         return True
     if c == r"\xmark":
         return False
+    c = CITET_RE.sub(lambda m: CITET_NAMES.get(m.group(1).strip(), m.group(1).strip()), c)
     c = CITE_RE.sub("", c)
     c = c.replace(r"\&", "&").replace(r"\_", "_").replace(r"\%", "%").replace("~", " ")
     c = re.sub(r"\\textbf\{([^}]*)\}", r"\1", c)

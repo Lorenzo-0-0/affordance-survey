@@ -11,6 +11,5 @@ python3 "$HERE/build_papers.py" --src "$SRC"
 python3 "$HERE/build_tables.py" --src "$SRC"
 bash    "$HERE/build_figs.sh"   --src "$SRC"
 python3 "$HERE/build_authors.py"
-python3 "$HERE/build_histogram.py"
 python3 "$HERE/validate_data.py" --strict
 echo "build_all: OK — remember to bump data-asset-v (and all ?v=) in index.html if assets changed"

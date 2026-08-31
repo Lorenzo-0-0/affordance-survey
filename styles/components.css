@@ -34,20 +34,6 @@
 }
 .hero__topo canvas { width: 100%; height: 100%; display: block; }
 
-/* fieldnote: a quiet plate caption that names the interaction */
-.hero__fieldnote {
-  position: absolute;
-  right: clamp(16px, 3vw, 44px);
-  bottom: 16px;
-  z-index: 1;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.09em;
-  color: var(--ink-faint);
-  pointer-events: none;
-}
-@media (hover: none), (max-width: 760px) { .hero__fieldnote { display: none; } }
-
 /* ---- centered masthead ---- */
 .hero__inner {
   position: relative;
@@ -58,14 +44,6 @@
   text-align: center;
 }
 
-.hero__eyebrow {
-  font-family: var(--font-mono);
-  font-size: var(--fs-mono);
-  letter-spacing: var(--track-wider);
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: var(--s5);
-}
 .hero__title {
   font-family: var(--font-display);
   font-size: var(--fs-hero);
@@ -77,28 +55,17 @@
 .hero__title-passive { color: var(--ink); }
 .hero__title-active { color: var(--accent); }
 
-.hero__epigraph {
-  margin: 0 auto var(--s6);
-  max-width: 56ch;
-}
-.hero__epigraph p {
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: var(--fs-lead);
-  font-weight: 400;
-  color: var(--ink-soft);
-  line-height: 1.5;
-}
-.hero__epigraph cite {
-  display: block;
-  margin-top: var(--s2);
+/* the paper title, set as a mono masthead line under the display heading */
+.hero__subtitle {
   font-family: var(--font-mono);
-  font-style: normal;
-  font-size: var(--fs-micro);
-  letter-spacing: 0.08em;
-  color: var(--ink-muted);
+  font-size: clamp(14.5px, 1.7vw, 19px);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  line-height: 1.55;
+  margin: 0 auto var(--s6);
+  max-width: 52ch;
 }
-.hero__epigraph cite span { font-style: italic; font-family: var(--font-body); font-size: 13px; }
 
 /* masthead roster: names set in the display face, affiliations as a
    numbered registry line — quiet chrome, everything earns its ink */
@@ -326,13 +293,6 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-}
-.stat__arr {
-  font-weight: 400;
-  font-size: 0.85em;
-  margin-inline: 2px;
-  color: var(--accent);
-  -webkit-text-fill-color: var(--accent);
 }
 .stat > span {
   display: block;
@@ -580,8 +540,6 @@
 }
 .shift p { font-size: 13.5px; color: var(--ink-muted); line-height: 1.55; margin-top: var(--s3); }
 
-.corpus-chart { margin-block: var(--s8); }
-.corpus-chart svg { width: 100%; height: auto; }
 
 /* ============================ CHALLENGES ============================ */
 .challenges {
