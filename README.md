@@ -46,6 +46,8 @@ tools/build_all.sh --src /path/to/paper_src   # the Overleaf/LaTeX source direct
 
 Order and affiliations follow the active byline in the 2026-09-15 paper — edit `tools/authors.json`, run `tools/build_authors.py`.
 
+Each affiliation specifies a local logo asset and its display dimensions. The validator checks that every institution has a configured, existing, rendered logo. UIUC uses the official [single-color Block I](https://cdn.brand.illinois.edu/logos/limited-use/block-i/blue.svg), displayed through the same monochrome `.affil__logo` style as the other institutions.
+
 ## Dev server
 
 `.claude/launch.json` (in `mac_vis_pack/`) has an `affordance-survey` entry → port 8470.

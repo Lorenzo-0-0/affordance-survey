@@ -4,7 +4,7 @@
     "1": {"name": "Nanyang Technological University", "logo": "ntu.svg", "w": 15, "h": 19},
     "2": {"name": "HKUST (Guangzhou)", "logo": "hkust-gz.svg", "w": 12, "h": 19},
     "3": {"name": "Shanghai Jiao Tong University", "logo": "sjtu.png", "w": 19, "h": 19},
-    "4": {"name": "University of Illinois Urbana-Champaign"},
+    "4": {"name": "University of Illinois Urbana-Champaign", "logo": "uiuc.svg", "w": 13, "h": 19},
     "5": {"name": "The University of Sydney", "logo": "sydney.svg", "w": 17, "h": 19},
     "6": {"name": "University of Liverpool", "logo": "liverpool.svg", "w": 12, "h": 19},
     "7": {"name": "The University of Edinburgh", "logo": "edinburgh.svg", "w": 19, "h": 19},

@@ -103,6 +103,22 @@ def main():
     authors = json.loads((SITE / "tools" / "authors.json").read_text())
     if len(authors["authors"]) != 18 or len(authors["affiliations"]) != 10:
         fail("author or affiliation count differs from September paper")
+    logos = re.findall(r'<img\b[^>]*class="affil__logo"[^>]*>', html)
+    if len(logos) != len(authors["affiliations"]):
+        fail("every affiliation must render its institution logo")
+    for number, affiliation in authors["affiliations"].items():
+        logo = affiliation.get("logo")
+        if not logo:
+            fail(f"affiliation {number} has no logo configured")
+            continue
+        src = f"assets/logos/{logo}"
+        if not (SITE / src).is_file():
+            fail(f"affiliation {number} logo asset is missing: {src}")
+        for dimension in ("w", "h"):
+            if not isinstance(affiliation.get(dimension), (int, float)) or affiliation[dimension] <= 0:
+                fail(f"affiliation {number} has invalid logo dimension: {dimension}")
+        if sum(f'src="{src}"' in tag for tag in logos) != 1:
+            fail(f"affiliation {number} logo is not rendered exactly once")
     if "Liu, Yuanzhe" not in html:
         fail("Yuanzhe Liu missing from citation")
 
