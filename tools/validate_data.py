@@ -14,9 +14,9 @@ from pathlib import Path
 SITE = Path(__file__).resolve().parent.parent
 
 EXPECTED = {
-    "methods": {"perception": 78, "reasoning": 50, "action": 61},
+    "methods": {"perception": 78, "reasoning": 54, "action": 61},
     "datasets": 34,
-    "tables": {"perception": 36, "reasoning": 36, "action": 48, "datasets": 32},
+    "tables": {"perception": 36, "reasoning": 37, "action": 48, "datasets": 32},
     "leaves": 18,
     "roles": 3,
 }
@@ -77,6 +77,34 @@ def main():
         got = len(tables[name]["rows"])
         if got != n:
             fail(f"tables[{name}] = {got}, expected {n}")
+
+    # Compare both legacy forward and current backward multirow groups.
+    for name, expected in {
+        "reasoning": {"Relation-based": 7, "Language-centric": 22, "Agentic": 8},
+        "action": {"Hierarchical": 30, "Policy Learning": 18},
+    }.items():
+        actual = {}
+        for row in tables[name]["rows"]:
+            group = row.get("paradigm")
+            actual[group] = actual.get(group, 0) + 1
+        if actual != expected:
+            fail(f"tables[{name}] groups = {actual}, expected {expected}")
+    methods_by_key = {p["key"]: p for p in papers["methods"]}
+    for row in tables["reasoning"]["rows"]:
+        if row.get("paper_key") not in methods_by_key:
+            fail(f"reasoning row has no valid corpus link: {row['method']}")
+        else:
+            method = methods_by_key[row["paper_key"]]
+            if method["venue"] != row["venue"] or method["year"] != row["year"]:
+                fail(f"reasoning table/corpus venue differs: {row['method']}")
+    total = sum(EXPECTED["methods"].values())
+    if f'data-count-to="{total}"' not in html:
+        fail("hero method count differs from corpus")
+    authors = json.loads((SITE / "tools" / "authors.json").read_text())
+    if len(authors["authors"]) != 18 or len(authors["affiliations"]) != 10:
+        fail("author or affiliation count differs from September paper")
+    if "Liu, Yuanzhe" not in html:
+        fail("Yuanzhe Liu missing from citation")
 
     # --- asset version uniformity ---
     mv = re.search(r'data-asset-v="(\d+)"', html)

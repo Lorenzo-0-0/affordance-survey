@@ -17,7 +17,7 @@ SITE = TOOLS.parent
 SPECS = {
     "perception": {
         "file": "perception_tab.tex",
-        "expected_rows": 36,
+        "expected_rows": 33,
         "cols": ["method", "venue_raw", "setting",
                  "in_I", "in_D", "in_V", "in_3D", "in_L", "in_HOI",
                  "out_M", "out_H", "out_P", "out_Mo",
@@ -26,7 +26,7 @@ SPECS = {
     },
     "reasoning": {
         "file": "reasoning_tab.tex",
-        "expected_rows": 36,
+        "expected_rows": 37,
         "cols": ["method", "venue_raw", "setting", "text_form", "output"],
         "has_paradigm": True,
     },
@@ -40,7 +40,7 @@ SPECS = {
     },
     "datasets": {
         "file": "dataset_table.tex",
-        "expected_rows": 32,
+        "expected_rows": 36,
         "cols": ["name", "venue_raw", "setting", "obj", "aff", "num",
                  "in_I", "in_D", "in_V", "in_3D", "in_L", "in_HOI",
                  "ann_M", "ann_H", "ann_P", "ann_Mo"],
@@ -48,7 +48,7 @@ SPECS = {
     },
 }
 
-MULTIROW_RE = re.compile(r"\\multirow(?:\[[^\]]*\])?\{[^}]*\}\{[^}]*\}\{(.*)\}\s*$")
+MULTIROW_RE = re.compile(r"\\multirow(?:\[[^\]]*\])?\{(-?\d+)\}\{[^}]*\}\{(.*)\}\s*$")
 CITE_RE = re.compile(r"~?\\cite[tp]?\{([^}]+)\}")
 CITET_RE = re.compile(r"\\citet\{([^}]+)\}")
 # \citet{} rows render as author names in the paper; mirror that here
@@ -81,6 +81,7 @@ def clean_cell(cell: str):
     c = CITET_RE.sub(lambda m: CITET_NAMES.get(m.group(1).strip(), m.group(1).strip()), c)
     c = CITE_RE.sub("", c)
     c = c.replace(r"\&", "&").replace(r"\_", "_").replace(r"\%", "%").replace("~", " ")
+    c = c.replace("$A_0$", "A₀")
     c = re.sub(r"\\textbf\{([^}]*)\}", r"\1", c)
     c = re.sub(r"\s+", " ", c).strip()
     return c
@@ -101,18 +102,24 @@ def parse_table(path: Path, spec: dict):
         sys.exit(f"{path.name}: no midrule..bottomrule block")
     body = m.group(1)
 
-    rows, paradigm = [], None
+    rows, paradigm, remaining = [], None, 0
     for raw in re.split(r"\\\\|\\tabularnewline", body):
         raw = raw.strip()
         raw = re.sub(r"\\(?:midrule|cmidrule(?:\([^)]*\))?\{[^}]*\}|addlinespace(?:\[[^\]]*\])?|rowcolor\{[^}]*\})", "", raw).strip()
         if not raw:
             continue
-        cells = [c for c in raw.split("&")]
+        cells = re.split(r"(?<!\\)&", raw)
+        backward = 0
         if spec["has_paradigm"]:
             head = cells[0].strip()
             mr = MULTIROW_RE.match(head)
             if mr:
-                paradigm = clean_paradigm(mr.group(1))
+                span = int(mr.group(1))
+                paradigm = clean_paradigm(mr.group(2))
+                if span < 0:
+                    backward = abs(span)
+                else:
+                    remaining = span
             cells = cells[1:]  # drop paradigm column (empty on non-multirow rows)
         if len(cells) != len(spec["cols"]):
             sys.exit(f"{path.name}: row has {len(cells)} cells, expected {len(spec['cols'])}: {raw[:90]!r}")
@@ -122,8 +129,19 @@ def parse_table(path: Path, spec: dict):
         vm = VENUE_RE.match(row["venue_raw"])
         row["venue"], row["year"] = (vm.group(1), int(vm.group(2))) if vm else (row["venue_raw"], None)
         if spec["has_paradigm"]:
-            row["paradigm"] = paradigm
+            row["paradigm"] = paradigm if remaining or backward else None
         rows.append(row)
+        if backward:
+            if backward > len(rows):
+                sys.exit(f"{path.name}: multirow span exceeds parsed rows")
+            for grouped in rows[-backward:]:
+                if grouped.get("paradigm") not in (None, paradigm):
+                    sys.exit(f"{path.name}: overlapping paradigm groups")
+                grouped["paradigm"] = paradigm
+        if remaining:
+            remaining -= 1
+    if spec["has_paradigm"] and any(not row.get("paradigm") for row in rows):
+        sys.exit(f"{path.name}: unassigned paradigm rows")
     if len(rows) != spec["expected_rows"]:
         sys.exit(f"{path.name}: parsed {len(rows)} rows, expected {spec['expected_rows']}")
     return rows
@@ -157,16 +175,21 @@ def attach_paper_keys(tables, papers_path: Path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", required=True)
+    ap.add_argument("--tables", nargs="+", choices=list(SPECS), default=list(SPECS),
+                    help="Regenerate selected tables, preserving the others in --out")
     ap.add_argument("--out", default=str(SITE / "data" / "tables.json"))
     args = ap.parse_args()
     src = Path(args.src).expanduser() / "tabs"
 
-    tables = {}
-    for name, spec in SPECS.items():
+    output_path = Path(args.out)
+    previous = json.loads(output_path.read_text()) if output_path.exists() else {}
+    tables = {name: previous[name] for name in SPECS if name in previous}
+    for name in args.tables:
+        spec = SPECS[name]
         rows = parse_table(src / spec["file"], spec)
         tables[name] = {"rows": rows}
         print(f"{name}: {len(rows)} rows")
-    attach_paper_keys(tables, SITE / "data" / "papers.json")
+    attach_paper_keys({name: tables[name] for name in args.tables}, SITE / "data" / "papers.json")
 
     out = {"version": 1, **tables}
     Path(args.out).write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")

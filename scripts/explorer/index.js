@@ -1,10 +1,10 @@
 /* §04 atlas index — wiring: data → state → url → filters/tree/list */
-import { createState } from './state.js?v=29';
-import { buildIndex, filterPapers } from './data.js?v=29';
-import { initUrl } from './url.js?v=29';
-import { initFilters } from './filters.js?v=29';
-import { initTree } from './tree.js?v=29';
-import { initList } from './list.js?v=29';
+import { createState } from './state.js?v=30';
+import { buildIndex, filterPapers } from './data.js?v=30';
+import { initUrl } from './url.js?v=30';
+import { initFilters } from './filters.js?v=30';
+import { initTree } from './tree.js?v=30';
+import { initList } from './list.js?v=30';
 
 export function initExplorer(root, papers, taxonomy) {
   if (!root) return;
@@ -61,6 +61,7 @@ export function initExplorer(root, papers, taxonomy) {
     if (!p) return;
     stateApi.set({
       mode: p.role ? 'methods' : 'datasets',
+      q: '', yearMin: null, yearMax: null, venues: [], modals: [], targets: [], mllm: false,
       role: p.role || null,
       leaf: p.leaf || null,
       paper: key,

@@ -8,7 +8,7 @@ while [[ $# -gt 0 ]]; do case "$1" in --src) SRC="$2"; shift 2;; *) shift;; esac
 [[ -z "$SRC" ]] && { echo "usage: build_all.sh --src <paper_src>"; exit 1; }
 
 python3 "$HERE/build_papers.py" --src "$SRC"
-python3 "$HERE/build_tables.py" --src "$SRC"
+python3 "$HERE/build_tables.py" --src "$SRC" --tables reasoning
 bash    "$HERE/build_figs.sh"   --src "$SRC"
 python3 "$HERE/build_authors.py"
 python3 "$HERE/validate_data.py" --strict

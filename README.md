@@ -21,7 +21,7 @@ Deployable at any subpath (relative URLs throughout).
 - `scripts/` — vanilla ES modules. `main.js` is the only versioned entry.
   `hero-topo.js` draws the hero topology backdrop (seeded layout, colors read from
   CSS tokens at init; single rAF, dash-offset writes only, IO pause offscreen).
-- `data/` — **generated, never hand-edited**: `papers.json` (189 methods + 34 datasets),
+- `data/` — **generated, never hand-edited**: `papers.json` (193 methods + 34 datasets),
   `taxonomy.json` (3 roles → 18 leaves), `tables.json` (the paper's 4 comparison tables).
 - `tools/` — the build pipeline (stdlib Python + bash; no venv needed).
 
@@ -31,7 +31,7 @@ Deployable at any subpath (relative URLs throughout).
 tools/build_all.sh --src /path/to/paper_src   # the Overleaf/LaTeX source directory
 ```
 
-- `build_papers.py` parses `taxonomy.md`; per-paper leaf assignment lives in
+- `build_papers.py` parses `taxonomy.md` plus `tools/corpus_additions.json` for methods already present in the paper but missing from its Markdown index; per-paper leaf assignment lives in
   `tools/leaf_overrides.json` and English one-liners in `tools/insights_en.json`
   (keyed by title slug — the build **never rewrites these**; it reports NEW /
   ORPHANED / STALE entries for you to resolve).
@@ -44,7 +44,7 @@ tools/build_all.sh --src /path/to/paper_src   # the Overleaf/LaTeX source direct
 
 ## Author order
 
-`% ORDER TBD` in the paper — edit `tools/authors.json`, run `tools/build_authors.py`.
+Order and affiliations follow the active byline in the 2026-09-15 paper — edit `tools/authors.json`, run `tools/build_authors.py`.
 
 ## Dev server
 
@@ -55,3 +55,9 @@ tools/build_all.sh --src /path/to/paper_src   # the Overleaf/LaTeX source direct
 - BibTeX carries `arXiv:XXXX.XXXXX` placeholder until the arXiv ID exists (also gate
   the disabled hero arXiv button on release).
 - No HuggingFace link in the paper source yet (logo asset exists if one appears).
+
+## September 15 update scope
+
+The 193-method corpus adds ViSPLA, TokAG, Spatial-RelNet, and PAP to the previous 189. The latter two are in the active reasoning table but absent from the exported `taxonomy.md`, so `tools/corpus_additions.json` records them with provenance. The corpus contains 78 perception, 54 reasoning, and 61 action methods, plus the existing 34 dataset records. Reasoning venues and 2D/3D settings follow the active LaTeX table; table aliases keep all 37 rows linked to their method records.
+
+`build_all.sh` refreshes the requested reasoning comparison table (37 rows), the timeline and trend figure assets, authors, and corpus. Other comparison tables remain at their previous published revision. To explicitly refresh additional tables, run `build_tables.py --src /path/to/paper --tables perception action datasets` and review the corpus coverage and validation constants. Their newer rows include methods outside the requested 193-method snapshot.

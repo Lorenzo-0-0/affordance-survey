@@ -164,6 +164,8 @@ def main():
     md_path = Path(args.src).expanduser() / "taxonomy.md"
     md = strip_comments(md_path.read_text(encoding="utf-8"))
 
+    additions = load_json(TOOLS / "corpus_additions.json", {})
+
     tree = load_json(TOOLS / "taxonomy_tree.json", None)
     if tree is None:
         sys.exit("taxonomy_tree.json missing")
@@ -192,7 +194,15 @@ def main():
         #   action:     title|venue|zh|Hierarchical-E2E|explicit-implicit-reward (5)
         #   datasets:   title|venue|category|benchmark                      (4)
         expect = {"perception": 6, "reasoning": 6, "action": 5}
-        for cells in table_rows(body):
+        rows = table_rows(body)
+        existing = [parse_title_cell(row[0]) for row in rows if row]
+        for extra in additions.get("methods", []):
+            if extra["role"] != role:
+                continue
+            title, url = parse_title_cell(extra["cells"][0])
+            if not any(slugify(t) == slugify(title) or (u and u == url) for t, u in existing):
+                rows.append(extra["cells"])
+        for cells in rows:
             if not any(cells):
                 continue
             if is_dataset:
@@ -281,6 +291,20 @@ def main():
         if ins is None:
             report["new_insight"].append(d["key"])
 
+    # The active reasoning table has newer venues/settings than taxonomy.md.
+    from build_tables import parse_table, SPECS
+    aliases = load_json(TOOLS / "table_aliases.json", {})
+    by_key = {p["key"]: p for p in methods}
+    reasoning_rows = parse_table(Path(args.src).expanduser() / "tabs/reasoning_tab.tex", SPECS["reasoning"])
+    for row in reasoning_rows:
+        rec = by_key.get(aliases.get(row["method"]))
+        if rec is None:
+            continue
+        if (rec["venue"], rec["year"]) != (row["venue"], row["year"]):
+            rec["month"] = None
+        rec.update(venue=row["venue"], year=row["year"], venue_raw=row["venue_raw"])
+        rec["modal"] = "3D" if row["setting"].startswith("3D") else "2D"
+
     counts = {r: sum(1 for p in methods if p["role"] == r) for r in ROLE_HEADINGS}
     counts["datasets"] = len(datasets)
     print(f"parsed: {counts}  (methods total {len(methods)})")
@@ -318,7 +342,9 @@ def main():
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
     papers = {
         "version": 1, "generated": stamp,
-        "source": f"taxonomy.md sha1:{sha1(md)}",
+        "source": (f"taxonomy.md sha1:{sha1(md)}; "
+                   f"corpus_additions.json sha1:{sha1(json.dumps(additions, sort_keys=True))}; "
+                   f"reasoning_tab.tex sha1:{sha1((Path(args.src).expanduser() / 'tabs/reasoning_tab.tex').read_text())}"),
         "counts": counts,
         "methods": methods, "datasets": datasets,
     }

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" data-asset-v="29" class="no-js">
+<html lang="en" data-asset-v="30" class="no-js">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="light" />
   <meta name="theme-color" content="#F7F8FA" />
   <title>From Passive Perception to Active Interaction · A Survey of Affordance Learning for Embodied AI</title>
-  <meta name="description" content="A unified survey of affordance learning for embodied AI: affordance perception, affordance reasoning, and affordance-guided action — 189 methods, 34 datasets, from Gibson 1979 to today." />
+  <meta name="description" content="A unified survey of affordance learning for embodied AI: affordance perception, affordance reasoning, and affordance-guided action — 193 methods, 34 datasets, from Gibson 1979 to today." />
   <link rel="canonical" href="https://jingliangli.com/affordance-survey/" />
   <meta property="og:url" content="https://jingliangli.com/affordance-survey/" />
   <meta property="og:title" content="From Passive Perception to Active Interaction" />
-  <meta property="og:description" content="A survey of affordance learning for embodied AI — perception, reasoning, and action. 189 methods · 34 datasets · 18 taxonomy leaves." />
+  <meta property="og:description" content="A survey of affordance learning for embodied AI — perception, reasoning, and action. 193 methods · 34 datasets · 18 taxonomy leaves." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://jingliangli.com/affordance-survey/assets/images/og-card.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -18,11 +18,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="styles/tokens.css?v=29" />
-  <link rel="stylesheet" href="styles/reset.css?v=29" />
-  <link rel="stylesheet" href="styles/layout.css?v=29" />
-  <link rel="stylesheet" href="styles/components.css?v=29" />
-  <link rel="stylesheet" href="styles/explorer.css?v=29" />
+  <link rel="stylesheet" href="styles/tokens.css?v=30" />
+  <link rel="stylesheet" href="styles/reset.css?v=30" />
+  <link rel="stylesheet" href="styles/layout.css?v=30" />
+  <link rel="stylesheet" href="styles/components.css?v=30" />
+  <link rel="stylesheet" href="styles/explorer.css?v=30" />
   <script>document.documentElement.classList.remove('no-js');</script>
 </head>
 <body>
@@ -67,15 +67,16 @@
         <span class="author"><a href="https://sailing-yifan.github.io/" target="_blank" rel="noopener">Yifan Han</a><sup>3*</sup></span>
         <span class="author"><a href="https://jiajindou.github.io/" target="_blank" rel="noopener">Jindou Jia</a><sup>1</sup></span>
         <span class="author"><a href="https://dorayakilin.github.io/" target="_blank" rel="noopener">Tao Lin</a><sup>3</sup></span>
-        <span class="author"><a href="https://jingliangli.com/affordance-survey/" target="_blank" rel="noopener">Yutong Wang</a><sup>4</sup></span>
+        <span class="author"><a href="https://yuanzhel0903.github.io/liuyuanzhe.github.io/" target="_blank" rel="noopener">Yuanzhe Liu</a><sup>4</sup></span>
+        <span class="author"><a href="https://jingliangli.com/affordance-survey/" target="_blank" rel="noopener">Yutong Wang</a><sup>5</sup></span>
         <span class="author"><a href="https://www.bozhao.me/" target="_blank" rel="noopener">Bo Zhao</a><sup>3</sup></span>
         <span class="author"><a href="https://fangqiangding.com/" target="_blank" rel="noopener">Fangqiang Ding</a><sup>2</sup></span>
-        <span class="author"><a href="https://cgi.csc.liv.ac.uk/~anguyen/" target="_blank" rel="noopener">Anh Nguyen</a><sup>5</sup></span>
-        <span class="author"><a href="https://laurasevilla.me" target="_blank" rel="noopener">Laura Sevilla-Lara</a><sup>6</sup></span>
-        <span class="author"><a href="https://mbzuai.ac.ae/study/faculty/gregory-chirikjian/" target="_blank" rel="noopener">Gregory S. Chirikjian</a><sup>7</sup></span>
+        <span class="author"><a href="https://cgi.csc.liv.ac.uk/~anguyen/" target="_blank" rel="noopener">Anh Nguyen</a><sup>6</sup></span>
+        <span class="author"><a href="https://laurasevilla.me" target="_blank" rel="noopener">Laura Sevilla-Lara</a><sup>7</sup></span>
         <span class="author"><a href="http://hxu.rocks" target="_blank" rel="noopener">Huazhe Xu</a><sup>8</sup></span>
-        <span class="author"><a href="https://people.inf.ethz.ch/pomarc/" target="_blank" rel="noopener">Marc Pollefeys</a><sup>9</sup></span>
-        <span class="author"><a href="https://www.oiermees.com" target="_blank" rel="noopener">Oier Mees</a><sup>9</sup></span>
+        <span class="author"><a href="https://mbzuai.ac.ae/study/faculty/gregory-chirikjian/" target="_blank" rel="noopener">Gregory S. Chirikjian</a><sup>9</sup></span>
+        <span class="author"><a href="https://people.inf.ethz.ch/pomarc/" target="_blank" rel="noopener">Marc Pollefeys</a><sup>10</sup></span>
+        <span class="author"><a href="https://www.oiermees.com" target="_blank" rel="noopener">Oier Mees</a><sup>10</sup></span>
         <span class="author"><a href="https://hkustai.github.io/" target="_blank" rel="noopener">Hui Xiong</a><sup>2†</sup></span>
         <span class="author"><a href="https://marsyang.site/" target="_blank" rel="noopener">Jianfei Yang</a><sup>1†</sup></span>
       </p>
@@ -83,12 +84,13 @@
         <span class="affil"><img class="affil__logo" src="assets/logos/ntu.svg" width="15" height="19" alt="" decoding="async" /><i class="affil__num">1</i>Nanyang Technological University</span>
         <span class="affil"><img class="affil__logo" src="assets/logos/hkust-gz.svg" width="12" height="19" alt="" decoding="async" /><i class="affil__num">2</i>HKUST (Guangzhou)</span>
         <span class="affil"><img class="affil__logo" src="assets/logos/sjtu.png" width="19" height="19" alt="" decoding="async" /><i class="affil__num">3</i>Shanghai Jiao Tong University</span>
-        <span class="affil"><img class="affil__logo" src="assets/logos/sydney.svg" width="17" height="19" alt="" decoding="async" /><i class="affil__num">4</i>The University of Sydney</span>
-        <span class="affil"><img class="affil__logo" src="assets/logos/liverpool.svg" width="12" height="19" alt="" decoding="async" /><i class="affil__num">5</i>University of Liverpool</span>
-        <span class="affil"><img class="affil__logo" src="assets/logos/edinburgh.svg" width="19" height="19" alt="" decoding="async" /><i class="affil__num">6</i>The University of Edinburgh</span>
-        <span class="affil"><img class="affil__logo" src="assets/logos/mbzuai.svg" width="47" height="13" alt="" decoding="async" /><i class="affil__num">7</i>MBZUAI</span>
+        <span class="affil"><i class="affil__num">4</i>University of Illinois Urbana-Champaign</span>
+        <span class="affil"><img class="affil__logo" src="assets/logos/sydney.svg" width="17" height="19" alt="" decoding="async" /><i class="affil__num">5</i>The University of Sydney</span>
+        <span class="affil"><img class="affil__logo" src="assets/logos/liverpool.svg" width="12" height="19" alt="" decoding="async" /><i class="affil__num">6</i>University of Liverpool</span>
+        <span class="affil"><img class="affil__logo" src="assets/logos/edinburgh.svg" width="19" height="19" alt="" decoding="async" /><i class="affil__num">7</i>The University of Edinburgh</span>
         <span class="affil"><img class="affil__logo" src="assets/logos/tsinghua.svg" width="19" height="19" alt="" decoding="async" /><i class="affil__num">8</i>Tsinghua University</span>
-        <span class="affil"><img class="affil__logo" src="assets/logos/eth.svg" width="72" height="12" alt="" decoding="async" /><i class="affil__num">9</i>ETH Zurich</span>
+        <span class="affil"><img class="affil__logo" src="assets/logos/mbzuai.svg" width="47" height="13" alt="" decoding="async" /><i class="affil__num">9</i>MBZUAI</span>
+        <span class="affil"><img class="affil__logo" src="assets/logos/eth.svg" width="72" height="12" alt="" decoding="async" /><i class="affil__num">10</i>ETH Zurich</span>
       </div>
       <p class="hero__marks"><span class="mark"><b>*</b>Equal contribution</span> <span class="mark"><b>‡</b>Project lead</span> <span class="mark"><b>†</b>Corresponding author</span></p>
       <!-- AUTHORS:END -->
@@ -101,7 +103,7 @@
       </div>
 
       <ul class="hero__stats" data-reveal style="--reveal-delay:300ms">
-        <li class="stat"><strong data-count-to="189">0</strong><span>methods surveyed</span></li>
+        <li class="stat"><strong data-count-to="193">0</strong><span>methods surveyed</span></li>
         <li class="stat"><strong data-count-to="34">0</strong><span>datasets &amp; benchmarks</span></li>
         <li class="stat"><strong data-count-to="18">0</strong><span>taxonomy leaves</span></li>
       </ul>
@@ -132,7 +134,7 @@
           <h3>Affordance Reasoning</h3>
           <p class="role-card__q">“Which affordance matters for this task, context, and agent state?”</p>
           <p class="role-card__desc">Selects task-relevant opportunities through relations, language, and agentic feasibility checks.</p>
-          <span class="role-card__link">50 papers <span class="arr">→</span></span>
+          <span class="role-card__link">54 papers <span class="arr">→</span></span>
         </a>
         <a class="role-card role-action" href="#explorer" data-explorer-pin="role:action" data-reveal style="--reveal-delay:180ms">
           <span class="role-card__num">III</span>
@@ -169,8 +171,8 @@
       <figure class="media-block" data-reveal>
         <div class="media-block__chrome">
           <picture>
-            <source type="image/webp" srcset="assets/images/overview.webp?v=29" />
-            <img src="assets/images/overview.png?v=29" width="2536" height="673" loading="lazy"
+            <source type="image/webp" srcset="assets/images/overview.webp?v=30" />
+            <img src="assets/images/overview.png?v=30" width="2536" height="673" loading="lazy"
                  alt="Overview taxonomy figure: affordance perception, affordance reasoning, and affordance-guided action, each expanded into its families and leaf categories." />
           </picture>
         </div>
@@ -193,7 +195,7 @@
       </p>
 
       <ol class="shifts">
-        <li class="shift" data-reveal><span class="shift__num">01</span><span class="shift__from">dense labels</span><span class="shift__track" aria-hidden="true"></span><span class="shift__to">scalable supervision</span><p>Pixel-perfect masks give way to weak labels, interaction data, and model-generated supervision.</p></li>
+        <li class="shift" data-reveal><span class="shift__num">01</span><span class="shift__from">dense labels</span><span class="shift__track" aria-hidden="true"></span><span class="shift__to">diverse evidence</span><p>Image-level labels, sparse points, human–object interactions, model priors, and physical simulation complement dense masks; reliability depends on evidence quality and simulation fidelity.</p></li>
         <li class="shift" data-reveal style="--reveal-delay:60ms"><span class="shift__num">02</span><span class="shift__from">2D image plane</span><span class="shift__track" aria-hidden="true"></span><span class="shift__to">3D metric space</span><p>From view-dependent heatmaps to metric grounding on point clouds and Gaussian splats.</p></li>
         <li class="shift" data-reveal style="--reveal-delay:120ms"><span class="shift__num">03</span><span class="shift__from">static regions</span><span class="shift__track" aria-hidden="true"></span><span class="shift__to">actionable dynamics</span><p>Beyond masks: contact points, motion directions, poses, and post-contact trajectories.</p></li>
         <li class="shift" data-reveal style="--reveal-delay:180ms"><span class="shift__num">04</span><span class="shift__from">closed-set recognition</span><span class="shift__track" aria-hidden="true"></span><span class="shift__to">open-set generalization</span><p>Fixed vocabularies dissolve into language queries and foundation-model grounding.</p></li>
@@ -203,8 +205,8 @@
       <figure class="media-block" data-reveal>
         <div class="media-block__chrome">
           <picture>
-            <source type="image/webp" srcset="assets/images/timeline.webp?v=29" />
-            <img src="assets/images/timeline.png?v=29" width="2610" height="1000" loading="lazy"
+            <source type="image/webp" srcset="assets/images/timeline.webp?v=30" />
+            <img src="assets/images/timeline.png?v=30" width="2765" height="1059" loading="lazy"
                  alt="Timeline of representative advances in affordance learning from 2016 to 2026, grouped into perception, reasoning, and action families." />
           </picture>
         </div>
@@ -218,15 +220,15 @@
       <figure class="media-block" data-reveal>
         <div class="media-block__chrome">
           <picture>
-            <source type="image/webp" srcset="assets/images/trends.webp?v=29" />
-            <img src="assets/images/trends.png?v=29" width="2644" height="934" loading="lazy"
-                 alt="Research-trend charts: the shift from 2D to 3D perception, the growth of open-set methods, and the expansion of affordance research across perception, reasoning, simulation execution, and real-robot execution." />
+            <source type="image/webp" srcset="assets/images/trends.webp?v=30" />
+            <img src="assets/images/trends.png?v=30" width="3113" height="1001" loading="lazy"
+                 alt="Research trends through July 2026: 2D and 3D affordance grounding, open-set methods, and cumulative publications across perception, reasoning, simulation execution, and real-robot execution." />
           </picture>
         </div>
         <figcaption class="media-block__meta">
           <span class="media-block__label">Fig. 03 · Plate III — Research trends</span>
-          <span class="media-block__title">Perception, reasoning, and execution over time</span>
-          <span class="media-block__caption">Research trends in affordance learning. (a) and (b) analyze affordance grounding across perception and reasoning, showing the transition from 2D image-based to 3D spatial representations and the growth of open-set methods, respectively. (c) shows the expansion of affordance research, with bars denoting paper counts and lines showing the percentage distribution across perception, reasoning, simulation execution, and real-robot execution.</span>
+          <span class="media-block__title">Perception, reasoning, and execution through July 2026</span>
+          <span class="media-block__caption">Research trends in affordance learning through July 2026. (a) and (b) analyze affordance grounding across perception and reasoning, showing the transition from 2D to 3D and the growth of open-set methods, respectively. (c) shows the cumulative publications and their distribution across perception, reasoning, simulation execution, and real-robot execution.</span>
         </figcaption>
       </figure>
     </div>
@@ -268,34 +270,34 @@
       <div class="chapter" data-reveal><span class="chapter__num">§ 06 · Open problems</span><span class="chapter__rule"></span></div>
       <h2 class="section-title" data-reveal>Challenges &amp; future directions</h2>
       <p class="section-lead" data-reveal style="--reveal-delay:60ms">
-        Where the current toolkit runs out — five problems that decide whether affordance becomes a load-bearing part of embodied intelligence.
+        Five research directions toward scalable, reliable, and actionable affordance learning for open-world embodied interaction.
       </p>
 
       <ol class="challenges">
         <li class="challenge" data-reveal>
           <span class="challenge__num">7.1</span>
-          <h3>Representation × action integration</h3>
-          <p>Explicit, latent, and auxiliary affordance interfaces have never been compared under matched conditions — and affordance remains centered on vision and language, leaving touch, sound, and proprioception as untapped evidence about the same interaction. The field needs no-affordance / predicted / oracle ablations, intervention tests that show the affordance is causally used, and cross-modal designs probed under missing or conflicting senses.</p>
+          <h3>Affordance representation and action integration</h3>
+          <p>Explicit masks, contacts, and trajectories offer interpretable action interfaces; latent features, auxiliary objectives, and optimization signals support other forms of policy integration. Controlled comparisons should match observations, training data, policy backbones, and action interfaces, test no-affordance, predicted-affordance, and oracle-affordance conditions, and use interventions to establish whether affordance information improves execution.</p>
         </li>
         <li class="challenge" data-reveal style="--reveal-delay:60ms">
           <span class="challenge__num">7.2</span>
-          <h3>Scalable, open-world learning</h3>
-          <p>Scalable supervision and open-world generalization are coupled problems: the label sources that scale are exactly the ones that must transfer beyond fixed object and affordance vocabularies.</p>
+          <h3>Scalable learning and open-world generalization</h3>
+          <p>Human interactions, demonstrations, model-generated labels, simulation, and robot experience broaden supervision, but each introduces uncertainty and bias. Future data pipelines should control quality while varying objects, tasks, states, and environments. Affordance-guided data generation and predictive models can scale interaction examples while preserving transferable functional relations.</p>
         </li>
         <li class="challenge" data-reveal style="--reveal-delay:120ms">
           <span class="challenge__num">7.3</span>
-          <h3>Reliable autonomous grounding</h3>
-          <p>Agentic pipelines confound general affordance capability with task-specific engineering. Reliability calls for calibrated uncertainty and grounding that survives outside the curated pipeline.</p>
+          <h3>Reliable and autonomous affordance grounding</h3>
+          <p>Multi-stage grounding can propagate early errors and depend heavily on prompts, thresholds, tool choices, and fallback rules. Future systems should select evidence and tools adaptively, track provenance and uncertainty, verify semantic and spatial consistency, and retry when needed. Evaluation should report human corrections, intermediate failures, tool calls, latency, cost, and sensitivity to component replacement.</p>
         </li>
         <li class="challenge" data-reveal style="--reveal-delay:180ms">
           <span class="challenge__num">7.4</span>
-          <h3>Closed-loop affordance modeling</h3>
-          <p>One-shot prediction should become a state-dependent belief — updated as the agent acts, observes outcomes, and re-plans over the affordances that remain.</p>
+          <h3>Closed-loop affordance modeling and planning</h3>
+          <p>Affordances change as actions alter object states, visibility, and scene configuration. Agents should maintain and update affordance beliefs through observation, action, and execution feedback. Active sensing and low-risk exploration can resolve uncertainty; long-horizon planning should model affordance transitions, track progress, revise later choices, and recover from unexpected outcomes.</p>
         </li>
         <li class="challenge challenge--wide" data-reveal style="--reveal-delay:240ms">
           <span class="challenge__num">7.5</span>
-          <h3>Embodied evaluation, safety &amp; trust</h3>
-          <p>Localization metrics do not establish embodiment-aware validity: a region can be found yet unusable by this robot, now. Negative and unsafe affordances — what must <em>not</em> be acted on — remain nearly unexplored.</p>
+          <h3>Embodied evaluation, safety, and trustworthiness</h3>
+          <p>Perceptual agreement does not establish whether an interaction is reachable, stable, or compatible with a particular robot. Benchmarks should measure embodiment-specific feasibility, execution success, and uncertainty calibration, using validated simulation alongside robot trials. Evaluation should also test complementary sensory evidence, unsafe and negative affordances, and whether actions respect human intent and social norms.</p>
         </li>
       </ol>
     </div>
@@ -313,9 +315,10 @@
   title   = {From Passive Perception to Active Interaction: A Survey
              of Affordance Learning for Embodied AI},
   author  = {Li, Gen and Wang, Hanqing and Li, Jingliang and Han, Yifan
-             and Jia, Jindou and Lin, Tao and Wang, Yutong and Zhao, Bo
+             and Jia, Jindou and Lin, Tao and Liu, Yuanzhe and Wang, Yutong
+             and Zhao, Bo
              and Ding, Fangqiang and Nguyen, Anh and Sevilla-Lara, Laura
-             and Chirikjian, Gregory S. and Xu, Huazhe and Pollefeys, Marc
+             and Xu, Huazhe and Chirikjian, Gregory S. and Pollefeys, Marc
              and Mees, Oier and Xiong, Hui and Yang, Jianfei},
   journal = {arXiv preprint arXiv:XXXX.XXXXX},
   year    = {2026}
@@ -329,6 +332,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
-  <script type="module" src="scripts/main.js?v=29"></script>
+  <script type="module" src="scripts/main.js?v=30"></script>
 </body>
 </html>

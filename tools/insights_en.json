@@ -890,5 +890,17 @@
  "worldafford-affordance-grounding-based-on-natural-language-instructions": {
   "en": "Parses instructions into object-part-function queries and grounds them to affordance masks, an open-set interface for embodied perception.",
   "zh_hash": "262114ca275c"
+ },
+ "learning-object-placements-for-relational-instructions-by-hallucinating-scene-representations": {
+  "en": "Spatial-RelNet predicts pixelwise placement probabilities for spatial relations, learning from hallucinated scene representations without dense relational labels."
+ },
+ "vispla-visual-iterative-self-prompting-for-language-guided-3d-affordance-learning": {
+  "en": "Combines language-conditioned masks with iterative geometric prompts, refining 3D affordance regions through visual and differential-geometric feedback."
+ },
+ "token-based-affordance-grounding-with-large-vision-language-models": {
+  "en": "TokAG extracts action-specific 2D heatmaps from frozen vision-language model output-token attention, without affordance-specific training."
+ },
+ "panoramic-affordance-prediction": {
+  "en": "PAP combines recursive visual routing, adaptive gaze, and cascaded grounding to recover affordance masks in ultra-high-resolution panoramic scenes."
  }
 }

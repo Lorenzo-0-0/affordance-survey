@@ -1,0 +1,31 @@
+{
+  "_note": "Methods present in the 2026-09-15 paper text and comparison tables but absent from taxonomy.md. Entries are skipped when future taxonomy exports include the same title or URL.",
+  "methods": [
+    {
+      "role": "reasoning",
+      "cite_key": "mees20icra_placements",
+      "source": "sec/4_Reasoning.tex; tabs/reasoning_tab.tex; paper.bib",
+      "cells": [
+        "[Learning Object Placements For Relational Instructions by Hallucinating Scene Representations](https://arxiv.org/abs/2001.08481)",
+        "ICRA 2020",
+        "简介：Spatial-RelNet<br>技术路线：基于空间关系和场景图像预测逐像素物体放置概率，借助幻觉场景表征的关系分类学习监督信号<br>Insight：关系建模可将放置约束转化为可执行的空间区域，而无需逐像素关系标注",
+        "2D",
+        "Relation-Based Affordance Reasoning",
+        "no"
+      ]
+    },
+    {
+      "role": "reasoning",
+      "cite_key": "zhang2026panoramic",
+      "source": "sec/4_Reasoning.tex; tabs/reasoning_tab.tex; paper.bib",
+      "cells": [
+        "[Panoramic Affordance Prediction](https://arxiv.org/abs/2603.15558)",
+        "ECCV 2026",
+        "简介：PAP<br>技术路线：递归视觉路由缩小全景图像中的搜索范围，自适应凝视校正局部畸变，级联定位恢复交互区域掩码<br>Insight：分阶段的视觉推理支持超高分辨率全景场景中的 affordance grounding",
+        "2D",
+        "Agentic Affordance Reasoning",
+        "yes"
+      ]
+    }
+  ]
+}

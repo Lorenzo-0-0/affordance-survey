@@ -8,8 +8,8 @@ while [[ $# -gt 0 ]]; do case "$1" in --src) SRC="$2"; shift 2;; *) shift;; esac
 OUT="$(cd "$(dirname "$0")/.." && pwd)/assets/images"
 mkdir -p "$OUT"
 
-names=(overview timeline)
-srcs=(overview-wide-2 timeline-cosmic)
+names=(timeline trends)
+srcs=(timeline-cosmic-bold trend-plot)
 
 for i in "${!names[@]}"; do
   n="${names[$i]}"; s="${srcs[$i]}"

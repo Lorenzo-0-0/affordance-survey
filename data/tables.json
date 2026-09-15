@@ -766,73 +766,85 @@
     "method": "Zhu et al.",
     "venue_raw": "ECCV 2014",
     "setting": "2D object",
-    "text_form": "–",
+    "text_form": "--",
     "output": "Affordance label",
-    "cite_key": null,
+    "cite_key": "zhu2014reasoning",
     "venue": "ECCV",
     "year": 2014,
     "paradigm": "Relation-based",
-    "paper_key": null
+    "paper_key": "reasoning-about-object-affordances-in-a-knowledge-base-representation"
    },
    {
     "method": "Fichtl et al.",
     "venue_raw": "TCDS 2016",
     "setting": "3D object",
-    "text_form": "–",
+    "text_form": "--",
     "output": "Relational affordance",
-    "cite_key": null,
+    "cite_key": "fichtl2016bootstrapping",
     "venue": "TCDS",
     "year": 2016,
     "paradigm": "Relation-based",
-    "paper_key": null
+    "paper_key": "bootstrapping-relational-affordances-of-object-pairs-using-transfer"
    },
    {
     "method": "Chuang et al.",
     "venue_raw": "CVPR 2018",
     "setting": "2D scene",
-    "text_form": "–",
+    "text_form": "--",
     "output": "Affordance label, explanation",
-    "cite_key": null,
+    "cite_key": "learn2act_properly",
     "venue": "CVPR",
     "year": 2018,
     "paradigm": "Relation-based",
-    "paper_key": null
+    "paper_key": "learning-to-act-properly-predicting-and-explaining-affordances-from-images"
    },
    {
     "method": "Ardón et al.",
     "venue_raw": "RA-L 2019",
     "setting": "2D scene",
-    "text_form": "–",
+    "text_form": "--",
     "output": "Grasp affordance",
-    "cite_key": null,
+    "cite_key": "aff_semantic_relations",
     "venue": "RA-L",
     "year": 2019,
     "paradigm": "Relation-based",
-    "paper_key": null
+    "paper_key": "learning-grasp-affordance-reasoning-through-semantic-relations"
+   },
+   {
+    "method": "Spatial-RelNet",
+    "venue_raw": "ICRA 2020",
+    "setting": "2D scene",
+    "text_form": "--",
+    "output": "Placement affordance",
+    "cite_key": "mees20icra_placements",
+    "venue": "ICRA",
+    "year": 2020,
+    "paradigm": "Relation-based",
+    "paper_key": "learning-object-placements-for-relational-instructions-by-hallucinating-scene-representations"
    },
    {
     "method": "AR-Net",
     "venue_raw": "arXiv 2021",
     "setting": "2D scene",
-    "text_form": "–",
+    "text_form": "--",
     "output": "Relational affordance",
     "cite_key": "aff_relations_2",
     "venue": "arXiv",
     "year": 2021,
     "paradigm": "Relation-based",
-    "paper_key": null
+    "paper_key": "relationship-oriented-affordance-learning-through-manipulation-graph-construction"
    },
    {
     "method": "Xin et al.",
     "venue_raw": "ICDH 2022",
     "setting": "2D scene",
-    "text_form": "–",
+    "text_form": "--",
     "output": "Affordance label",
-    "cite_key": null,
+    "cite_key": "xin2022visual",
     "venue": "ICDH",
     "year": 2022,
     "paradigm": "Relation-based",
-    "paper_key": null
+    "paper_key": "a-visual-affordance-reasoning-network-based-on-graph-attention"
    },
    {
     "method": "SayCan",
@@ -888,7 +900,7 @@
     "setting": "2D scene",
     "text_form": "Explicit instruction",
     "output": "Bounding box, mask",
-    "cite_key": null,
+    "cite_key": "huang2024manipvqa",
     "venue": "IROS",
     "year": 2024,
     "paradigm": "Language-centric",
@@ -900,7 +912,7 @@
     "setting": "2D scene",
     "text_form": "Implicit intent",
     "output": "Heatmap",
-    "cite_key": null,
+    "cite_key": "worldafford",
     "venue": "ICTAI",
     "year": 2024,
     "paradigm": "Language-centric",
@@ -912,7 +924,7 @@
     "setting": "2D object",
     "text_form": "Action term",
     "output": "Mask",
-    "cite_key": null,
+    "cite_key": "oval-prompt",
     "venue": "ICRAW",
     "year": 2024,
     "paradigm": "Language-centric",
@@ -970,7 +982,7 @@
     "method": "GREAT",
     "venue_raw": "CVPR 2025",
     "setting": "3D object",
-    "text_form": "–",
+    "text_form": "Explicit instruction",
     "output": "Heatmap",
     "cite_key": "great_cvpr25",
     "venue": "CVPR",
@@ -984,7 +996,7 @@
     "setting": "3D scene",
     "text_form": "Explicit instruction",
     "output": "Mask",
-    "cite_key": null,
+    "cite_key": "corsetti2025fun3du",
     "venue": "CVPR",
     "year": 2025,
     "paradigm": "Language-centric",
@@ -996,11 +1008,11 @@
     "setting": "3D object",
     "text_form": "Explicit instruction",
     "output": "Mask",
-    "cite_key": null,
+    "cite_key": "basak2026vispla",
     "venue": "NeurIPS",
     "year": 2025,
     "paradigm": "Language-centric",
-    "paper_key": null
+    "paper_key": "vispla-visual-iterative-self-prompting-for-language-guided-3d-affordance-learning"
    },
    {
     "method": "PAVLM",
@@ -1008,7 +1020,7 @@
     "setting": "3D object",
     "text_form": "Explicit instruction",
     "output": "Heatmap",
-    "cite_key": null,
+    "cite_key": "liu2025pavlm",
     "venue": "IROS",
     "year": 2025,
     "paradigm": "Language-centric",
@@ -1020,7 +1032,7 @@
     "setting": "3D object",
     "text_form": "Explicit instruction",
     "output": "Heatmap",
-    "cite_key": null,
+    "cite_key": "wu2025funcafford",
     "venue": "ACM MM",
     "year": 2025,
     "paradigm": "Language-centric",
@@ -1080,7 +1092,7 @@
     "setting": "3D scene",
     "text_form": "Explicit instruction",
     "output": "Mask",
-    "cite_key": null,
+    "cite_key": "he2026tasa",
     "venue": "AAAI",
     "year": 2026,
     "paradigm": "Language-centric",
@@ -1092,11 +1104,11 @@
     "setting": "2D object",
     "text_form": "Explicit instruction",
     "output": "Heatmap",
-    "cite_key": null,
+    "cite_key": "lee2026token",
     "venue": "ECCV",
     "year": 2026,
     "paradigm": "Language-centric",
-    "paper_key": null
+    "paper_key": "token-based-affordance-grounding-with-large-vision-language-models"
    },
    {
     "method": "ASP",
@@ -1192,7 +1204,7 @@
     "venue": "ECCV",
     "year": 2026,
     "paradigm": "Agentic",
-    "paper_key": null
+    "paper_key": "panoramic-affordance-prediction"
    }
   ]
  },
