@@ -1,16 +1,16 @@
 {
   "_note": "Order and affiliation numbers follow paper.tex in the 2026-09-15 Overleaf export (18 authors, 10 affiliations). Yuanzhe Liu homepage supplied by the user. Existing homepage choices preserved.",
   "affiliations": {
-    "1": {"name": "Nanyang Technological University", "logo": "ntu.svg", "w": 15, "h": 19},
-    "2": {"name": "HKUST (Guangzhou)", "logo": "hkust-gz.svg", "w": 12, "h": 19},
-    "3": {"name": "Shanghai Jiao Tong University", "logo": "sjtu.png", "w": 19, "h": 19},
-    "4": {"name": "University of Illinois Urbana-Champaign", "logo": "uiuc.svg", "w": 13, "h": 19},
-    "5": {"name": "The University of Sydney", "logo": "sydney.svg", "w": 17, "h": 19},
-    "6": {"name": "University of Liverpool", "logo": "liverpool.svg", "w": 12, "h": 19},
-    "7": {"name": "The University of Edinburgh", "logo": "edinburgh.svg", "w": 19, "h": 19},
-    "8": {"name": "Tsinghua University", "logo": "tsinghua.svg", "w": 19, "h": 19},
-    "9": {"name": "MBZUAI", "logo": "mbzuai.svg", "w": 47, "h": 13},
-    "10": {"name": "ETH Zurich", "logo": "eth.svg", "w": 72, "h": 12}
+    "1": {"name": "Nanyang Technological University", "logo": "ntu.svg", "w": 19, "h": 24},
+    "2": {"name": "HKUST (Guangzhou)", "logo": "hkust-gz.svg", "w": 15, "h": 24},
+    "3": {"name": "Shanghai Jiao Tong University", "logo": "sjtu.png", "w": 24, "h": 24},
+    "4": {"name": "University of Illinois Urbana-Champaign", "logo": "uiuc.svg", "w": 16, "h": 24},
+    "5": {"name": "The University of Sydney", "logo": "sydney.svg", "w": 21, "h": 24},
+    "6": {"name": "University of Liverpool", "logo": "liverpool.svg", "w": 15, "h": 24},
+    "7": {"name": "The University of Edinburgh", "logo": "edinburgh.svg", "w": 24, "h": 24},
+    "8": {"name": "Tsinghua University", "logo": "tsinghua.svg", "w": 24, "h": 24},
+    "9": {"name": "MBZUAI", "logo": "mbzuai.svg", "w": 59, "h": 16},
+    "10": {"name": "ETH Zurich", "logo": "eth.svg", "w": 91, "h": 15}
   },
   "marks": {"*": "Equal contribution", "‡": "Project lead", "†": "Corresponding author"},
   "authors": [

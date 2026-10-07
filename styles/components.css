@@ -107,18 +107,18 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 12px 26px;
+  gap: 14px 30px;
   margin-top: var(--s5);
   margin-inline: auto;
-  padding-block: 14px;
-  max-width: 1020px;
+  padding-block: 16px;
+  max-width: 1100px;
   border-block: 1px solid var(--hairline);
 }
 .hero__affils .affil {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-size: 14.5px;
+  gap: 8px;
+  font-size: 17px;
   letter-spacing: 0.01em;
   color: var(--ink-soft);
   white-space: nowrap;
@@ -133,12 +133,12 @@
 .affil__num {
   font-family: var(--font-mono);
   font-style: normal;
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 500;
   line-height: 1;
   color: var(--ink-muted);
   align-self: flex-start;
-  padding-top: 2px; /* bare superscript numeral, no seal */
+  padding-top: 3px; /* bare superscript numeral, no seal */
   margin-right: -2px;
 }
 .hero__marks {
@@ -890,6 +890,6 @@ kbd {
   .shift { min-width: 72vw; scroll-snap-align: start; }
   .hero__stats { gap: var(--s5); }
   .hero__affils { gap: 8px 18px; padding-block: 12px; }
-  .hero__affils .affil { font-size: 13px; gap: 6px; }
-  .affil__logo { height: 15px; width: auto; }
+  .hero__affils .affil { font-size: 14.5px; gap: 7px; }
+  .affil__logo { height: 18px; width: auto; }
 }
