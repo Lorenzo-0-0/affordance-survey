@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-asset-v="34" class="no-js">
+<html lang="en" data-asset-v="36" class="no-js">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -18,11 +18,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="styles/tokens.css?v=34" />
-  <link rel="stylesheet" href="styles/reset.css?v=34" />
-  <link rel="stylesheet" href="styles/layout.css?v=34" />
-  <link rel="stylesheet" href="styles/components.css?v=34" />
-  <link rel="stylesheet" href="styles/explorer.css?v=34" />
+  <link rel="stylesheet" href="styles/tokens.css?v=36" />
+  <link rel="stylesheet" href="styles/reset.css?v=36" />
+  <link rel="stylesheet" href="styles/layout.css?v=36" />
+  <link rel="stylesheet" href="styles/components.css?v=36" />
+  <link rel="stylesheet" href="styles/explorer.css?v=36" />
   <script>document.documentElement.classList.remove('no-js');</script>
 </head>
 <body>
@@ -30,6 +30,22 @@
   <nav class="nav" aria-label="Site">
     <div class="nav__inner">
       <a class="nav__brand" href="#top" aria-label="Affordance Survey — back to top">
+        <svg class="brand__mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="bm-page" x1="4" y1="5" x2="20" y2="19" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#2e6bf2" stop-opacity="0.18" />
+              <stop offset="1" stop-color="#a78bfa" stop-opacity="0.18" />
+            </linearGradient>
+            <linearGradient id="bm-spine" x1="12" y1="6" x2="12" y2="20" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#2e6bf2" />
+              <stop offset="1" stop-color="#6fc2ff" />
+            </linearGradient>
+          </defs>
+          <path d="M12 6.6C10.1 4.9 7.3 4.4 4.2 5.1v13.1c3.1-.7 5.9-.2 7.8 1.5 1.9-1.7 4.7-2.2 7.8-1.5V5.1c-3.1-.7-5.9-.2-7.8 1.5z" fill="url(#bm-page)" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+          <path d="M12 6.9v12.5" fill="none" stroke="url(#bm-spine)" stroke-width="1.7" stroke-linecap="round" />
+          <path d="M6.7 9.3c1.3-.3 2.5-.2 3.5.2M6.7 12.1c1.3-.3 2.5-.2 3.5.2M13.8 9.5c1-.4 2.2-.5 3.5-.2M13.8 12.3c1-.4 2.2-.5 3.5-.2" fill="none" stroke="currentColor" stroke-opacity="0.38" stroke-width="1.1" stroke-linecap="round" />
+          <circle cx="20.2" cy="3.9" r="1.55" fill="#6fc2ff" />
+        </svg>
         <span class="brand__title">Affordance <em>Survey</em></span>
       </a>
       <ul class="nav__links">
@@ -180,8 +196,8 @@
       <figure class="media-block" data-reveal>
         <div class="media-block__chrome">
           <picture>
-            <source type="image/webp" srcset="assets/images/overview.webp?v=34" />
-            <img src="assets/images/overview.png?v=34" width="2536" height="673" loading="lazy"
+            <source type="image/webp" srcset="assets/images/overview.webp?v=36" />
+            <img src="assets/images/overview.png?v=36" width="2536" height="673" loading="lazy"
                  alt="Overview taxonomy figure: affordance perception, affordance reasoning, and affordance-guided action, each expanded into its families and leaf categories." />
           </picture>
         </div>
@@ -214,8 +230,8 @@
       <figure class="media-block" data-reveal>
         <div class="media-block__chrome">
           <picture>
-            <source type="image/webp" srcset="assets/images/timeline.webp?v=34" />
-            <img src="assets/images/timeline.png?v=34" width="2765" height="1059" loading="lazy"
+            <source type="image/webp" srcset="assets/images/timeline.webp?v=36" />
+            <img src="assets/images/timeline.png?v=36" width="2765" height="1059" loading="lazy"
                  alt="Timeline of representative advances in affordance learning from 2016 to 2026, grouped into perception, reasoning, and action families." />
           </picture>
         </div>
@@ -229,8 +245,8 @@
       <figure class="media-block" data-reveal>
         <div class="media-block__chrome">
           <picture>
-            <source type="image/webp" srcset="assets/images/trends.webp?v=34" />
-            <img src="assets/images/trends.png?v=34" width="3113" height="1001" loading="lazy"
+            <source type="image/webp" srcset="assets/images/trends.webp?v=36" />
+            <img src="assets/images/trends.png?v=36" width="3113" height="1001" loading="lazy"
                  alt="Research trends through July 2026: 2D and 3D affordance grounding, open-set methods, and cumulative publications across perception, reasoning, simulation execution, and real-robot execution." />
           </picture>
         </div>
@@ -343,6 +359,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
-  <script type="module" src="scripts/main.js?v=34"></script>
+  <script type="module" src="scripts/main.js?v=36"></script>
 </body>
 </html>

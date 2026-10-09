@@ -65,7 +65,7 @@
   --font-body: "Inter Tight", "Inter", -apple-system, "Helvetica Neue", sans-serif;
   --font-mono: "JetBrains Mono", "SF Mono", Menlo, monospace;
 
-  --fs-hero: clamp(42px, 6vw, 88px);
+  --fs-hero: clamp(38px, 5.2vw, 76px);
   --fs-h2: clamp(32px, 4vw, 54px);
   --fs-h3: clamp(21px, 2.3vw, 28px);
   --fs-lead: clamp(18px, 1.7vw, 21px);

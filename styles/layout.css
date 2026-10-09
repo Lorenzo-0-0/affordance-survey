@@ -48,12 +48,26 @@
   justify-content: space-between;
   gap: var(--s5);
 }
-/* brand: a single-deck wordmark */
+/* brand: an open-book mark (cobalt spine, one spark) beside a single-deck wordmark */
 .nav__brand {
   display: inline-flex;
   align-items: center;
+  gap: 10px;
   text-decoration: none;
   white-space: nowrap;
+}
+.brand__mark {
+  width: 25px;
+  height: 25px;
+  flex: none;
+  color: var(--ink);
+  overflow: visible;
+  transition: transform var(--d-base) var(--ease-out);
+}
+.nav__brand:hover .brand__mark { transform: translateY(-1px) rotate(-5deg); }
+@media (prefers-reduced-motion: reduce) {
+  .brand__mark { transition: none; }
+  .nav__brand:hover .brand__mark { transform: none; }
 }
 .brand__title {
   font-family: var(--font-display);
