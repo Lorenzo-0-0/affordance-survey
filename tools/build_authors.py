@@ -11,7 +11,7 @@ data = json.loads((TOOLS / "authors.json").read_text(encoding="utf-8"))
 
 parts = []
 for a in data["authors"]:
-    sup = "".join(str(n) for n in a["affils"]) + "".join(a["marks"])
+    sup = "".join(str(n) for n in a["affils"]) + "".join(f"<b>{m}</b>" for m in a["marks"])
     name = a["name"]
     inner = f'<a href="{a["url"]}" target="_blank" rel="noopener">{name}</a>' if a.get("url") else name
     parts.append(f'<span class="author">{inner}<sup>{sup}</sup></span>')

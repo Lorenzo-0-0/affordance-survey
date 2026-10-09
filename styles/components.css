@@ -58,7 +58,7 @@
 /* the paper title, set as a mono masthead line under the display heading */
 .hero__subtitle {
   font-family: var(--font-mono);
-  font-size: clamp(15px, 1.75vw, 23px);
+  font-size: clamp(16px, 2vw, 27px);
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -103,6 +103,13 @@
   letter-spacing: 0.06em;
   color: var(--accent);
   margin-left: 3px;
+}
+/* contribution marks (* ‡ †) read a step larger and heavier than the affiliation numerals */
+.hero__authors sup b {
+  font-size: 1.55em;
+  font-weight: 700;
+  color: var(--accent);
+  margin-left: 1px;
 }
 /* the ten institutions as an editorial colophon: full-colour crests seated
    into the porcelain, names in the display face, bare index numerals, one

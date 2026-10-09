@@ -1,10 +1,10 @@
 /* entry: boots every feature in its own try/catch — one failure never cascades */
-import { initReveal } from './reveal.js?v=36';
-import { initScrollProgress } from './scroll-progress.js?v=36';
-import { initCopyBibtex } from './copy-bibtex.js?v=36';
-import { initHeroNet } from './hero-net.js?v=36';
-import { initTables } from './tables.js?v=36';
-import { initExplorer } from './explorer/index.js?v=36';
+import { initReveal } from './reveal.js?v=38';
+import { initScrollProgress } from './scroll-progress.js?v=38';
+import { initCopyBibtex } from './copy-bibtex.js?v=38';
+import { initHeroNet } from './hero-net.js?v=38';
+import { initTables } from './tables.js?v=38';
+import { initExplorer } from './explorer/index.js?v=38';
 
 const V = document.documentElement.dataset.assetV || '1';
 const boot = (name, fn) => { try { fn(); } catch (err) { console.error(`[${name}]`, err); } };
