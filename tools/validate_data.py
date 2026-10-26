@@ -101,8 +101,8 @@ def main():
     if f'data-count-to="{total}"' not in html:
         fail("hero method count differs from corpus")
     authors = json.loads((SITE / "tools" / "authors.json").read_text())
-    if len(authors["authors"]) != 18 or len(authors["affiliations"]) != 10:
-        fail("author or affiliation count differs from September paper")
+    if len(authors["authors"]) != 17 or len(authors["affiliations"]) != 9:
+        fail("author or affiliation count differs from the current author list")
     logos = re.findall(r'<img\b[^>]*class="affil__logo"[^>]*>', html)
     if len(logos) != len(authors["affiliations"]):
         fail("every affiliation must render its institution logo")

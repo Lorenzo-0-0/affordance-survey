@@ -1,5 +1,5 @@
 {
-  "_note": "Order and affiliation numbers follow paper.tex in the 2026-09-15 Overleaf export (18 authors, 10 affiliations). Yuanzhe Liu homepage supplied by the user. Existing homepage choices preserved.",
+  "_note": "Order and affiliation numbers follow paper.tex in the 2026-09-15 Overleaf export, except that Gregory S. Chirikjian and MBZUAI were removed on 2026-10-26 (ETH Zurich renumbered 10→9; now 17 authors, 9 affiliations). Yuanzhe Liu homepage supplied by the user. Existing homepage choices preserved.",
   "affiliations": {
     "1": {"name": "Nanyang Technological University", "logo": "ntu.svg", "w": 19, "h": 24},
     "2": {"name": "HKUST (Guangzhou)", "logo": "hkust-gz.svg", "w": 15, "h": 24},
@@ -9,8 +9,7 @@
     "6": {"name": "University of Liverpool", "logo": "liverpool.svg", "w": 15, "h": 24},
     "7": {"name": "The University of Edinburgh", "logo": "edinburgh.svg", "w": 24, "h": 24},
     "8": {"name": "Tsinghua University", "logo": "tsinghua.svg", "w": 24, "h": 24},
-    "9": {"name": "MBZUAI", "logo": "mbzuai.svg", "w": 59, "h": 16},
-    "10": {"name": "ETH Zurich", "logo": "eth.svg", "w": 91, "h": 15}
+    "9": {"name": "ETH Zurich", "logo": "eth.svg", "w": 91, "h": 15}
   },
   "marks": {"*": "Equal contribution", "‡": "Project lead", "†": "Corresponding author"},
   "authors": [
@@ -27,9 +26,8 @@
     {"name": "Anh Nguyen", "affils": [6], "marks": [], "url": "https://cgi.csc.liv.ac.uk/~anguyen/"},
     {"name": "Laura Sevilla-Lara", "affils": [7], "marks": [], "url": "https://laurasevilla.me"},
     {"name": "Huazhe Xu", "affils": [8], "marks": [], "url": "http://hxu.rocks"},
-    {"name": "Gregory S. Chirikjian", "affils": [9], "marks": [], "url": "https://mbzuai.ac.ae/study/faculty/gregory-chirikjian/"},
-    {"name": "Marc Pollefeys", "affils": [10], "marks": [], "url": "https://people.inf.ethz.ch/pomarc/"},
-    {"name": "Oier Mees", "affils": [10], "marks": [], "url": "https://www.oiermees.com"},
+    {"name": "Marc Pollefeys", "affils": [9], "marks": [], "url": "https://people.inf.ethz.ch/pomarc/"},
+    {"name": "Oier Mees", "affils": [9], "marks": [], "url": "https://www.oiermees.com"},
     {"name": "Hui Xiong", "affils": [2], "marks": ["†"], "url": "https://hkustai.github.io/"},
     {"name": "Jianfei Yang", "affils": [1], "marks": ["†"], "url": "https://marsyang.site/"}
   ]
